@@ -1,27 +1,73 @@
-# StarterProject
+# Starter Waiting List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
+## Installation et exécution
 
-## Development server
+1) Install [NodeJS Installer](https://nodejs.org/en/download/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+2) Clone your repository
 
-## Code scaffolding
+```
+git clone https://github.com/PATH_TO_YOUR_REPOSITORY.git
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4) Install the dependencies
 
-## Build
+```
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+5) Run the application
 
-## Running unit tests
+```
+npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Check your application at
 
-## Running end-to-end tests
+```
+http://localhost:4200/
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Start the project
 
-## Further help
+Run 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+npm start
+```
+
+
+## Run the linter
+
+```
+npm run lint
+```
+
+Note: The linter will be executed before each commit. If the linter fails then the commit will be canceled.
+
+## Angular documentation
+
+The best documentation is the [Official Angular Documentation](https://angular.io/docs). 
+It contains everything and it is always up to date.
+
+#### Important note 
+We are working with Angular version 2+ (here Angular 7). When you look for some documentation, add "Angular 2" in your 
+research to be sure to find the right documentation. You might find documentation about AngularJS, run if it's the case! 
+It's a very old version totally different from our version.
+
+## Documentation - Liens
+
+Documentation Angular 2: 
+
+- [Directives](https://angular.io/docs/ts/latest/guide/attribute-directives.html)
+- [Pipes](https://angular.io/docs/ts/latest/guide/pipes.html)
+- [Services](https://angular.io/docs/ts/latest/tutorial/toh-pt4.html)
+- [HTTP Request with Angular](https://angular.io/docs/ts/latest/guide/server-communication.html)
+- [NgOnInit](https://angular.io/docs/ts/latest/tutorial/toh-pt4.html#the-ngoninit-lifecycle-hook)
+- [@Input and @Ouput](https://angular.io/docs/ts/latest/cookbook/component-communication.html)
+
+Documentation on Observables:
+
+- [Official Documentation rxjs](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html)
+- [Video Tutorial for beginers - FR](http://www.meanjs.fr/rxjs-tutoriel-1-creer-un-observable/)
+- [Tutorial FR](http://home.heeere.com/tech-intro-programmation-reactive.html)
