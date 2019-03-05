@@ -1,6 +1,10 @@
+import {User} from "./user";
+
 export interface Ticket {
   title?: string;
   description?: string;
   date?: Date;
-  author?: string;
+  user?: User;
+  major?: string;
+  archived?: boolean;
 }

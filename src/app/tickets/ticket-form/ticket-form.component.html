@@ -6,12 +6,25 @@
   </label>
   <br>
   <label for="description">
-    Description <br>
-    <input class="input-custom" type="text" id="description" [formControlName]="'description'">
-  </label>
+  Description <br>
+  <input class="input-custom" type="text" id="description" [formControlName]="'description'">
+</label>
+  <br>
+  <label for="major"> Filière </label>
+  <br>
+  <select id="major" [formControlName]="'major'">
+    <option *ngFor="let currentFiliere of FILIERE_LIST" [value]="currentFiliere">
+      {{currentFiliere}}
+    </option>
+  </select>
+  <br>
+  <label for="userID"> Etudiant </label>
+  <br>
+  <select id="userID" [formControlName]="'userID'">
+    <option *ngFor="let currentFiliere of USER_LIST" [value]="currentFiliere">
+      {{currentFiliere}}
+    </option>
+  </select>
   <br>
   <button type="submit" class="btn-custom" (click)="addTicket()">Create</button>
 </form>
-
-<!-- Uncomment below to see your form structure and how it changes-->
-<!--<br><br>{{ticketForm.getRawValue() | json}}-->
