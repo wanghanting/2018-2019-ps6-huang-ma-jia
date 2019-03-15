@@ -1,0 +1,10 @@
+Scénarios :
+
+Etudiant connaissant dans quel pays il veut faire son stage :
+
+Zaki est en train de chercher un stage de SI5 en chine. Soit il clique sur la Chine sur la carte, soit il recherche le pays dans la liste. Ensuite, Il a alors les informations général du pays : démarche pour obtenir un visa de travail, culture, logement partenaire. Pour en connaitre plus sur une entreprise il clique dessus et obtient un description de l’entreprise ainsi que les étudiants qui ont déjà fait un stage dans l’entreprise.
+
+Etudiant ne connaissant pas dans quel pays il veut faire son stage : 
+
+Bernard est en train de chercher un stage de SI5. Il ne sait pas dans quel pays partir. Il clique donc que le bouton ‘Je ne sais pas dans quel pays je veux partir’. Il remplit les filtres correspondant à sa recherche : filière SI5, spécialité IHM. Puis clique sur le bouton rechercher. Il obtient alors l’ensemble des entreprises ayant accueilli des étudiants de Polytech correspondant à ses filtres. Pour en connaitre plus sur une entreprise il clique dessus et obtient un description de l’entreprise ainsi que les étudiants qui ont déjà fait un stage dans l’entreprise.
+
