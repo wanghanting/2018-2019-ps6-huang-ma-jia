@@ -1,16 +1,17 @@
-import {Student} from "../models/student";
+import {Student} from '../models/student';
+import {StudentService} from '../services/student/student.service';
 
 const dateToday: Date = new Date();
 
 export const STUDENTS_MOCKED: Student[] = [
   {
     id: 0,
-    nom: 'Durand',
-    prenom: 'Marc'
+    lastName: 'Durand',
+    firstName: 'Marc'
   },
   {
     id: 1,
-    nom: 'Dupont',
-    prenom: 'Jean'
+    lastName: 'Dupont',
+    firstName: 'Jean'
   },
 ];

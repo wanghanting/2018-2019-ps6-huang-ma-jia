@@ -18,11 +18,11 @@
     </option>
   </select>
   <br>
-  <label for="userID"> Etudiant </label>
+  <label for="studentID"> Etudiant </label>
   <br>
-  <select id="userID" [formControlName]="'userID'">
-    <option *ngFor="let currentFiliere of USER_LIST" [value]="currentFiliere">
-      {{currentFiliere}}
+  <select id="studentID" [formControlName]="'studentID'">
+    <option *ngFor="let currentStudent of STUDENTS_LIST" [value]="currentStudent.id">
+      {{currentStudent.id}}
     </option>
   </select>
   <br>

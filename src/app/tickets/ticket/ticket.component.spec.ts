@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TicketComponent } from './ticket.component';
+import {describe, expect} from '@angular/core/testing/src/testing_internal';
 
 describe('TicketComponent', () => {
   let component: TicketComponent;

@@ -10,7 +10,7 @@ import { Ticket } from '../../../models/ticket';
 export class TicketListComponent implements OnInit {
 
   public ticketList: Ticket[] = [];
-  public displayTicketArchived: boolean = true;
+  public displayTicketArchived = true;
 
   constructor(public ticketService: TicketService) {
     this.ticketService.tickets$.subscribe((tickets) => this.ticketList = tickets);
@@ -22,11 +22,11 @@ export class TicketListComponent implements OnInit {
   ticketHasBeenSelected(hasBeenSelected: boolean) {
     console.log('event received from child:', hasBeenSelected);
   }
-  archiveTicket(ticket: Ticket){
-    ticket.archived = !ticket.archived
+  archiveTicket(ticket: Ticket) {
+    ticket.archived = !ticket.archived;
   }
 
   showArchive() {
-    this.displayTicketArchived = !this.displayTicketArchived
+    this.displayTicketArchived = !this.displayTicketArchived;
   }
 }

@@ -1,10 +1,10 @@
-import {User} from "./user";
+import {Student} from './student';
 
 export interface Ticket {
   title?: string;
   description?: string;
   date?: Date;
-  user?: User;
+  student?: Student;
   major?: string;
   archived?: boolean;
 }
