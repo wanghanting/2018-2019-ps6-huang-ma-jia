@@ -1,10 +1,12 @@
 import {Pays} from './pays';
 import {Companies} from './companies';
+import {Student} from './student';
 
 export interface Stage {
   id?: number;
+  idEntreprise?: number;
   // iconImage?: string;
-  name?: string;
+  student?: Student;
   company: Companies;
   locationPay?: Pays;
   address?: string;
