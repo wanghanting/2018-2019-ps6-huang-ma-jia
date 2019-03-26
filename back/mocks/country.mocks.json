@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Thaïlande",
+        "flagPath": null,
+        "photoPath": null,
+        "information": "Très beau pays d'Asie du Sud Est, très peuplé et très sauvage",
+        "someInformation": "Très beau pays"
+    },{
+        "id": 2,
+        "name": "Chine",
+        "flagPath": null,
+        "photoPath": null,
+        "information": "Très grand pays d'Asie de l'Est, très peuplé et très pollué",
+        "someInformation": "Très grand pays"
+    },{
+        "id": 3,
+        "name": "USA",
+        "flagPath": null,
+        "photoPath": null,
+        "information": "Gigantesque pays très urbanisé, 1er puissance économique du monde contenant les villes de St Fransisco et New York",
+        "someInformation": "Gigantesque pays très urbanisé"
+    }
+]
