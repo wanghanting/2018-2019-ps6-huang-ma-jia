@@ -6,7 +6,7 @@ import {Internship} from '../../models/internship';
   providedIn: 'root'
 })
 
-export class StageService {
+export class InternshipService {
 
   constructor() {
   }
