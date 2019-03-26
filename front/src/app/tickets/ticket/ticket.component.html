@@ -1,0 +1,36 @@
+<div class="card ticket" (click)="selectTicket()">
+  <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
+  <h3>{{ticket.title}}</h3>
+  <i class="fas fa-calendar-alt"></i> {{ticket.date | date: 'shortTime'}} &nbsp;&nbsp;
+  <i class="far fa-user"></i> {{ticket.student.id + ' - ' + ticket.student.lastName + ' ' + ticket.student.firstName}}
+
+  <div *ngIf="ticket.major === 'BIO'">
+    <i class="fas fa-atom"></i>BIO
+  </div>
+
+  <div *ngIf="ticket.major === 'GE'">
+    <i class="fas fa-bath"></i>GE
+  </div>
+
+  <div *ngIf="ticket.major === 'MAM'">
+    <i class="fas fa-calculator"></i>MAM
+  </div>
+
+  <div *ngIf="ticket.major === 'SI'">
+    <i class="fas fa-desktop"></i>SI
+  </div>
+
+  <div *ngIf="ticket.major === 'ELEC'">
+    <i class="fas fa-car-battery"></i>ELEC
+  </div>
+
+  <div *ngIf="ticket.major === 'BAT'">
+    <i class="far fa-building"></i>BAT
+  </div>
+  <div *ngIf="ticket.archived == true">
+    <button type="submit" class="btn-custom" (click)="archiveTicket()">Desarchiver</button>
+  </div>
+  <div *ngIf="ticket.archived == false">
+    <button type="submit" class="btn-custom" (click)="archiveTicket()">Archiver</button>
+  </div>
+</div>
