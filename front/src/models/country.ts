@@ -1,4 +1,4 @@
-export interface Pays {
+export interface Country {
     id?: number;
     name?: string;
     flagPath?: string;
