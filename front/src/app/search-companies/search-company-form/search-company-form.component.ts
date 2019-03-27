@@ -19,11 +19,12 @@ export class SearchCompanyFormComponent implements OnInit {
    */
   public userForm: FormGroup;
   public companyForm: FormGroup;
-  public FILIERE_LIST: string[] = ['SI', 'GE', 'MAM', 'BIO', 'ELEC', 'BAT'];
-  public STUDENTS_LIST: Student[] = [];
-  constructor(public formBuilder: FormBuilder, public ticketService: TicketService, public studentService: StudentService) {
-    this.studentService.getStudent();
-    this.studentService.student$.subscribe(student => this.STUDENTS_LIST = student);
+  public FILIERE_LIST: string[] = ['SI4', 'SI5', 'MAM4', 'MAM5', 'ELEC4', 'ELEC5'];
+  public CONTINENT_LIST: string[] = ['Amérique du Nord',  'Asie', 'Europe', 'Amérique du Sud', 'Océanie', 'Afrique'];
+  public SPECIALITE_LIST: string[] = ['IHM', 'SECURITE'];
+  public TAILE_LIST: string[] = ['1-50', '51-300', '301+'];
+  public SECTEUR_LIST: string[] = ['produit', 'marketing', 'exploitation et maintenance' ];
+  constructor(public formBuilder: FormBuilder) {
     // Form creation
     this.userForm = this.formBuilder.group({
       filiere: [''],

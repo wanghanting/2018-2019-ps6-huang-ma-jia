@@ -9,4 +9,5 @@ export interface Company {
   numberEmployees?: number;
   creationDate?: Date;
   opportunity?: number;
+  internshipType?: string;
 }
