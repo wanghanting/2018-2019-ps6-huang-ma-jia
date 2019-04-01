@@ -1,10 +1,8 @@
-<div class="country-list">
-    <div class="country" *ngFor="let country of countryList">
+<div class="country-page">
         <!--Inputs & Output allow communication between parent & child components.-->
         <!--More information: https://angular.io/guide/component-interaction-->
       <div class="country">
         <app-country [country]="country" (countryHasBeenSelected)="countryHasBeenSelected($event)"></app-country>
       </div>
-    </div>
   </div>
   
