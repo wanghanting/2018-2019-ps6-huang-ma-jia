@@ -18,7 +18,7 @@ export class CountryListComponent implements OnInit {
   ngOnInit() {
   }
 
-  ticketHasBeenSelected(hasBeenSelected: boolean) {
+  countryHasBeenSelected(hasBeenSelected: boolean) {
     console.log('event received from child:', hasBeenSelected);
   }
 }

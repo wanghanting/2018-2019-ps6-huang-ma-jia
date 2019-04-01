@@ -18,7 +18,6 @@ export class StudentService {
   private studentsUrl = 'http://localhost:9428/api/students/';
 
   /**
-   * Observable which contains the list of the tickets.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
   public student$: BehaviorSubject<Student[]> = new BehaviorSubject(this.studentList);

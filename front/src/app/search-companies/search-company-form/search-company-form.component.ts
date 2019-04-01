@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { TicketService } from '../../../services/ticket/ticket.service';
 import { Student } from '../../../models/student';
 import { StudentService } from 'src/services/student/student.service';
 

@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CountryComponent } from './country.component';
 import {describe, expect} from '@angular/core/testing/src/testing_internal';
 
-describe('TicketComponent', () => {
+describe('CountryComponent', () => {
   let component: CountryComponent;
   let fixture: ComponentFixture<CountryComponent>;
 

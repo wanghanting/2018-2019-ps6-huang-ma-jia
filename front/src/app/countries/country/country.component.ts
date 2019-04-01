@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Country } from '../../../models/country';
 
 @Component({
-  selector: 'app-ticket',
+  selector: 'app-country',
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.scss']
 })
@@ -24,7 +24,7 @@ export class CountryComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectTicket() {
+  selectCountry() {
     this.countryHasBeenSelected.emit(true);
   }
 }
