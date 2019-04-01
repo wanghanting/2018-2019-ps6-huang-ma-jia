@@ -1,5 +1,5 @@
 import {Company} from '../models/company';
-import {COUNTRIES_MOCKED} from './countries';
+import {COUNTRIES_MOCKED} from './countries.mock';
 
 export const COMPANIES_MOCKED: Company[] = [
   {
