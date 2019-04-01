@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "name": "Thaïlande",
+      "flagPath": "",
+      "someInformation": "Très beau pays"
+    },
+    {
+      "id": 3,
+      "name": "USA",
+      "flagPath": "",
+      "someInformation": "Gigantesque pays très urbanisé"
+    }
+  ]
