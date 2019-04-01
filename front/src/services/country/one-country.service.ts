@@ -8,22 +8,22 @@ import {Country} from '../../models/country';
   providedIn: 'root'
 })
 
-export class CountryService {
+export class OneCountryService {
   /**
    * Services Documentation:
    * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
    */
 
   //private countryList: Country[] = []; A remettre quand le back marche
-  private countryList: Country[] = COUNTRIES_MOCKED;
+  private country: Country = COUNTRIES_MOCKED[0];
 
   private countriesUrl = 'http://localhost:9428/api/country/';
-  
+
   /**
    * Observable which contains the list of the country.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
-  public countries$: BehaviorSubject<Country[]> = new BehaviorSubject(this.countryList);
+  public countries$: BehaviorSubject<Country> = new BehaviorSubject(this.country);
 
   constructor(
     private http: HttpClient) {

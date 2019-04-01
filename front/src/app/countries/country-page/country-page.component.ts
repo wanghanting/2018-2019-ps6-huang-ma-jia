@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { CountryService } from '../../../services/country/country.service';
+import { OneCountryService } from '../../../services/country/one-country.service';
 import { Country } from '../../../models/country';
 
 @Component({
   selector: 'app-country-list',
-  templateUrl: './country-list.component.html',
-  styleUrls: ['./country-list.component.scss']
+  templateUrl: './country-page.component.html',
+  styleUrls: ['./country-page.component.scss']
 })
 export class CountryPageComponent implements OnInit {
 
-  constructor(public country: Country) {
+    public country: Country
+
+  constructor(public id: number) {//Id par la suite
+    
   }
 
   ngOnInit() {
