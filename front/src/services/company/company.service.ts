@@ -9,6 +9,7 @@ import {COMPANIES_MOCKED} from '../../mocks/companies';
 export class CompanyService {
   private companyList: Company[] = COMPANIES_MOCKED;
   private searchTerms = new Subject<Company>();
+  private Url = 'http://localhost:9428/api/companies';
   public companies$: BehaviorSubject<Company[]> = new BehaviorSubject(this.companyList);
 
   constructor() {
