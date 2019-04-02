@@ -17,8 +17,8 @@ export class CountryService {
   //private countryList: Country[] = []; A remettre quand le back marche
   private countryList: Country[] = COUNTRIES_MOCKED;
 
-  private countriesUrl = 'http://localhost:9428/api/country/';
-  
+  private countriesUrl = 'http://localhost:9428/api/countries/';
+
   /**
    * Observable which contains the list of the country.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
