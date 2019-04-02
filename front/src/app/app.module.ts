@@ -14,9 +14,9 @@ import {SearchCompanyComponent} from './search-companies/search-company';
 import {SearchCompanyFormComponent} from './search-companies/search-company-form';
 import {SearchCompanyListComponent} from './search-companies/search-company-list';
 import {AppRoutingModule} from './app.AppRoutingModule';
-import {InternshipComponent} from "./company/internship";
-import {InternshipListComponent} from "./company/internship-list";
-import {CompanyPageComponent} from "./company/company-page";
+import {InternshipComponent} from './company/internship';
+import {InternshipListComponent} from './company/internship-list';
+import {CompanyPageComponent} from './company/company-page';
 
 @NgModule({
   declarations: [

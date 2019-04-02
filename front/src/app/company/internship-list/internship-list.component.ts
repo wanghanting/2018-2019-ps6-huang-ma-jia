@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Internship} from "../../../models/internship";
-import {InternshipService} from "../../../services/internship/internship.service";
+import {Internship} from '../../../models/internship';
+import {InternshipService} from '../../../services/internship/internship.service';
 
 @Component({
   selector: 'app-internship-list',
