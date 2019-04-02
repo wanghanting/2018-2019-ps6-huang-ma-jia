@@ -8,4 +8,6 @@ module.exports = new BaseModel('Country', {
   photoPath: Joi.string().required(),
   information: Joi.string().required(),
   someInformation: Joi.string().required(),
+  visaDifficulty: Joi.number().required(),
+  visaInformation: Joi.string().required(),
 });

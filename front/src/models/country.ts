@@ -5,9 +5,10 @@ export interface Country {
     photoPath?: string;
     information?: string;
     someInformation?: string;
-    //Demarche visa : note + info
+    visaDifficulty?: number;
+    visaInformation?: string;
+    hiringOpportunities?: string;
     //Liste des logements partenaires
-    //Oportunités d'embauche
     //Liste des entreprise
 }
   

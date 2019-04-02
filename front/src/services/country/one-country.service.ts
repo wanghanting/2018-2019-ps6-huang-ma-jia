@@ -15,7 +15,7 @@ export class OneCountryService {
    */
 
   //private countryList: Country[] = []; A remettre quand le back marche
-  private country: Country = COUNTRIES_MOCKED[0];
+  private country: Country;
 
   private countriesUrl = 'http://localhost:9428/api/countries/';
 

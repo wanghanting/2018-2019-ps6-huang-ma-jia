@@ -3,16 +3,22 @@
     "id": 1,
     "name": "Thaïlande",
     "flagPath": "",
-    "photoPath": "",
-    "information": "Très beau pays d'Asie du Sud Est, très peuplé et très sauvage",
-    "someInformation": "Très beau pays"
+    "photoPath": "https://www.lonelyplanet.fr/sites/lonelyplanet/files/media/article/image/fotolia_117988727_subscription_monthly_m.jpg",
+    "information": " La Thaïlande, en forme longue le royaume de Thaïlande, en thaï Prathet Thaï2, ประเทศไทย ou Ratcha Anachak Thai, ราชอาณาจักรไทย, est un pays d’Asie du Sud-Est. Avant 1939, il s’appelait le royaume de Siam. Il est bordé à l’ouest et au nord-ouest par la Birmanie, au sud par la Malaisie, à l’est par le Cambodge et au nord-est par le Laos",
+    "someInformation": "Très beau pays",
+    "visaDifficulty": 3,
+    "visaInformation": "https://www.rapidevisa.fr/Visa/Thailande.html",
+    "hiringOpportunities": "Aucune"
   },
   {
     "id": 3,
     "name": "USA",
     "flagPath": "",
-    "photoPath": "",
+    "photoPath": "https://cdn.officiel-des-vacances.com/files/styles/product_580x360/public/bend_meander.jpg?itok=tfaPtv_D",
     "information": "Gigantesque pays très urbanisé, 1er puissance économique du monde contenant les villes de St Fransisco et New York",
-    "someInformation": "Gigantesque pays très urbanisé"
+    "someInformation": "Gigantesque pays très urbanisé",
+    "visaDifficulty": 4,
+    "visaInformation": "https://www.rapidevisa.fr/Visa/Thailande.html",
+    "hiringOpportunities": "Plein"
   }
 ]

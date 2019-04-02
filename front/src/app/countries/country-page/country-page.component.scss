@@ -2,15 +2,42 @@
 app-country {
     margin: 0.2em;
   }
-  
-  .country {
-    width: 40%;
+
+  .subTitle {
+    margin: 20px;
+    font-size: 20px;
   }
-  
+
   .country-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+      margin: 50px;
+  }
+
+  .country-infos-td {
+    width: 100%;
+  }
+
+  .country-infos {
+    margin: 20px;
+    font-size: 14px;
+    line-height: 130%
+  }
+
+  .tabulation {
+      margin-left: 30px;
+  }
+
+  .country-image {
+      height: 300px;
+      width: 300px;
+      margin: 5px;      
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  table {
+    border: 1px solid black;
+    width: 100%;
   }
   

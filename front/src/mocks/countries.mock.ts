@@ -7,20 +7,29 @@ export const COUNTRIES_MOCKED: Country[] = [
       flagPath: "",
       photoPath: "",
       information: "Très beau pays d'Asie du Sud Est, très peuplé et très sauvage",
-      someInformation: "Très beau pays"
+      someInformation: "Très beau pays",
+      visaDifficulty: 3,
+      visaInformation: "https://www.rapidevisa.fr/Visa/Thailande.html",
+      hiringOpportunities: ""
   },{
       id: 2,
       name: "Chine",
       flagPath: "",
       photoPath: "",
       information: "Très grand pays d'Asie de l'Est, très peuplé et très pollué",
-      someInformation: "Très grand pays"
+      someInformation: "Très grand pays",
+      visaDifficulty: 3,
+      visaInformation: "https://www.rapidevisa.fr/Visa/Thailande.html",
+      hiringOpportunities: ""
   },{
       id: 3,
       name: "USA",
       flagPath: "",
       photoPath: "",
       information: "Gigantesque pays très urbanisé, 1er puissance économique du monde contenant les villes de St Fransisco et New York",
-      someInformation: "Gigantesque pays très urbanisé"
+      someInformation: "Gigantesque pays très urbanisé",
+      visaDifficulty: 3,
+      visaInformation: "https://www.rapidevisa.fr/Visa/Thailande.html",
+      hiringOpportunities: ""
   }
 ]

@@ -1,6 +1,35 @@
-<div class="country-page">
+<div class="country-page" *ngIf="country != null">
+
         <!--Inputs & Output allow communication between parent & child components.-->
         <!--More information: https://angular.io/guide/component-interaction-->
-        <h3>{{country.name}}</h3>
+        <h1>{{country.name}}</h1>
+        <table>
+            <tr>
+                <td class="country-infos-td">
+                    <div class="subTitle">Information sur le pays</div>
+                    <div class="country-infos">
+                        {{country.information}}<br>
+                        <br>
+                        Démarche pour avoir un visa :<br>
+                        <div class="tabulation">
+                            - Difficulté :
+                                <i *ngFor="let item of visaFullStarsArray" class="fas fa-star"></i>
+                                <i *ngFor="let item of visaEmptyStarsArray" class="far fa-star"></i><br>
+                            - Informations :
+                                <a href="{{country.visaInformation}}" target="_blank">{{country.visaInformation}}</a>
+                        </div><br>
+                        Logements partenaires :
+                        <div class="tabulation" *ngFor="let partnerHousing of partnerHousingArray">
+                            - {{partnerHousing}}
+                        </div><br>
+                        Opportinité d'embauche dans le pays : {{country.hiringOpportunities}}
+                    </div>
+                </td>
+                <td>
+                    <img class="country-image" src={{country.photoPath}}/>
+                </td>
+            </tr>
+        </table>
+        
   </div>
   

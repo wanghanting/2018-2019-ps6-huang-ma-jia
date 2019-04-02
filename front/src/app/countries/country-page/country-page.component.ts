@@ -11,12 +11,22 @@ import { Country } from '../../../models/country';
 export class CountryPageComponent implements OnInit {
 
     public country: Country
+    public visaFullStarsArray: any[]
+    public visaEmptyStarsArray: any[]
+    public partnerHousingArray: any[]
 
   constructor(public oneCountryService: OneCountryService, private route: ActivatedRoute) {//Id par la suite
-    this.oneCountryService.country$.subscribe((country) => this.country = country);
+    this.oneCountryService.country$.subscribe((country) => {
+        this.country = country
+        if (country != null){
+            this.visaFullStarsArray = Array(country.visaDifficulty)
+            this.visaEmptyStarsArray = Array(5 - country.visaDifficulty)
+        }
+    });
     this.route.queryParams.subscribe(params => {
         this.oneCountryService.getStudent(params['id']);
     });
+    this.partnerHousingArray = ["Residence okoPoko : https://www.okopoko.org/fr/informations/logements/bangkok/","Residence asiaExchange : https://www.asiaexchange.org/fr/informations/logements/bangkok/"];
   }
 
   ngOnInit() {
