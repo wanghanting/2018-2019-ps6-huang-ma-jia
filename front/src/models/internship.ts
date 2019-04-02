@@ -9,4 +9,11 @@ export interface Internship {
   company: Company;
   startDate?: Date;
   endDate?: Date;
+  period?: String;
+  contract?: String;
+  salary?: String;
+  residence?: String;
+  ifHasCar?: Boolean;
+  rating?: number;
+  tuteur?: String;
 }

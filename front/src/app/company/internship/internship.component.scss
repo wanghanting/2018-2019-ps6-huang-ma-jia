@@ -2,16 +2,33 @@
   padding: 15px;
   margin: 10px;
   border: 1px solid black;
+  background: white;
 }
 
 .item-left{
+  font-size: 20px;
   width: 30%;
   display: inline-block;
+  padding: 1px;
+}
+
+#postname{
+  font-size: 50px;
+  font-family: Serif;
+}
+
+.postdetail{
+  margin: 1px;
 }
 
 .item-center{
   width: 50%;
   display: inline-block;
+}
+
+.detail{
+  padding: 5px;
+  font-size: 25px;
 }
 
 .item-right{
