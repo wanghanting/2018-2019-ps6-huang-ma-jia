@@ -33,7 +33,6 @@ export class OneCountryService {
     this.http.get<Country>(this.countriesUrl+id).subscribe(value => {
       this.country = value;
       this.country$.next(value);
-      console.log(this.country.name);
     });
   }
 }
