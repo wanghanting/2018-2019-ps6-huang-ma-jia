@@ -2,7 +2,7 @@ const { Router } = require('express');
 const { Company } = require('../../models');
 
 function getIDCompanyFiltres(company) {
-  return Object.assign({}, company.id);
+  return company.id;
 }
 function getSomeInformationCompany(company) {
   return Object.assign({}, company);
