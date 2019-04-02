@@ -17,23 +17,23 @@ export class OneCountryService {
   //private countryList: Country[] = []; A remettre quand le back marche
   private country: Country = COUNTRIES_MOCKED[0];
 
-  private countriesUrl = 'http://localhost:9428/api/country/';
+  private countriesUrl = 'http://localhost:9428/api/countries/';
 
   /**
    * Observable which contains the list of the country.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
-  public countries$: BehaviorSubject<Country> = new BehaviorSubject(this.country);
+  public country$: BehaviorSubject<Country> = new BehaviorSubject(this.country);
 
   constructor(
     private http: HttpClient) {
-      this.getStudent();
      }
 
-  public getStudent() {
-    /*this.http.get<Country[]>(this.countriesUrl).subscribe(value => {
-      this.countryList = value;
+  public getStudent(id : number) {
+    this.http.get<Country>(this.countriesUrl+id).subscribe(value => {
+      this.country = value;
       this.country$.next(value);
-    });*/ //A remettre quand le back marche
+      console.log(this.country.name);
+    });
   }
 }
