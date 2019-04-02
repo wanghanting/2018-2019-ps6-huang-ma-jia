@@ -24,4 +24,6 @@ export class SearchCompanyComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
 }
