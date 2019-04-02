@@ -1,0 +1,19 @@
+.item{
+  padding: 15px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.item-left{
+  width: 30%;
+  display: inline-block;
+}
+
+.item-center{
+  width: 50%;
+  display: inline-block;
+}
+
+.item-right{
+  display: inline-block;
+}

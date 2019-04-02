@@ -14,6 +14,9 @@ import {SearchCompanyComponent} from './search-companies/search-company';
 import {SearchCompanyFormComponent} from './search-companies/search-company-form';
 import {SearchCompanyListComponent} from './search-companies/search-company-list';
 import {AppRoutingModule} from './app.AppRoutingModule';
+import {InternshipComponent} from "./company/internship";
+import {InternshipListComponent} from "./company/internship-list";
+import {CompanyPageComponent} from "./company/company-page";
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import {AppRoutingModule} from './app.AppRoutingModule';
     SearchCompanyFormComponent,
     SearchCompanyListComponent,
     SearchCompanyPageComponent,
-    HeaderComponent // All the components needs to be declared
+    HeaderComponent, // All the components needs to be declared
+    InternshipComponent,
+    InternshipListComponent,
+    CompanyPageComponent
   ],
   imports: [
     HttpClientModule,
