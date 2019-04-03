@@ -5,6 +5,7 @@ function getIDCompanyFiltres(company) {
   return company.id;
 }
 function getSomeInformationCompany(company) {
+  console.log(company);
   return Object.assign({}, company);
 }
 

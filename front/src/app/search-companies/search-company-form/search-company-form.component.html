@@ -1,7 +1,7 @@
 <h3>Quel sont tes criteres?</h3>
-<form class="user-form" [formGroup]="userForm">
+<form class="user-form" [formGroup]="userForm" (change)="userFilter()">
   <label>A propos de toi:
-    <select  id="filiere" [formControlName]="'filiere'">
+    <select id="filiere" [formControlName]="'filiere'">
       <option value="" selected disabled hidden>filiere</option>
       <option *ngFor="let currentFiliere of FILIERE_LIST" [value]="currentFiliere">
         {{currentFiliere}}
@@ -16,7 +16,7 @@
   </label>
 </form>
   <br>
-<form class="company-form" [formGroup]="companyForm">
+<form class="company-form" [formGroup]="companyForm" (change)="companyFilter()">
   <label>A propos de entreprise:
     <select  id="continent" [formControlName]="'continent'">
       <option value="" selected disabled hidden>continent</option>
