@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs/index';
 import {HttpClient} from '@angular/common/http';
-import { COUNTRIES_MOCKED } from '../../mocks/countries.mock';
 import {Country} from '../../models/country';
 
 @Injectable({
@@ -15,7 +14,7 @@ export class CountryService {
    */
 
   //private countryList: Country[] = []; A remettre quand le back marche
-  private countryList: Country[] = COUNTRIES_MOCKED;
+  private countryList: Country[] = [];
 
   private countriesUrl = 'http://localhost:9428/api/countries/';
 
@@ -26,14 +25,5 @@ export class CountryService {
   public countries$: BehaviorSubject<Country[]> = new BehaviorSubject(this.countryList);
 
   constructor(
-    private http: HttpClient) {
-      this.getStudent();
-     }
-
-  public getStudent() {
-    /*this.http.get<Country[]>(this.countriesUrl).subscribe(value => {
-      this.countryList = value;
-      this.country$.next(value);
-    });*/ //A remettre quand le back marche
-  }
+    private http: HttpClient) {}
 }
