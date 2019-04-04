@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Student } from '../../../models/student';
 import { StudentService } from 'src/services/student/student.service';
+import {Company} from '../../../models/company';
+import {Searchuser} from '../../../models/searchuser';
+import {Searchcompany} from '../../../models/searchcompany';
+import {CompanyService} from '../../../services/company/company.service';
 
 @Component({
   selector: 'app-company-form',
@@ -23,7 +27,7 @@ export class SearchCompanyFormComponent implements OnInit {
   public SPECIALITE_LIST: string[] = ['IHM', 'SECURITE'];
   public TAILE_LIST: string[] = ['1-50', '51-300', '301+'];
   public SECTEUR_LIST: string[] = ['produit', 'marketing', 'exploitation et maintenance' ];
-  constructor(public formBuilder: FormBuilder) {
+  constructor(public formBuilder: FormBuilder, public  companyservice: CompanyService) {
     // Form creation
     this.userForm = this.formBuilder.group({
       filiere: [''],
@@ -40,5 +44,18 @@ export class SearchCompanyFormComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  userFilter() {
+    const conditionsUser: Searchuser = this.userForm.getRawValue() as Searchuser;
+    const obj = {'filiere': conditionsUser.filiere, 'specialite': conditionsUser.specialite};
+    const jsonuser = JSON.stringify(obj);
+    console.log(jsonuser);
+  }
+  companyFilter() {
+    const conditionsCompany: Searchcompany = this.companyForm.getRawValue() as Searchcompany;
+    const obj = {'continent': conditionsCompany.continent, 'secteur': conditionsCompany.secteur, 'taile': conditionsCompany.taile};
+    const jsoncompany = JSON.stringify(obj);
+    console.log(jsoncompany);
+    this.companyservice.filterCompanies(jsoncompany);
   }
 }
