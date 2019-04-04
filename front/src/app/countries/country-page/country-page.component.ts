@@ -30,6 +30,7 @@ export class CountryPageComponent implements OnInit {
     });
     this.route.queryParams.subscribe(params => {
         this.oneCountryService.setCountryId(params['id']);
+        this.partnerHousingService.setCountryId(params['id']);
     });
   }
 

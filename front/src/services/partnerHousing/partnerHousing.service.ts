@@ -26,9 +26,13 @@ export class PartnerHousingService {
 
   constructor(
     private http: HttpClient) {
-        this.http.get<PartnerHousing[]>(this.partnersHousingsUrl).subscribe(value => {
+        
+    }
+
+    public setCountryId(id : number) {
+        this.http.get<PartnerHousing[]>(this.partnersHousingsUrl + "country=" + id).subscribe(value => {
             this.partnerHousingList = value;
             this.partnersHousings$.next(value);
-          });
+        });
     }
 }
