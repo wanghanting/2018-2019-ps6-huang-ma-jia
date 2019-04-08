@@ -5,7 +5,7 @@ export const COMPANIES_MOCKED: Company[] = [
     id: 0,
     name: 'Apple',
     iconImage: 'appleicon.jpg',
-    locationCountry: null,
+    locationCountryId: null,
     address: '',
     rating: 4.5,
     creationDate: new Date('1976-4-1'),

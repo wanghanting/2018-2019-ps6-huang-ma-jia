@@ -4,6 +4,7 @@ const MiniCountryRouter = require('./mini-countries');
 const StudentRouter = require('./students');
 const CompanyRouter = require('./companies');
 const PartnerHousingRouter = require('./partnerHousing');
+const InternshipRouter = require('./internship');
 
 const router = new Router();
 router.get('/status', (req, res) => res.status(200).json('ok'));
@@ -12,6 +13,7 @@ router.use('/mini-countries', MiniCountryRouter);
 router.use('/students', StudentRouter);
 router.use('/companies', CompanyRouter);
 router.use('/partnerHousing', PartnerHousingRouter);
+router.use('/internship', InternshipRouter);
 
 
 module.exports = router;
