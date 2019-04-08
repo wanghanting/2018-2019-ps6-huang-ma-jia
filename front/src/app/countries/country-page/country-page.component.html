@@ -37,6 +37,10 @@
             <tr>
                 <td class="entreprise-list-td">
                     <div class="subTitle">Liste des entreprises où des étudiants on fait leur stage</div>
+
+                    <div class="tabulation" *ngFor="let company of companyList">
+                        - {{company.name}}
+                    </div><br>
                 </td>
             </tr>
         </table>

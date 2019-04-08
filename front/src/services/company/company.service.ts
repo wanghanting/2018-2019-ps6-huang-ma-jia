@@ -13,6 +13,8 @@ export class CompanyService {
   private searchTerms = new Subject<Company>();
   public companies$: BehaviorSubject<Company[]> = new BehaviorSubject(this.companyList);
 
+  private companiesUrl = 'http://localhost:9428/api/companies/';
+
   constructor(private http: HttpClient) {
   }
   Companyfilter() {
@@ -26,9 +28,14 @@ export class CompanyService {
       this.companies$.next(companies);
     });
   }
+  public setCountryId(id : number) {
+    this.http.get<Company[]>(this.companiesUrl + "country=" + id).subscribe(value => {
+      this.companyList = value;
+      this.companies$.next(value);
+  });
+  }
   filterCompanies(jsoncompany) {
-    const URL = 'http://localhost:9428/api/companies/filterresult';
-    this.http.post(URL, jsoncompany).subscribe(res => {
+    this.http.post(this.companiesUrl + 'filterresult', jsoncompany).subscribe(res => {
       console.log(res);
     });
     console.log(URL);

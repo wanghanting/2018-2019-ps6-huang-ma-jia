@@ -11,9 +11,9 @@ function getSomeInformationCompany(company) {
 
 const router = new Router();
 router.get('/', (req, res) => res.status(200).json(Company.get()));
-router.get('/:companyId', (req, res) => res.status(200).json(Company.getById(req.params.companyId)));
 router.delete('/:companyId', (req, res) => res.status(200).json(Company.delete(req.params.companyId)));
 router.put('/:companyId', (req, res) => res.status(200).json(Company.update(req.params.companyId, req.body)));
+router.get('/country=:countryId', (req, res) => res.status(200).json(Company.getByCountryId(req.params.countryId)));
 
 
 router.post('/', (req, res) => {

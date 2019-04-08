@@ -3,7 +3,7 @@ export interface Company {
   id?: number;
   name?: string;
   iconImage?: string;
-  locationCountryId?: Country;
+  countryId?: Country;
   address?: string;
   rating?: number;
   numberEmployees?: number;
