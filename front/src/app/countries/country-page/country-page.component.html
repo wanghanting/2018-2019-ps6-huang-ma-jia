@@ -5,7 +5,7 @@
         <h1>{{country.name}}</h1>
         <table>
             <tr>
-                <td class="country-infos-td">
+                <td class="country-infos-td ">
                     <div class="subTitle">Information sur le pays</div>
                     <div class="country-infos">
                         {{country.information}}<br>
@@ -33,16 +33,45 @@
 
         <br>
 
-        <table>
-            <tr>
-                <td class="entreprise-list-td">
-                    <div class="subTitle">Liste des entreprises où des étudiants on fait leur stage</div>
+        <div class="list-of-company">
+            <div class="subTitle">Liste des entreprises où des étudiants on fait leur stage</div>
+            
+            <form class="country-page-form" [formGroup]="countryPageForm">
 
-                    <div class="tabulation" *ngFor="let company of companyList">
-                        - {{company.name}}
-                    </div><br>
-                </td>
-            </tr>
-        </table>
+                Filtre :
+
+                <select class="custom-select" name="Filliere" [formControlName]="'filliere'" (change)="filliereChange($event.target.value)">
+                    <option>- Filliere -</option>
+                    <option *ngFor="let filliere of filliereArray">
+                            {{filliere}}
+                    </option>
+                </select>
+
+                <select class="custom-select" name="Specialite" [formControlName]="'specialite'">
+                    <option>- Spécialite -</option>
+                    <option *ngFor="let specialite of specialiteArray">
+                            {{specialite}}
+                    </option>
+                </select>
+
+                <select class="custom-select" name="Specialite" [formControlName]="'secteur'">
+                    <option>- Secteur d'activité -</option>
+                    <option *ngFor="let secteur of secteurArray">
+                            {{secteur}}
+                    </option>
+                </select>
+
+                <select class="custom-select" name="Size" [formControlName]="'size'">
+                    <option>- Taille de l'entreprise -</option>
+                    <option *ngFor="let size of sizeArray">
+                            {{secteur}}
+                    </option>
+                </select>
+            </form>
+            
+            <div class="tabulation" *ngFor="let company of companyList">
+                - {{company.name}}
+            </div>
+        </div>
   </div>
   
