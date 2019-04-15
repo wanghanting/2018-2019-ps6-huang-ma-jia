@@ -40,21 +40,21 @@
 
                 Filtre :
 
-                <select class="custom-select" name="Filliere" [formControlName]="'filliere'" (change)="filliereChange($event.target.value)">
+                <select class="custom-select" name="Filliere" [formControlName]="'sector'" (change)="sectorChange($event.target.value)">
                     <option>- Filliere -</option>
-                    <option *ngFor="let filliere of filliereArray">
-                            {{filliere}}
+                    <option *ngFor="let sector of sectorArray">
+                            {{sector}}
                     </option>
                 </select>
 
-                <select class="custom-select" name="Specialite" [formControlName]="'specialite'">
+                <select class="custom-select" name="Specialite" [formControlName]="'specialty'">
                     <option>- Spécialite -</option>
-                    <option *ngFor="let specialite of specialiteArray">
-                            {{specialite}}
+                    <option *ngFor="let specialty of specialtyArray">
+                            {{specialty}}
                     </option>
                 </select>
 
-                <select class="custom-select" name="Specialite" [formControlName]="'secteur'">
+                <select class="custom-select" name="Secteur" [formControlName]="'secteur'">
                     <option>- Secteur d'activité -</option>
                     <option *ngFor="let secteur of secteurArray">
                             {{secteur}}
@@ -64,7 +64,7 @@
                 <select class="custom-select" name="Size" [formControlName]="'size'">
                     <option>- Taille de l'entreprise -</option>
                     <option *ngFor="let size of sizeArray">
-                            {{secteur}}
+                            {{size}}
                     </option>
                 </select>
             </form>

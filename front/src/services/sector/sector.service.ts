@@ -1,37 +1,34 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs/index';
 import {HttpClient} from '@angular/common/http';
-import {PartnerHousing} from '../../models/partnerHousing';
+import {Sector} from '../../models/sector';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class PartnerHousingService {
+export class SectorService {
   /**
    * Services Documentation:
    * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
    */
 
   //private countryList: Country[] = []; A remettre quand le back marche
-  private partnerHousingList: PartnerHousing[];
+  private sectorList: Sector[];
 
-  private partnersHousingsUrl = 'http://localhost:9428/api/partnersHousings/';
+  private sectorsUrl = 'http://localhost:9428/api/sectors/';
 
   /**
    * Observable which contains the list of the country.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
-  public partnersHousings$: BehaviorSubject<PartnerHousing[]> = new BehaviorSubject(this.partnerHousingList);
+  public sectors$: BehaviorSubject<Sector[]> = new BehaviorSubject(this.sectorList);
 
   constructor(
     private http: HttpClient) {
-    }
-
-    public setCountryId(id : number) {
-        this.http.get<PartnerHousing[]>(this.partnersHousingsUrl + "country=" + id).subscribe(value => {
-            this.partnerHousingList = value;
-            this.partnersHousings$.next(value);
+        this.http.get<Sector[]>(this.sectorsUrl).subscribe(value => {
+            this.sectorList = value;
+            this.sectors$.next(value);
         });
     }
 }

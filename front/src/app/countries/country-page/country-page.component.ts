@@ -1,12 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { FormBuilder, FormGroup } from '@angular/forms';
+
+/*
+  Services
+*/
 import { OneCountryService } from '../../../services/country/one-country.service';
 import { PartnerHousingService } from '../../../services/partnerHousing/partnerHousing.service';
 import { CompanyService } from '../../../services/company/company.service';
+import { SectorService } from '../../../services/sector/sector.service';
+import { SpecialtyService } from '../../../services/specialty/specialty.service';
+
+/*
+  Models
+*/
 import { Country } from '../../../models/country';
 import { PartnerHousing } from '../../../models/partnerHousing';
 import { Company } from '../../../models/company';
+import { Sector } from '../../../models/sector';
+import { Specialty } from '../../../models/specialty';
 
 @Component({
   selector: 'app-country-page',
@@ -21,16 +33,23 @@ export class CountryPageComponent implements OnInit {
     public companyList: Company[]
     public visaFullStarsArray: any[]
     public visaEmptyStarsArray: any[]
-    public filliereArray: any[]
-    public specialiteArray: any[]
+    public sectorArray: any[]
+    public specialtyArray: any[]
     public secteurArray: any[]
     public sizeArray: any[]
 
-  constructor(public formBuilder: FormBuilder, public oneCountryService: OneCountryService, public partnerHousingService: PartnerHousingService,public companyService: CompanyService , private route: ActivatedRoute) {//Id par la suite
-    this.filliereArray = ['salut', 'coucou', 'bonjour'];
-    this.specialiteArray = [];
+  constructor(public formBuilder: FormBuilder, 
+    public oneCountryService: OneCountryService, 
+    public partnerHousingService: PartnerHousingService, 
+    public companyService: CompanyService, 
+    public sectorService: SectorService,
+    public specialtyService: SpecialtyService,
+    private route: ActivatedRoute) {//Id par la suite
+    this.sectorArray = [];
+    this.specialtyArray = [];
     this.secteurArray = [];
     this.sizeArray = [];
+
     this.oneCountryService.country$.subscribe((country) => {
         this.country = country
         if (country != null){
@@ -49,10 +68,16 @@ export class CountryPageComponent implements OnInit {
         this.partnerHousingService.setCountryId(params['id']);
         this.companyService.setCountryId(params['id']);
     });
+    this.sectorService.sectors$.subscribe((sectors) => {
+      this.sectorArray = sectors;
+    })
+    this.specialtyService.specialties$.subscribe((specialties) => {
+      this.specialtyArray = specialties;
+    })
 
     this.countryPageForm = this.formBuilder.group({
-      filliere: [''],
-      specialite: [''],
+      sector: [''],
+      specialty: [''],
       secteur: [''],
       size: ['']
     });
@@ -61,18 +86,7 @@ export class CountryPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  filliereChange(value){
-
-    switch (value){
-      case 'salut':
-        this.secteurArray = ['salut', 'salut']
-        break;
-      case 'coucou':
-        this.secteurArray = ['c', 'c']
-        break;
-      case 'bonjour':
-        this.secteurArray = ['b', 'b']
-        break;
-    }
+  sectorChange(value){
+    this.specialtyService.setSectorName(value);
   }
 }
