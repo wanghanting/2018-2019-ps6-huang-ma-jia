@@ -16,6 +16,7 @@ import {AppRoutingModule} from './app.AppRoutingModule';
 import {InternshipComponent} from './company/internship';
 import {InternshipListComponent} from './company/internship-list';
 import {CompanyPageComponent} from './company/company-page';
+import { SearchFormComponent } from './company/search-form/search-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {CompanyPageComponent} from './company/company-page';
     SearchCompanyPageComponent,
     InternshipComponent,
     InternshipListComponent,
-    CompanyPageComponent
+    CompanyPageComponent,
+    SearchFormComponent
   ],
   imports: [
     HttpClientModule,
