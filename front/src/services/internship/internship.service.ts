@@ -15,7 +15,7 @@ export class InternshipService {
   private searchTerms = new Subject<Internship>();
   public internships$: BehaviorSubject<Internship[]> = new BehaviorSubject(this.internshipList);
 
-  private companyUrl = 'http://localhost:9428/api/company/';
+  private internshipUrl = 'http://localhost:9428/api/internships/';
 
   constructor(private http: HttpClient) {
   }
@@ -37,8 +37,8 @@ export class InternshipService {
   //     this.companies$.next(value);
   //   });
   // }
-  filterCompanies(jsoninternship) {
-    this.http.post(this.companyUrl + 'filterresult', jsoninternship).subscribe(res => {
+  filterInternships(jsoninternship) {
+    this.http.post(this.internshipUrl + 'filterresult', jsoninternship).subscribe(res => {
       console.log(res);
     });
     console.log(URL);
