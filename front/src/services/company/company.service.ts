@@ -40,6 +40,4 @@ export class CompanyService {
     });
     console.log(URL);
   }
-
-
 }
