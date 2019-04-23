@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Student } from '../../../models/student';
-import { StudentService } from 'src/services/student/student.service';
-import {Company} from '../../../models/company';
 import {Searchuser} from '../../../models/searchuser';
 import {Searchcompany} from '../../../models/searchcompany';
 import {CompanyService} from '../../../services/company/company.service';
