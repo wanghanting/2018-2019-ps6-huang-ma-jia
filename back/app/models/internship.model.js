@@ -9,11 +9,10 @@ module.exports = new BaseModel('Internship', {
   startDate: Joi.string().required(),
   endDate: Joi.string().required(),
   period: Joi.string().required(),
-  contract: Joi.string().required(),
+  contractRenewed: Joi.string().required(),
   salary: Joi.string().required(),
   residence: Joi.string().required(),
-  ifHasCar: Joi.boolean().required(),
+  hasCompanyCar: Joi.boolean().required(),
   rating: Joi.number().required(),
   tuteur: Joi.string().required(),
-  countryId: Joi.string().required(),
 });

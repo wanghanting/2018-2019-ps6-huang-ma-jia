@@ -12,10 +12,10 @@ export const INTERNSHIP_MOCKED: Internship[] = [
     startDate: new Date('2019-4-1'),
     endDate: new Date('2019-9-1'),
     period: '5 mois',
-    contract: 'CDI',
+    contractRenewed: 'CDI',
     salary: 'Haut',
     residence: 'Loge',
-    ifHasCar: true,
+    hasCompanyCar: true,
     rating: 5,
     tuteur: 'Jean MEDECIN'
   },
@@ -27,10 +27,10 @@ export const INTERNSHIP_MOCKED: Internship[] = [
     startDate: new Date('2019-6-1'),
     endDate: new Date('2019-12-1'),
     period: '6 mois',
-    contract: 'CDD',
+    contractRenewed: 'CDD',
     salary: 'Moyenne',
     residence: 'Loge',
-    ifHasCar: false,
+    hasCompanyCar: false,
     rating: 4,
     tuteur: 'Jiazen Liu'
   }
