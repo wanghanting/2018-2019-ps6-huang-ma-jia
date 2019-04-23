@@ -5,7 +5,14 @@ function getIDCompanyFiltres(company) {
   return company.id;
 }
 function getSomeInformationCompany(company) {
-  console.log(company);
+  this.items = [];
+  this.name = name;
+  this.filePath = `${__dirname}/../../mocks/${this.name.toLowerCase()}.mocks.json`;
+  try {
+    this.items = JSON.parse(fs.readFileSync(this.filePath, 'utf8'));
+  } catch (err) {
+    if (err.message === 'Unexpected end of JSON input') logger.log(`Warning : ${this.filePath} has wrong JSON format`);
+  }
   return Object.assign({}, company);
 }
 
@@ -43,6 +50,7 @@ router.post('/getid', (req, res) => {
 
 router.post('/filterresult', (req, res) => {
   try {
+    console.log(req.body);
     const company = getSomeInformationCompany(req.body);
     res.status(200).json(company);
   } catch (err) {

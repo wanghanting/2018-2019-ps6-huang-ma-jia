@@ -5,7 +5,7 @@ const { Student } = require('../../models');
 function getStudent(name, items) {
   const myFinalStudent = [];
   for (let a = 0; a < items.length; a++) {
-    const firstName = items[a].firstName;
+    const FirstName = items[a].firstName;
     const lastName = items[a].lastName;
     if ((firstName.substring(0, name.length).localeCompare(name) === 0) || (lastName.substring(0, name.length).localeCompare(name) === 0)) {
       myFinalStudent.push(items[a]);
