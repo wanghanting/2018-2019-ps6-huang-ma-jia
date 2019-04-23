@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CountryComponent, CountryListComponent, CountryPageComponent } from './countries';
+import { TicketListComponent, TicketComponent} from './tickets';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {StudentService} from '../services/student/student.service';
 import {CountryService} from '../services/country/country.service';
+import {TicketService} from '../services/ticket/ticket.service';
 import {OneCountryService} from '../services/country/one-country.service';
 import {SearchCompanyPageComponent} from './search-companies/search-company-page';
 import {SearchCompanyComponent} from './search-companies/search-company';
@@ -30,6 +32,9 @@ import { SearchFormComponent } from './company/search-form/search-form.component
     SearchCompanyPageComponent,
     InternshipComponent,
     InternshipListComponent,
+    CompanyPageComponent,
+    TicketListComponent,
+    TicketComponent,
     CompanyPageComponent,
     SearchFormComponent
   ],

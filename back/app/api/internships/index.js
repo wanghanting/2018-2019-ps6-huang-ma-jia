@@ -19,7 +19,17 @@ function getInternshipCarInformation(internship){
 }
 
 function getByCompanyId(id){
-  const internship = this.internship.filter(i => i.companyId == id);
+  const internship = this.internship.filter(i => i.companyId === id);
+  return internship;
+}
+
+function getByCountryId(id){
+  const internship = this.internship.filter(i => i.countryId === id);
+  return internship;
+}
+
+function getByInternshipId(id){
+  const internship = this.internship.filter(i => i.id === id);
   return internship;
 }
 
@@ -28,11 +38,11 @@ function getSomeInformationInternship(internship) {
   return Object.assign({}, internship);
 }
 
-router.get('/country=:countryId', (req, res) => res.status(200).json(Internship.getByCountryId(req.params.countryId)));
+router.get('/country=:countryId', (req, res) => res.status(200).json(getByCountryId(req.params.countryId)));
 
 router.get('/company=:companyId', (req, res) => res.status(200).json(getByCompanyId(req.params.companyId)));
 
-router.get('/internship=:internshipId', (req, res) => res.status(200).json(Internship.getByInternshipId(req.params.id)));
+router.get('/internship=:internshipId', (req, res) => res.status(200).json(getByInternshipId(req.params.id)));
 
 
 router.post('/', (req, res) => {

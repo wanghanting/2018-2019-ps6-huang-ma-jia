@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {Internship} from '../../models/internship';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {INTERNSHIP_MOCKED} from '../../mocks/internship';
-import {HttpClient} from "@angular/common/http";
-import {Company} from "../../models/company";
+import {HttpClient} from '@angular/common/http';
+import {Company} from '../../models/company';
 
 @Injectable({
   providedIn: 'root'
