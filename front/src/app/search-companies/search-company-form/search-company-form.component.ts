@@ -53,9 +53,8 @@ export class SearchCompanyFormComponent implements OnInit {
   }
   companyFilter() {
     const conditionsCompany: Searchcompany = this.companyForm.getRawValue() as Searchcompany;
-    const obj = {'continent': conditionsCompany.continent, 'secteur': conditionsCompany.secteur, 'taile': conditionsCompany.taile};
-    const jsoncompany = JSON.stringify(obj);
-    console.log(jsoncompany);
-    this.companyservice.filterCompanies(jsoncompany);
+    const obj = {continent: conditionsCompany.continent, secteur: conditionsCompany.secteur, taile: conditionsCompany.taile};
+    console.log(obj);
+    this.companyservice.filterCompanies(obj);
   }
 }

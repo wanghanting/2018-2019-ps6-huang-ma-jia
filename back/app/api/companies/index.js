@@ -5,7 +5,6 @@ function getIDCompanyFiltres(company) {
   return company.id;
 }
 function getSomeInformationCompany(company) {
-  console.log(company);
   return Object.assign({}, company);
 }
 
@@ -43,6 +42,7 @@ router.post('/getid', (req, res) => {
 
 router.post('/filterresult', (req, res) => {
   try {
+    console.log(req.body);
     const company = getSomeInformationCompany(req.body);
     res.status(200).json(company);
   } catch (err) {

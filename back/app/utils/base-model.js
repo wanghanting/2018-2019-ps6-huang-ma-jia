@@ -43,7 +43,7 @@ module.exports = class BaseModel {
 
   /* partnerHousing */
 
-  getByCountryId(id){
+  getByCountryId(id) {
     const items = this.items.filter(i => i.countryId == id);
     return items;
   }

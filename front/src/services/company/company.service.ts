@@ -28,8 +28,8 @@ export class CompanyService {
       this.companies$.next(companies);
     });
   }
-  public setCountryId(id : number) {
-    this.http.get<Company[]>(this.companiesUrl + "country=" + id).subscribe(value => {
+  public setCountryId(id: number) {
+    this.http.get<Company[]>(this.companiesUrl + 'country=' + id).subscribe(value => {
       this.companyList = value;
       this.companies$.next(value);
   });
