@@ -6,4 +6,6 @@ module.exports = new BaseModel('Internship', {
   name: Joi.string().required(),
   studentId: Joi.number().required(),
   companyId: Joi.number().required(),
+  sector: Joi.string().required(),
+  specialty: Joi.string().required(),
 });

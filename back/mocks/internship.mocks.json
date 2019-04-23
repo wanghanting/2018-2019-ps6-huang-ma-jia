@@ -3,12 +3,24 @@
       "id": 1,
       "name": "Stage 1",
       "studentId": 1,
-      "companyId": 1
+      "companyId": 1,
+      "sector": "SI",
+      "specialty": "specialtySI1"
   },
   {
     "id": 2,
     "name": "Stage 2",
     "studentId": 1,
-    "companyId": 1
+    "companyId": 2,
+    "sector": "SI",
+    "specialty": "specialtySI1"
+  },
+  {
+    "id": 3,
+    "name": "Stage 3",
+    "studentId": 1,
+    "companyId": 1,
+    "sector": "SI",
+    "specialty": "specialtySI2"
   }
 ]
