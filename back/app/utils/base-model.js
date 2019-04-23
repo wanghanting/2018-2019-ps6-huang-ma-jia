@@ -43,8 +43,8 @@ module.exports = class BaseModel {
 
   /* partnerHousing */
 
-  getByCountryId(id) {
-    const items = this.items.filter(i => i.countryId === id);
+  getByCountryId(id){
+    const items = this.items.filter(i => i.countryId == id);
     return items;
   }
 
@@ -56,6 +56,13 @@ module.exports = class BaseModel {
     const item = this.items.find(i => i.id === id);
     if (!item) throw new NotFoundError(`Cannot get ${this.name} id=${id} : not found`);
     return item;
+  }
+
+  /* Internship */
+
+  getByCompanyId(id){
+    const items = this.items.filter(i => i.companyId == id);
+    return items;
   }
 
   create(obj = {}) {

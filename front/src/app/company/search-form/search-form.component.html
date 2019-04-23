@@ -1,8 +1,9 @@
 <!--<div class="search" (change)="internshipFilter()" )>-->
 <form class="search" [formGroup]="internshipForm" (change)="internshipFilter()">
-  <span><input type="text" id="text" [formControlName]="'name'">&nbsp;&nbsp;&nbsp;</span>
+  <!--<span><input type="text" id="text" [formControlName]="'name'">&nbsp;&nbsp;&nbsp;</span>-->
+  <span></span>
   <span><input type="checkbox"  id="contract" [formControlName] ="'hasCDIouCDD'" value="">A ete reconduit CDD/CDI &nbsp;&nbsp;&nbsp;</span>
   <span><input type="checkbox" id="car" [formControlName] ="'hasVoiture'" value="">Voiture de fonction&nbsp;&nbsp;&nbsp;</span>
-  <span><input type="button" name="comfirm" value="verifier" id="confirm_button">&nbsp;&nbsp;&nbsp;</span>
+  <!--<span><input type="button" name="comfirm" value="verifier" id="confirm_button">&nbsp;&nbsp;&nbsp;</span>-->
   <span id="result">9 resultats</span>
 </form>
