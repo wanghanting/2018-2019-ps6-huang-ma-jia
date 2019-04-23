@@ -5,7 +5,9 @@
     "pathFlag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People's_Republic_of_China.svg/1280px-Flag_of_the_People's_Republic_of_China.svg.png",
     "visaStar": 4,
     "nbStudent": 8,
-    "nbCompagny": 6
+    "nbCompagny": 6,
+    "filiere": "MAM4",
+    "specialite": "IHM"
   },
   {
     "id": 2,

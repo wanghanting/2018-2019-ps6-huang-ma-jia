@@ -6,5 +6,5 @@ const PartnerHousing = require('./partnerHousing.model.js');
 const Internship = require('./internship.model.js');
 
 module.exports = {
-  Ticket, Student, Company, Country, PartnerHousing, Internship
+  Ticket, Student, Company, Country, PartnerHousing, Internship,
 };

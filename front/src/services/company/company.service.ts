@@ -34,10 +34,11 @@ export class CompanyService {
       this.companies$.next(value);
   });
   }
-  filterCompanies(jsoncompany) {
-    this.http.post(this.companiesUrl + 'filterresult', jsoncompany).subscribe(res => {
-      console.log(res);
-    });
-    console.log(URL);
-  }
+ public filterCompanies(filiere= null, specialite= null, continent= null, secteur= null, taile= null) {
+   this.http.get<Company[]>(this.companiesUrl + 'filiere=' + filiere + '&specialite=' + specialite + '&continent=' +
+     continent + '&secteur=' + secteur + '&taile=' + taile).subscribe(value => {
+     this.companyList = value;
+     this.companies$.next(value);
+   });
+ }
 }

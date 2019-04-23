@@ -8,4 +8,6 @@ module.exports = new BaseModel('Student', {
   visaStar: Joi.number().required(),
   nbStudent: Joi.number().required(),
   nbCompagny: Joi.number().required(),
+  filiere: Joi.string().required(),
+  specialite: Joi.string().required(),
 });
