@@ -1,26 +1,34 @@
 [
   {
-      "id": 1,
-      "name": "Stage 1",
-      "studentId": 1,
-      "companyId": 1,
-      "sector": "SI",
-      "specialty": "specialtySI1"
+    "id": 1,
+    "name": "UX Designer",
+    "studentId": 1200,
+    "companyId": 12,
+    "countryId": 86,
+    "startDate": "2019-4-1",
+    "endDate": "2019-9-1",
+    "period": "5 mois",
+    "contract": "CDI",
+    "salary": "Haut",
+    "residence": "Loge",
+    "ifHasCar": true,
+    "rating": 5,
+    "tuteur": "Jean MEDECIN"
   },
   {
     "id": 2,
-    "name": "Stage 2",
-    "studentId": 1,
-    "companyId": 2,
-    "sector": "SI",
-    "specialty": "specialtySI1"
-  },
-  {
-    "id": 3,
-    "name": "Stage 3",
-    "studentId": 1,
-    "companyId": 1,
-    "sector": "SI",
-    "specialty": "specialtySI2"
+    "name": "Back-end Designer",
+    "studentId": 1206,
+    "companyId": 15,
+    "countryId": 88,
+    "startDate": "2019-6-1",
+    "endDate": "2019-12-1",
+    "period": "6 mois",
+    "contract": "CDD",
+    "salary": "Moyenne",
+    "residence": "Loge",
+    "ifHasCar": false,
+    "rating": 4,
+    "tuteur": "Jiazen Liu"
   }
 ]

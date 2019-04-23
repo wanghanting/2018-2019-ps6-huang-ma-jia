@@ -1,0 +1,45 @@
+// You can apply style directly to a component
+app-ticket {
+  margin: 100%;
+}
+
+.ticket {
+  width: auto;
+  height: auto;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.ticket-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.title, button{
+  margin-top: 2%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.mapWorld {
+  width: 70%;
+}
+
+.mapWorld path{
+  fill: #a4ced2;
+  stroke: #FFF;
+  stroke-width: 1px;
+  transition: fill 0.3s;
+}
+
+.mapWorld path:hover{
+  fill: #2925d2;
+}

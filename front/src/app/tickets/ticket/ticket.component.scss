@@ -1,0 +1,26 @@
+@import '../../../styles/card.scss';
+
+.ticket {
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.static{
+  width: inherit;
+  height: inherit;
+}
+.country-image {
+  width: inherit;
+  height: inherit;
+}
+.ticket:hover {
+  cursor: pointer;
+}
+
+.info {
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+}
+

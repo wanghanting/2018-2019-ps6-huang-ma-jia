@@ -1,0 +1,18 @@
+<div class="card ticket" (click)="selectTicket()">
+  <!-- <img class="country-image" src={{ticket.pathFlag}}/>-->
+  <div class="static" (mouseenter) ="mouseEnter() "  (mouseleave) ="mouseLeave()">
+    <img class="country-image" src={{ticket.pathFlag}}/>
+    <h1>{{ticket.name}}</h1>
+  </div>
+
+  <div class="info"*ngIf="showInformation === true">
+    <h2>Informations sur le pays</h2>
+    Nombre d'étudiant partis dans ce pays : {{ticket.nbStudent}}<br>
+    Nombre d'entreprise dans le pays : {{ticket.nbCompagny}}<br>
+    Difficulté démarches :
+    <i *ngFor="let item of visaFullStarsArray" class="fas fa-star"></i>
+    <i *ngFor="let item of visaEmptyStarsArray" class="far fa-star"></i><br>
+  </div>
+
+</div>
+
