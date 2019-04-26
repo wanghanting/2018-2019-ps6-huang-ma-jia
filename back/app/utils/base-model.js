@@ -2,6 +2,8 @@
 const fs = require('fs');
 const Joi = require('joi');
 const logger = require('../utils/logger.js');
+const { Student } = require('../models');
+const { Internship } = require('../models');
 const ValidationError = require('./errors/validation-error.js');
 const NotFoundError = require('./errors/not-found-error.js');
 
@@ -42,17 +44,15 @@ module.exports = class BaseModel {
   }
 
   /* Company */
-  getWithFilter(countryId, sector, specialty){
-    var companies = this.items;
+  getWithFilter(countryId, sector, specialty) {
+    let companies = this.items;
 
-    if (countryId){
-      companies = companies.filter(i => i.countryId == countryId);
+    if (countryId) {
+      companies = companies.filter(i => i.countryId === countryId);
     }
 
-    if (sector){
-      const { Internship } = require('../models');
-
-      companies = companies.filter(i => Internship.getWithCompanyIdAndSector(i.id, sector, specialty).length != 0);
+    if (sector) {
+      companies = companies.filter(i => Internship.getWithCompanyIdAndSector(i.id, sector, specialty).length !== 0);
     }
 
     return companies;
@@ -60,20 +60,19 @@ module.exports = class BaseModel {
 
   /* Internship */
 
-  getWithCompanyIdAndSector(companyId, sector, specialty){
-    const { Student } = require('../models');
+  getWithCompanyIdAndSector(companyId, sector, specialty) {
     return this.items.filter(
-      internship => internship.companyId == companyId 
-      && Student.getWithStudentFilter(internship.studentId, sector, specialty).length != 0);
+      internship => internship.companyId === companyId
+      && Student.getWithStudentFilter(internship.studentId, sector, specialty).length !== 0,
+    );
   }
 
   /* Student */
 
-  getWithStudentFilter(studentId, sector, specialty){
-    return this.items.filter(i => 
-      studentId == i.id 
-      && sector == i.sector 
-      && (specialty == null || specialty == i.specialty));
+  getWithStudentFilter(studentId, sector, specialty) {
+    return this.items.filter(i => studentId === i.id
+      && sector === i.sector
+      && (specialty == null || specialty === i.specialty));
   }
 
   /* partnerHousing */
@@ -94,8 +93,8 @@ module.exports = class BaseModel {
   }
 
   getBySomeInformation(filiere, specialite) {
-    const item = this.items.filter(i => (i.filiere === filiere) && (i.specialite === specialite));
-    if (!item) throw new NotFoundError(`Cannot get ${this.name} filiere=${filiere} : not found`);
+    const item = this.items.filter(i => (i.sector === filiere) && (i.specialty === specialite));
+    if (!item) throw new NotFoundError('Cannot get : not found');
     return item;
   }
 
@@ -105,9 +104,27 @@ module.exports = class BaseModel {
   }
 
   getBySomeInformation2(countries, secteur, taile) {
+    let lowerbound;
+    let higherbound;
+    switch (taile) {
+      case '1-50': {
+        lowerbound = 1;
+        higherbound = 50;
+        break;
+      }
+      case '51-300': {
+        lowerbound = 51;
+        higherbound = 300;
+        break;
+      }
+      default: {
+        lowerbound = 301;
+        higherbound = 100000;
+      }
+    }
     const companies = this.items.filter(i => (i.countryId === countries.id)
-      || (i.secteur === secteur) || (i.taile === taile));
-    if (!companies) throw new NotFoundError(`Cannot get ${this.name}  : not found`);
+      && (i.secteur === secteur) && (lowerbound < i.numberEmployees
+        && i.numberEmployees < higherbound));
     return companies;
   }
 
