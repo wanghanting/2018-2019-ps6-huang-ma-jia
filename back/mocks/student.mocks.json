@@ -1,42 +1,32 @@
+
+
 [
   {
     "id": 1,
-    "name": "Chine",
-    "pathFlag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People's_Republic_of_China.svg/1280px-Flag_of_the_People's_Republic_of_China.svg.png",
-    "visaStar": 4,
-    "nbStudent": 8,
-    "nbCompagny": 6,
-    "filiere": "MAM4",
-    "specialite": "IHM"
+    "firstName": "f1",
+    "lastName": "l1",
+    "email": "",
+    "profilePicture": "https://randomuser.me/api/portraits/men/49.jpg",
+    "briefing": "note izi",
+    "sector": "SI",
+    "specialty": "specialitySI1"
   },
   {
     "id": 2,
-    "name": "France",
-    "pathFlag": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1280px-Flag_of_France.svg.png",
-    "visaStar": 1,
-    "nbStudent": 18,
-    "nbCompagny": 10,
-    "filiere": "SI4",
-    "specialite": "IHM"
+    "firstName": "f2",
+    "lastName": "l2",
+    "email": "",
+    "profilePicture": "https://randomuser.me/api/portraits/men/42.jpg",
+    "sector": "SI",
+    "specialty": "specialitySI2"
   },
   {
     "id": 3,
-    "name": "Thaïland",
-    "pathFlag": "http://flagpedia.net/data/flags/ultra/th.png",
-    "visaStar": 3,
-    "nbStudent": 3,
-    "nbCompagny": 3,
-    "filiere": "SI5",
-    "specialite": "IHM"
-  },
-  {
-    "id": 4,
-    "name": "USA",
-    "pathFlag": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png",
-    "visaStar": 5,
-    "nbStudent": 2,
-    "nbCompagny": 2,
-    "filiere": "MAM5",
-    "specialite": "IHM"
+    "firstName": "f3",
+    "lastName": "l3",
+    "email": "",
+    "profilePicture": "https://randomuser.me/api/portraits/women/23.jpg",
+    "sector": "MAM",
+    "specialty": "specialityMAM1"
   }
 ]

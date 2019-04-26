@@ -47,7 +47,7 @@
                     </option>
                 </select>
 
-                <select class="custom-select" name="Specialite" [formControlName]="'specialty'">
+                <select class="custom-select" name="Specialite" [formControlName]="'specialty'" (change)="formChange()">
                     <option>- Spécialite -</option>
                     <option *ngFor="let specialty of specialtyArray">
                             {{specialty}}

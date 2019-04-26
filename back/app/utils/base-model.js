@@ -41,6 +41,41 @@ module.exports = class BaseModel {
     return this.items;
   }
 
+  /* Company */
+  getWithFilter(countryId, sector, specialty){
+    var companies = this.items;
+
+    if (countryId){
+      companies = companies.filter(i => i.countryId == countryId);
+    }
+
+    if (sector){
+      const { Internship } = require('../models');
+
+      companies = companies.filter(i => Internship.getWithCompanyIdAndSector(i.id, sector, specialty).length != 0);
+    }
+
+    return companies;
+  }
+
+  /* Internship */
+
+  getWithCompanyIdAndSector(companyId, sector, specialty){
+    const { Student } = require('../models');
+    return this.items.filter(
+      internship => internship.companyId == companyId 
+      && Student.getWithStudentFilter(internship.studentId, sector, specialty).length != 0);
+  }
+
+  /* Student */
+
+  getWithStudentFilter(studentId, sector, specialty){
+    return this.items.filter(i => 
+      studentId == i.id 
+      && sector == i.sector 
+      && (specialty == null || specialty == i.specialty));
+  }
+
   /* partnerHousing */
 
   getByCountryId(id) {
