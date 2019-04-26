@@ -1,145 +1,32 @@
+
+
 [
   {
     "id": 1,
-    "firstName": "xisto",
-    "lastName": "castro",
-    "email": "xisto.castro@example.com",
+    "firstName": "f1",
+    "lastName": "l1",
+    "email": "",
     "profilePicture": "https://randomuser.me/api/portraits/men/49.jpg",
-    "briefing": "note izi"
+    "briefing": "note izi",
+    "sector": "SI",
+    "specialty": "specialitySI1"
   },
   {
     "id": 2,
-    "firstName": "aubin",
-    "lastName": "olivier",
-    "email": "aubin.olivier@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/42.jpg"
+    "firstName": "f2",
+    "lastName": "l2",
+    "email": "",
+    "profilePicture": "https://randomuser.me/api/portraits/men/42.jpg",
+    "sector": "SI",
+    "specialty": "specialitySI2"
   },
   {
     "id": 3,
-    "firstName": "kenzi",
-    "lastName": "harper",
-    "email": "kenzi.harper@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/women/23.jpg"
-  },
-  {
-    "id": 4,
-    "firstName": "jasper",
-    "lastName": "kumar",
-    "email": "jasper.kumar@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/79.jpg"
-  },
-  {
-    "id": 5,
-    "firstName": "kuzey",
-    "lastName": "taşçı",
-    "email": "kuzey.taşçı@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/99.jpg"
-  },
-  {
-    "id": 7,
-    "firstName": "margaret",
-    "lastName": "distler",
-    "email": "margaret.distler@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/women/69.jpg"
-  },
-  {
-    "id": 8,
-    "firstName": "chad",
-    "lastName": "mckinney",
-    "email": "chad.mckinney@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/96.jpg"
-  },
-  {
-    "id": 9,
-    "firstName": "rosario",
-    "lastName": "gil",
-    "email": "rosario.gil@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/women/88.jpg"
-  },
-  {
-    "id": 10,
-    "firstName": "isobel",
-    "lastName": "green",
-    "email": "isobel.green@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/women/57.jpg"
-  },
-  {
-    "id": 11,
-    "firstName": "timóteo",
-    "lastName": "da mota",
-    "email": "timóteo.damota@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/31.jpg"
-  },
-  {
-    "id": 12,
-    "firstName": "علیرضا",
-    "lastName": "گلشن",
-    "email": "علیرضا.گلشن@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/88.jpg"
-  },
-  {
-    "id": 13,
-    "firstName": "peetu",
-    "lastName": "lokso",
-    "email": "peetu.lakso@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/29.jpg"
-  },
-  {
-    "id": 14,
-    "firstName": "umut",
-    "lastName": "akman",
-    "email": "umut.akman@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/79.jpg"
-  },
-  {
-    "id": 15,
-    "firstName": "دانیال",
-    "lastName": "رضاییان",
-    "email": "دانیال.رضاییان@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/39.jpg"
-  },
-  {
-    "id": 16,
-    "firstName": "barry",
-    "lastName": "sanchez",
-    "email": "barry.sanchez@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/62.jpg"
-  },
-  {
-    "id": 17,
-    "firstName": "milo",
-    "lastName": "ingvaldsen",
-    "email": "milo.ingvaldsen@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/0.jpg"
-  },
-  {
-    "id": 18,
-    "firstName": "george",
-    "lastName": "duncan",
-    "email": "george.duncan@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/22.jpg"
-  },
-  {
-    "id": 19,
-    "firstName": "lloyd",
-    "lastName": "flores",
-    "email": "lloyd.flores@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/56.jpg"
-  },
-  {
-    "id": 20,
-    "firstName": "joan",
-    "lastName": "marquez",
-    "email": "joan.marquez@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/87.jpg",
-    "briefing": "yes  we can"
-  },
-  {
-    "id": 6,
-    "firstName": "aubin",
-    "lastName": "olivier",
-    "email": "aubin.olivier@example.com",
-    "profilePicture": "https://randomuser.me/api/portraits/men/42.jpg",
-    "briefing": "Note :  first"
+    "firstName": "f3",
+    "lastName": "l3",
+    "email": "",
+    "profilePicture": "https://randomuser.me/api/portraits/women/23.jpg",
+    "sector": "MAM",
+    "specialty": "specialityMAM1"
   }
 ]

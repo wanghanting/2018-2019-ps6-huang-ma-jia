@@ -7,5 +7,6 @@ module.exports = new BaseModel('Student', {
   lastName: Joi.string().required(),
   email: Joi.string().required(),
   profilePicture: Joi.string().required(),
-  briefing: Joi.string().required(),
+  sector: Joi.string().required(),
+  specialty: Joi.string().required(),
 });

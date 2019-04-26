@@ -16,6 +16,8 @@ export class SpecialtyService {
   //private countryList: Country[] = []; A remettre quand le back marche
   private specialtyList: Specialty[];
 
+
+
   private specialtiesUrl = 'http://localhost:9428/api/specialties/';
 
   /**
@@ -29,7 +31,7 @@ export class SpecialtyService {
     }
 
     public setSectorName(name: string) {
-        this.http.get<Specialty[]>(this.specialtiesUrl + "sector=" + name).subscribe(value => {
+        this.http.get<Specialty[]>(this.specialtiesUrl + "?sector=" + name).subscribe(value => {
             this.specialtyList = value;
             this.specialties$.next(value);
         });
