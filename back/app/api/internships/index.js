@@ -4,45 +4,16 @@ const { Company } = require('../../models');
 const { Country } = require('../../models');
 
 const router = new Router();
+
 router.get('/', (req, res) => res.status(200).json(Internship.get()));
+// router.delete('/:id', (req, res) => res.status(200).json(Country.delete(req.params.id)));
+router.put('/:id', (req, res) => res.status(200).json(Country.update(req.params.id, req.body)));
 
-function getByInternshpId(internship){
-  return internship.id;
-}
+router.get('/country/:countryId', (req, res) => res.status(200).json(Internship.getByCountryId(req.params.countryId)));
 
-function getInternshipType(internship){
-  return internship.contract;
-}
+router.get('/company/:companyId', (req, res) => res.status(200).json(Internship.getByCompanyId(req.params.companyId)));
 
-function getInternshipCarInformation(internship){
-  return internship.ifHasCar;
-}
-
-function getByCompanyId(id){
-  const internship = this.internship.filter(i => i.companyId === id);
-  return internship;
-}
-
-function getByCountryId(id){
-  const internship = this.internship.filter(i => i.countryId === id);
-  return internship;
-}
-
-function getByInternshipId(id){
-  const internship = this.internship.filter(i => i.id === id);
-  return internship;
-}
-
-function getSomeInformationInternship(internship) {
-  console.log(internship);
-  return Object.assign({}, internship);
-}
-
-router.get('/country=:countryId', (req, res) => res.status(200).json(getByCountryId(req.params.countryId)));
-
-router.get('/company=:companyId', (req, res) => res.status(200).json(getByCompanyId(req.params.companyId)));
-
-router.get('/internship=:internshipId', (req, res) => res.status(200).json(getByInternshipId(req.params.id)));
+router.get('/id/:id', (req, res) => res.status(200).json(Internship.getById(req.params.id)));
 
 
 router.post('/', (req, res) => {
@@ -58,17 +29,5 @@ router.post('/', (req, res) => {
   }
 });
 
-router.post('/filterresult', (req, res) => {
-  try {
-    const internship = getSomeInformationInternship(req.body);
-    res.status(200).json(internship);
-  } catch (err) {
-    if (err.name === 'ValidationError') {
-      res.status(400).json(err.extra);
-    } else {
-      res.status(500).json(err);
-    }
-  }
-});
 
 module.exports = router;

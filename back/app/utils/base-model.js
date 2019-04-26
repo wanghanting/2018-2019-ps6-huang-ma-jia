@@ -90,6 +90,20 @@ module.exports = class BaseModel {
     return item;
   }
 
+  getBySomeInformation(filiere, specialite) {
+    console.log(1);
+    const item = this.items.find(i => (i.filiere === filiere) || (i.specialite === specialite));
+    console.log(item);
+    if (!item) throw new NotFoundError(`Cannot get ${this.name} filiere=${filiere} : not found`);
+    return item;
+  }
+
+  filterCompany(company) {
+    const item = this.items.find(i => i.stage.filiere === company.filiere);
+    if (!item) throw new NotFoundError(`Cannot get ${this.name} filiere=${company.filiere} : not found`);
+    return item;
+  }
+
   create(obj = {}) {
     const item = Object.assign({}, obj, { id: Date.now() });
     const { error } = Joi.validate(item, this.schema);

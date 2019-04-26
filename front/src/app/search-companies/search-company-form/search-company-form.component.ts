@@ -25,11 +25,11 @@ export class SearchCompanyFormComponent implements OnInit {
   constructor(public formBuilder: FormBuilder, public  companyservice: CompanyService) {
     // Form creation
     this.searchForm = this.formBuilder.group({
-      filiere: [''],
-      specialite: [''],
-      continent: [''],
-      secteur: [''],
-      taile: [''],
+      filiere: ['all'],
+      specialite: ['all'],
+      continent: ['all'],
+      secteur: ['all'],
+      taile: ['all'],
     });
     // You can also add validators to your inputs such as required, maxlength or even create your own validator!
     // More information: https://angular.io/guide/reactive-forms#simple-form-validation
@@ -40,9 +40,7 @@ export class SearchCompanyFormComponent implements OnInit {
   }
   companyFilter() {
     const conditionsCompany: Searchcompany = this.searchForm.getRawValue() as Searchcompany;
-    const obj = {filiere: conditionsCompany.filiere, specialite: conditionsCompany.specialite,
-      continent: conditionsCompany.continent, secteur: conditionsCompany.secteur, taile: conditionsCompany.taile};
-    console.log(obj);
-    this.companyservice.filterCompanies(obj);
+    this.companyservice.filterCompanies(conditionsCompany.filiere, conditionsCompany.specialite, conditionsCompany.continent,
+      conditionsCompany.secteur, conditionsCompany.taile);
   }
 }
