@@ -42,7 +42,7 @@ module.exports = class BaseModel {
   }
 
   /* Company */
-  getWithOption(countryId, sector, specialty){
+  getWithFilter(countryId, sector, specialty){
     var companies = this.items;
 
     if (countryId){
@@ -52,7 +52,7 @@ module.exports = class BaseModel {
     if (sector){
       const { Internship } = require('../models');
 
-      companies = companies.filter(i => Internship.getWithOptionInternship(i.id, sector).length != 0);
+      companies = companies.filter(i => Internship.getWithCompanyIdAndSector(i.id, sector, specialty).length != 0);
     }
 
     return companies;
@@ -60,17 +60,20 @@ module.exports = class BaseModel {
 
   /* Internship */
 
-  getWithOptionInternship(companyId, sector){
+  getWithCompanyIdAndSector(companyId, sector, specialty){
     const { Student } = require('../models');
     return this.items.filter(
       internship => internship.companyId == companyId 
-      && Student.getWithOptionStudent(internship.studentId, sector).length != 0);
+      && Student.getWithStudentFilter(internship.studentId, sector, specialty).length != 0);
   }
 
   /* Student */
 
-  getWithOptionStudent(studentId, sector){
-    return this.items.filter(i => i.id == studentId && i.sector == sector);
+  getWithStudentFilter(studentId, sector, specialty){
+    return this.items.filter(i => 
+      studentId == i.id 
+      && sector == i.sector 
+      && (specialty == null || specialty == i.specialty));
   }
 
   /* partnerHousing */
