@@ -1,12 +1,21 @@
 const { Router } = require('express');
 const { Company } = require('../../models');
 const { Student } = require('../../models');
+const { Internship } = require('../../models');
+const { Country } = require('../../models');
+
 
 function filterCompany(params) {
   console.log(params);
   const student = Student.getBySomeInformation(params.filiere, params.specialite);
   console.log(student);
-  return student;
+  const countries = Country.filterCountry(params.continent);
+  console.log(countries);
+  const companies1 = Company.getBySomeInformation2(countries, params.secteur, params.taile);
+  const stage = Internship.getById(student.stageId);
+  const companies2 = Company.getById(stage.companyId);
+  const obj = Object.assign({}, companies1, companies2);
+  return obj;
 }
 
 const router = new Router();

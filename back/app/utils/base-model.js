@@ -59,17 +59,21 @@ module.exports = class BaseModel {
   }
 
   getBySomeInformation(filiere, specialite) {
-    console.log(1);
-    const item = this.items.find(i => (i.filiere === filiere) || (i.specialite === specialite));
-    console.log(item);
+    const item = this.items.filter(i => (i.filiere === filiere) && (i.specialite === specialite));
     if (!item) throw new NotFoundError(`Cannot get ${this.name} filiere=${filiere} : not found`);
     return item;
   }
 
-  filterCompany(company) {
-    const item = this.items.find(i => i.stage.filiere === company.filiere);
-    if (!item) throw new NotFoundError(`Cannot get ${this.name} filiere=${company.filiere} : not found`);
-    return item;
+  filterCountry(continent) {
+    const countries = this.items.filter(i => (i.continent === continent));
+    return countries;
+  }
+
+  getBySomeInformation2(countries, secteur, taile) {
+    const companies = this.items.filter(i => (i.countryId === countries.id)
+      || (i.secteur === secteur) || (i.taile === taile));
+    if (!companies) throw new NotFoundError(`Cannot get ${this.name}  : not found`);
+    return companies;
   }
 
   create(obj = {}) {

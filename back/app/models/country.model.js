@@ -11,4 +11,5 @@ module.exports = new BaseModel('Country', {
   visaDifficulty: Joi.number().required(),
   visaInformation: Joi.string().required(),
   hiringOpportunities: Joi.string().required(),
+  continent: Joi.string().required,
 });

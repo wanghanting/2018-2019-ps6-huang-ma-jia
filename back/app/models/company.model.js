@@ -12,4 +12,5 @@ module.exports = new BaseModel('Company', {
   creationDate: Joi.string().required(),
   opportunity: Joi.number().required(),
   internshipType: Joi.string().required(),
+  stageId: Joi.number().required(),
 });

@@ -15,7 +15,9 @@
     "pathFlag": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1280px-Flag_of_France.svg.png",
     "visaStar": 1,
     "nbStudent": 18,
-    "nbCompagny": 10
+    "nbCompagny": 10,
+    "filiere": "SI4",
+    "specialite": "IHM"
   },
   {
     "id": 3,
@@ -23,7 +25,9 @@
     "pathFlag": "http://flagpedia.net/data/flags/ultra/th.png",
     "visaStar": 3,
     "nbStudent": 3,
-    "nbCompagny": 3
+    "nbCompagny": 3,
+    "filiere": "SI5",
+    "specialite": "IHM"
   },
   {
     "id": 4,
@@ -31,6 +35,8 @@
     "pathFlag": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png",
     "visaStar": 5,
     "nbStudent": 2,
-    "nbCompagny": 2
+    "nbCompagny": 2,
+    "filiere": "MAM5",
+    "specialite": "IHM"
   }
 ]
