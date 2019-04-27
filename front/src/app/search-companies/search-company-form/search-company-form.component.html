@@ -1,5 +1,5 @@
 <h3>Quel sont tes criteres?</h3>
-<form class="form" [formGroup]="searchForm" (change)="companyFilter()">
+<form class="form" [formGroup]="searchForm">
   <label>A propos de toi:
     <select id="filiere" [formControlName]="'filiere'">
       <option value="all" selected disabled hidden>filiere</option>
@@ -35,4 +35,5 @@
       </option>
     </select>
   </label>
+  <button [value]="" (click)="companyFilter()">submit</button>
 </form>

@@ -52,7 +52,9 @@ module.exports = class BaseModel {
     }
 
     if (sector) {
-      companies = companies.filter(i => Internship.getWithCompanyIdAndSector(i.id, sector, specialty).length !== 0);
+      companies = companies.filter(
+        i => Internship.getWithCompanyIdAndSector(i.id, sector, specialty).length !== 0,
+      );
     }
 
     return companies;
@@ -99,11 +101,26 @@ module.exports = class BaseModel {
   }
 
   filterCountry(continent) {
+    if (continent === 'all') {
+      console.log('continent = all');
+      return this.items;
+    }
     const countries = this.items.filter(i => (i.continent === continent));
     return countries;
   }
 
-  getBySomeInformation2(countries, secteur, taile) {
+  getBySector(secteur) {
+    if (secteur === 'all') {
+      return this.items;
+    }
+    const companies = this.items.filter(i => i.secteur === secteur);
+    return companies;
+  }
+
+  getByTaile(taile) {
+    if (taile === 'all') {
+      return this.items;
+    }
     let lowerbound;
     let higherbound;
     switch (taile) {
@@ -122,9 +139,8 @@ module.exports = class BaseModel {
         higherbound = 100000;
       }
     }
-    const companies = this.items.filter(i => (i.countryId === countries.id)
-      && (i.secteur === secteur) && (lowerbound < i.numberEmployees
-        && i.numberEmployees < higherbound));
+    const companies = this.items.filter(i => (lowerbound < i.numberEmployees)
+      && (i.numberEmployees < higherbound));
     return companies;
   }
 

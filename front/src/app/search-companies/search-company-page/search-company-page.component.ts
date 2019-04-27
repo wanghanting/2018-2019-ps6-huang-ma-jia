@@ -10,8 +10,4 @@ export class SearchCompanyPageComponent implements OnInit {
   constructor(public companyService: CompanyService) {
   }
   ngOnInit() {}
-  displayCompaniesFiltered() {
-    this.companyService.Companyfilter();
-
-  }
 }

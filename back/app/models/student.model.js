@@ -9,4 +9,5 @@ module.exports = new BaseModel('Student', {
   profilePicture: Joi.string().required(),
   sector: Joi.string().required(),
   specialty: Joi.string().required(),
+  stageId: Joi.number().required(),
 });
