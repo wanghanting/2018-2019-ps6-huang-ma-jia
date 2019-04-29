@@ -21,6 +21,7 @@ import {CompanyPageComponent} from './company/company-page';
 import { SearchFormComponent } from './company/search-form/search-form.component';
 import { InteractiveMapComponent} from './tickets/interactive-map/interactive-map.component';
 import { HomePageComponent} from './tickets/home-page/home-page.component';
+import { CardInformationComponent } from './tickets/card-information/card-information.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HomePageComponent} from './tickets/home-page/home-page.component';
     CompanyPageComponent,
     SearchFormComponent,
     InteractiveMapComponent,
-    HomePageComponent
+    HomePageComponent,
+    CardInformationComponent
   ],
   imports: [
     HttpClientModule,

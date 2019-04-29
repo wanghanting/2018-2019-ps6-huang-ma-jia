@@ -1,45 +1,33 @@
 // You can apply style directly to a component
-app-ticket {
-  margin: 100%;
-}
-
-.ticket {
-  width: auto;
-  height: auto;
-  margin-right: 5%;
-  margin-left: 5%;
-}
-
-.ticket-list {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border-style: solid;
-  border-width: 1px;
-  margin-right: 5%;
-  margin-left: 5%;
-}
-
-.title, button{
-  margin-top: 2%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 
 .mapWorld {
-  width: 70%;
+  fill: #bdbdbd;
 }
 
-.mapWorld path{
-  fill: #a4ced2;
-  stroke: #FFF;
-  stroke-width: 1px;
-  transition: fill 0.3s;
+.mapWorld path.CN {
+  fill: #ff333b;
+}
+.mapWorld path.CN:hover {
+  fill: #ab2b2b;
 }
 
-.mapWorld path:hover{
-  fill: #2925d2;
+.mapWorld path.FR {
+  fill: #dc80ff;
+}
+.mapWorld path.FR:hover {
+  fill: #9154a8;
+}
+
+.mapWorld path.TH {
+  fill: #7efff0;
+}
+.mapWorld path.TH:hover {
+  fill: #51a59b;
+}
+
+.mapWorld path.US {
+  fill: #a6ff1b;
+}
+.mapWorld path.US:hover {
+  fill: #78a64b;
 }

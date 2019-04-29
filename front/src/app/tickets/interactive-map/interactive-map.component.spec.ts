@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InteractiveMapComponent } from './interactive-map.component';
+import {describe, expect} from '@angular/core/testing/src/testing_internal';
 
 describe('InteractiveMapComponent', () => {
   let component: InteractiveMapComponent;

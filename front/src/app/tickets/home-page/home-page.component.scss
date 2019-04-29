@@ -1,8 +1,16 @@
 // You can apply style directly to a component
-app-ticket {
-  margin: 100%;
+
+.mapWorld {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.countryList {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .title, button{
   margin-top: 2%;
   display: block;
