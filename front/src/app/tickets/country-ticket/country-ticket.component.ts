@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SomeInformationCountry } from '../../../models/someInformationCountry';
 
 @Component({
-  selector: 'app-ticket',
+  selector: 'app-country-ticket',
   templateUrl: './country-ticket.component.html',
   styleUrls: ['./country-ticket.component.scss']
 })

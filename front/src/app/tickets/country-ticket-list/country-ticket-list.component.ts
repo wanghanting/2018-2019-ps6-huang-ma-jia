@@ -3,7 +3,7 @@ import { SomeInformationCountryService } from '../../../services/someInformation
 import { SomeInformationCountry } from '../../../models/someInformationCountry';
 
 @Component({
-  selector: 'app-ticket-list',
+  selector: 'app-country-ticket-list',
   templateUrl: './country-ticket-list.component.html',
   styleUrls: ['./country-ticket-list.component.scss']
 })

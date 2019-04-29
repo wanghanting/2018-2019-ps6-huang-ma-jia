@@ -4,7 +4,8 @@ import {CountryListComponent} from './countries/country-list';
 import {CountryPageComponent} from './countries/country-page';
 import {SearchCompanyPageComponent} from './search-companies/search-company-page';
 import {CompanyPageComponent} from './company/company-page';
-import { CountryTicketListComponent } from './tickets/country-ticket-list/country-ticket-list.component';
+import {HomePageComponent} from './tickets/home-page/home-page.component';
+
 // import {UserListComponent} from './users/user-list/user-list.component';
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
   {path: 'company', component: CompanyPageComponent},
   {path: 'countries', component: CountryListComponent},
   {path: 'country', component: CountryPageComponent},
-  {path: 'homePage', component: CountryTicketListComponent}
+  {path: 'homePage', component: HomePageComponent}
     // {path: 'users', component: UserListComponent}
 ];
 @NgModule({
@@ -21,6 +22,5 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule {
-
 
 }

@@ -1,20 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { CountryTicketListComponent } from './country-ticket-list.component';
+
+import { HomePageComponent } from './home-page.component';
 import {describe, expect} from '@angular/core/testing/src/testing_internal';
 
-describe('CountryTicketListComponent', () => {
-  let component: CountryTicketListComponent;
-  let fixture: ComponentFixture<CountryTicketListComponent>;
+describe('HomePageComponent', () => {
+  let component: HomePageComponent;
+  let fixture: ComponentFixture<HomePageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountryTicketListComponent ]
+      declarations: [ HomePageComponent ]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CountryTicketListComponent);
+    fixture = TestBed.createComponent(HomePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

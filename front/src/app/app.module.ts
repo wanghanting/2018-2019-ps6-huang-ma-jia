@@ -19,6 +19,8 @@ import {InternshipComponent} from './company/internship';
 import {InternshipListComponent} from './company/internship-list';
 import {CompanyPageComponent} from './company/company-page';
 import { SearchFormComponent } from './company/search-form/search-form.component';
+import { InteractiveMapComponent} from './tickets/interactive-map/interactive-map.component';
+import { HomePageComponent} from './tickets/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { SearchFormComponent } from './company/search-form/search-form.component
     CountryTicketListComponent,
     CountryTicketComponent,
     CompanyPageComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    InteractiveMapComponent,
+    HomePageComponent
   ],
   imports: [
     HttpClientModule,
