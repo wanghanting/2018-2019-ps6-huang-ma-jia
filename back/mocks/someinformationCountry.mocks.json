@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "CN",
     "name": "Chine",
     "pathFlag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People's_Republic_of_China.svg/1280px-Flag_of_the_People's_Republic_of_China.svg.png",
     "visaStar": 4,
@@ -8,7 +8,7 @@
     "nbCompagny": 6
   },
   {
-    "id": 2,
+    "id": "FR",
     "name": "France",
     "pathFlag": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1280px-Flag_of_France.svg.png",
     "visaStar": 1,
@@ -16,7 +16,7 @@
     "nbCompagny": 10
   },
   {
-    "id": 3,
+    "id": "TH",
     "name": "Thaïland",
     "pathFlag": "http://flagpedia.net/data/flags/ultra/th.png",
     "visaStar": 3,
@@ -24,7 +24,7 @@
     "nbCompagny": 3
   },
   {
-    "id": 4,
+    "id": "US",
     "name": "USA",
     "pathFlag": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png",
     "visaStar": 5,
