@@ -1,2 +1,2 @@
-export { TicketComponent } from './ticket';
-export { TicketListComponent } from './ticket-list';
+export { CountryTicketComponent } from './country-ticket';
+export { CountryTicketListComponent } from './country-ticket-list';

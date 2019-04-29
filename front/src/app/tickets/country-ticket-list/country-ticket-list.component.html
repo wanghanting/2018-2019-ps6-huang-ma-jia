@@ -186,10 +186,10 @@
 </div>
 
 <div class="ticket-list">
-  <div class="ticket" *ngFor="let ticket of ticketList">
+  <div class="ticket" *ngFor="let countryTicket of countryTicketList">
       <!--Inputs & Output allow communication between parent & child components.-->
       <!--More information: https://angular.io/guide/component-interaction-->
-      <app-ticket *ngIf="false == false" [ticket]="ticket" (ticketHasBeenSelected)="ticketHasBeenSelected($event)" (ticketArchive)="archiveTicket(ticket)"></app-ticket>
+      <app-ticket *ngIf="false == false" [ticket]="countryTicket" (ticketHasBeenSelected)="ticketHasBeenSelected($event)" (ticketArchive)="archiveTicket(countryTicket)"></app-ticket>
 
   </div>
 </div>

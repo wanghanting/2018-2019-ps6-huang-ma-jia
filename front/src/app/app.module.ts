@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CountryComponent, CountryListComponent, CountryPageComponent } from './countries';
-import { TicketListComponent, TicketComponent} from './tickets';
+import { CountryTicketListComponent, CountryTicketComponent} from './tickets';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {StudentService} from '../services/student/student.service';
@@ -33,8 +33,8 @@ import { SearchFormComponent } from './company/search-form/search-form.component
     InternshipComponent,
     InternshipListComponent,
     CompanyPageComponent,
-    TicketListComponent,
-    TicketComponent,
+    CountryTicketListComponent,
+    CountryTicketComponent,
     CompanyPageComponent,
     SearchFormComponent
   ],

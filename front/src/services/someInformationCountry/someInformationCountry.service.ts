@@ -15,7 +15,7 @@ export class SomeInformationCountryService {
 
   private someInformationCountryList: SomeInformationCountry[] = [];
 
-  private someInformationCountryUrl = 'http://localhost:9428/api/students/';
+  private someInformationCountryUrl = 'http://localhost:9428/api/someInformationCountry/';
 
   /**
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.

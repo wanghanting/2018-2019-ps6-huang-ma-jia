@@ -4,7 +4,7 @@ import {CountryListComponent} from './countries/country-list';
 import {CountryPageComponent} from './countries/country-page';
 import {SearchCompanyPageComponent} from './search-companies/search-company-page';
 import {CompanyPageComponent} from './company/company-page';
-import { TicketListComponent } from './tickets/ticket-list/ticket-list.component';
+import { CountryTicketListComponent } from './tickets/country-ticket-list/country-ticket-list.component';
 // import {UserListComponent} from './users/user-list/user-list.component';
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'company', component: CompanyPageComponent},
   {path: 'countries', component: CountryListComponent},
   {path: 'country', component: CountryPageComponent},
-  {path: 'mapWorld', component: TicketListComponent}
+  {path: 'homePage', component: CountryTicketListComponent}
     // {path: 'users', component: UserListComponent}
 ];
 @NgModule({

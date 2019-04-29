@@ -3,10 +3,10 @@ import { SomeInformationCountry } from '../../../models/someInformationCountry';
 
 @Component({
   selector: 'app-ticket',
-  templateUrl: './ticket.component.html',
-  styleUrls: ['./ticket.component.scss']
+  templateUrl: './country-ticket.component.html',
+  styleUrls: ['./country-ticket.component.scss']
 })
-export class TicketComponent implements OnInit {
+export class CountryTicketComponent implements OnInit {
 
   @Input()
   ticket: SomeInformationCountry;
