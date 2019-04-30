@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {Searchcompany} from '../../../models/searchcompany';
 import {CompanyService} from '../../../services/company/company.service';
+import {SectorService} from '../../../services/sector/sector.service';
+import {SpecialtyService} from '../../../services/specialty/specialty.service';
 
 @Component({
   selector: 'app-company-form',
@@ -22,8 +24,18 @@ export class SearchCompanyFormComponent implements OnInit {
   public SPECIALITE_LIST: string[] = ['IHM', 'SECURITE'];
   public TAILE_LIST: string[] = ['1-50', '51-300', '301+'];
   public SECTEUR_LIST: string[] = ['produit', 'marketing', 'exploitation et maintenance' ];
-  constructor(public formBuilder: FormBuilder, public  companyservice: CompanyService) {
-    // Form creation
+  public sectorArray: any[];
+  public specialtyArray: any[];
+  public secteurArray: any[];
+  public sizeArray: any[];
+  constructor(public formBuilder: FormBuilder, public  companyservice: CompanyService, public sectorService: SectorService,
+  public specialtyService: SpecialtyService) {
+    this.sectorService.sectors$.subscribe((sectors) => {
+      this.sectorArray = sectors;
+    });
+    this.specialtyService.specialties$.subscribe((specialties) => {
+      this.specialtyArray = specialties;
+    });
     this.searchForm = this.formBuilder.group({
       filiere: ['all'],
       specialite: ['all'],
@@ -42,5 +54,8 @@ export class SearchCompanyFormComponent implements OnInit {
     const conditionsCompany: Searchcompany = this.searchForm.getRawValue() as Searchcompany;
     this.companyservice.filterCompanies(conditionsCompany.filiere, conditionsCompany.specialite, conditionsCompany.continent,
       conditionsCompany.secteur, conditionsCompany.taile);
+  }
+  sectorChange(value) {
+    this.specialtyService.setSectorName(value);
   }
 }

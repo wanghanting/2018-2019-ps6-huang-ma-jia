@@ -6,8 +6,8 @@
     "email": "",
     "profilePicture": "https://randomuser.me/api/portraits/men/49.jpg",
     "briefing": "note izi",
-    "sector": "SI4",
-    "specialty": "IHM",
+    "sector": "SI",
+    "specialty": "specialitySI1",
     "stageId": 1
   },
   {
@@ -16,8 +16,8 @@
     "lastName": "l2",
     "email": "",
     "profilePicture": "https://randomuser.me/api/portraits/men/42.jpg",
-    "sector": "SI5",
-    "specialty": "SECURITE",
+    "sector": "GE",
+    "specialty": "specialityGE1",
     "stageId": 1
   },
   {
@@ -26,8 +26,8 @@
     "lastName": "l3",
     "email": "",
     "profilePicture": "https://randomuser.me/api/portraits/women/23.jpg",
-    "sector": "MAM4",
-    "specialty": "IHM",
+    "sector": "MAM",
+    "specialty": "specialityMAM1",
     "stageId": 2
   }
 ]
