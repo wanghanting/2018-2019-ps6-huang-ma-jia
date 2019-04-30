@@ -84,6 +84,12 @@ module.exports = class BaseModel {
     return items;
   }
 
+  /* internships */
+  getByCompanyId(id) {
+    const items = this.items.filter(i => i.countryId === id);
+    return items;
+  }
+
   /* Ticket */
 
   getById(id) {
@@ -96,6 +102,12 @@ module.exports = class BaseModel {
 
   getBySomeInformation(filiere, specialite) {
     const item = this.items.filter(i => (i.sector === filiere) && (i.specialty === specialite));
+    if (!item) throw new NotFoundError('Cannot get : not found');
+    return item;
+  }
+
+  getByContractRenewedAndHasCompanyCar(contractRenewed, hasCompanyCar) {
+    const item = this.items.filter(i => (i.contractRenewed === contractRenewed) && (i.hasCompanyCar === hasCompanyCar));
     if (!item) throw new NotFoundError('Cannot get : not found');
     return item;
   }
