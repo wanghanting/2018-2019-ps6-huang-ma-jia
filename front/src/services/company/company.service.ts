@@ -40,9 +40,10 @@ export class CompanyService {
   }
 
   public formChange(form: FormGroup){
+
     this.http.get<Company[]>(this.companiesUrl + '?countryId=' + this.countryId
-      + (form.getRawValue().sector ? ("&sector=" + form.getRawValue().sector) : "")
-      + (form.getRawValue().specialty ? ("&specialty=" + form.getRawValue().specialty) : "")
+      + (form.getRawValue().sector && form.getRawValue().sector != '- Filière -' ? ("&sector=" + form.getRawValue().sector) : "")
+      + (form.getRawValue().specialty && form.getRawValue().specialty != '- Spécialité -' ? ("&specialty=" + form.getRawValue().specialty) : "")
     ).subscribe(value => {
       this.companyList = value;
       this.companies$.next(value);

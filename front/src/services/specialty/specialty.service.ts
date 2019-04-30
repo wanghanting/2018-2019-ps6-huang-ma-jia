@@ -31,9 +31,16 @@ export class SpecialtyService {
     }
 
     public setSectorName(name: string) {
+      if (name == '- Filiere -'){
+        this.http.get<Specialty[]>(this.specialtiesUrl).subscribe(value => {
+          this.specialtyList = value;
+          this.specialties$.next(value);
+        });
+      } else {
         this.http.get<Specialty[]>(this.specialtiesUrl + "?sector=" + name).subscribe(value => {
             this.specialtyList = value;
             this.specialties$.next(value);
         });
+      }
     }
 }

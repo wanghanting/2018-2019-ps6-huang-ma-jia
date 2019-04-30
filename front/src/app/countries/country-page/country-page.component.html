@@ -41,14 +41,14 @@
                 Filtre :
 
                 <select class="custom-select" name="Filliere" [formControlName]="'sector'" (change)="sectorChange($event.target.value)">
-                    <option>- Filliere -</option>
+                    <option>- Filière -</option>
                     <option *ngFor="let sector of sectorArray">
                             {{sector}}
                     </option>
                 </select>
 
                 <select class="custom-select" name="Specialite" [formControlName]="'specialty'" (change)="formChange()">
-                    <option>- Spécialite -</option>
+                    <option>- Spécialité -</option>
                     <option *ngFor="let specialty of specialtyArray">
                             {{specialty}}
                     </option>
