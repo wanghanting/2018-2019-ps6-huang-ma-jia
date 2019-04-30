@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "TH",
     "name": "Thaïlande",
     "flagPath": "",
     "photoPath": "https://www.lonelyplanet.fr/sites/lonelyplanet/files/media/article/image/fotolia_117988727_subscription_monthly_m.jpg",
@@ -12,7 +12,7 @@
     "continent": "Asie"
   },
   {
-    "id": 3,
+    "id": "US",
     "name": "USA",
     "flagPath": "",
     "photoPath": "https://cdn.officiel-des-vacances.com/files/styles/product_580x360/public/bend_meander.jpg?itok=tfaPtv_D",

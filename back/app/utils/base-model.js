@@ -93,8 +93,6 @@ module.exports = class BaseModel {
   /* Ticket */
 
   getById(id) {
-    if (typeof id === 'string') id = parseInt(id, 10);
-    // console.log(this.items);
     const item = this.items.find(i => i.id === id);
     if (!item) throw new NotFoundError(`Cannot get ${this.name} id=${id} : not found`);
     return item;

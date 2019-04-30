@@ -2,7 +2,7 @@ const Joi = require('joi');
 const BaseModel = require('../utils/base-model.js');
 
 module.exports = new BaseModel('Country', {
-  id: Joi.number().required(),
+  id: Joi.string().required(),
   name: Joi.string().required(),
   flagPath: Joi.string().required(),
   photoPath: Joi.string().required(),
