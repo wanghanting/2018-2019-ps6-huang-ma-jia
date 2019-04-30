@@ -37,9 +37,8 @@ export class SearchFormComponent implements OnInit {
 
   internshipFilter() {
     const conditionsInternship: searchInternship = this.internshipForm.getRawValue() as searchInternship;
-    // const obj = {name: conditionsInternship.name, hasCDIouCDD: conditionsInternship.hasCDIouCDD, hasVoiture: conditionsInternship.hasVoiture};
-    // const jsoninternship = JSON.stringify(obj);
-    // console.log(obj);
+    const obj = {name: conditionsInternship.name, hasCDIouCDD: conditionsInternship.contractRenewed, hasVoiture: conditionsInternship.hasCompanyCar};
+    console.log(obj);
     this.internshipservice.filterInternships(conditionsInternship.contractRenewed, conditionsInternship.hasCompanyCar);
   }
 
