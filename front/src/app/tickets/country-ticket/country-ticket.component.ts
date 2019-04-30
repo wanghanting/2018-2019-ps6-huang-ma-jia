@@ -9,6 +9,7 @@ import { SomeInformationCountry } from '../../../models/someInformationCountry';
 export class CountryTicketComponent implements OnInit {
 
   @Output() ticketEventTicket = new EventEmitter<SomeInformationCountry>();
+  @Output() clickEventTicket = new EventEmitter<String>();
 
   @Input()
   ticket: SomeInformationCountry;
@@ -18,6 +19,10 @@ export class CountryTicketComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onClick(idPays: String) {
+    this.clickEventTicket.emit(idPays);
   }
 
   mouseEnter() {

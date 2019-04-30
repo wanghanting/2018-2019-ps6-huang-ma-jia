@@ -4,12 +4,14 @@
 
 <div class="mapWorld">
   <app-map-world
-  (ticketEvent)="ticketEvent($event)"></app-map-world>
+  (ticketEvent)="ticketEvent($event)"
+  (clickEvent)="onClick($event)"></app-map-world>
 </div>
 
 <div class="countryList">
   <app-country-ticket-list
-    (ticketEventList)="ticketEvent($event)"></app-country-ticket-list>
+    (ticketEventList)="ticketEvent($event)"
+    (clickEventList)="onClick($event)"></app-country-ticket-list>
 </div>
 
 <app-card-information [ticket]="this.countrySelected" [visaFullStarsArray]="this.visaFullStarsArray" [visaEmptyStarsArray]="this.visaEmptyStarsArray" ></app-card-information>

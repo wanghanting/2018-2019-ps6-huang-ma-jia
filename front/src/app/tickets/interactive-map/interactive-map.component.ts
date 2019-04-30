@@ -10,6 +10,7 @@ import { SomeInformationCountry } from '../../../models/someInformationCountry';
 export class InteractiveMapComponent implements OnInit {
 
   @Output() ticketEvent = new EventEmitter<SomeInformationCountry>();
+  @Output() clickEvent = new EventEmitter<String>();
 
   public countryTicketList: SomeInformationCountry[] = [];
 
@@ -32,6 +33,14 @@ export class InteractiveMapComponent implements OnInit {
     for (let i = 0; i < this.countryTicketList.length; i++) {
       if (this.countryTicketList[i].id === id) {
         this.ticketEvent.emit(null);
+      }
+    }
+  }
+
+  mouseClick(id: string) {
+    for (let i = 0; i < this.countryTicketList.length; i++) {
+      if (this.countryTicketList[i].id === id) {
+        this.clickEvent.emit(id);
       }
     }
   }
