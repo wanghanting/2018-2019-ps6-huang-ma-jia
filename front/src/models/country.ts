@@ -1,5 +1,5 @@
 export interface Country {
-    id?: number;
+    string?: number;
     name?: string;
     flagPath?: string;
     photoPath?: string;
@@ -11,4 +11,3 @@ export interface Country {
     //Liste des logements partenaires
     //Liste des entreprise
 }
-  
