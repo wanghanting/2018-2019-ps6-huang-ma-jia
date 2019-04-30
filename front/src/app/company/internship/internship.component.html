@@ -1,7 +1,8 @@
 <div class="internship" xmlns="http://www.w3.org/1999/html">
   <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
   <div class="internshipInfo">
-    <div class="item" onclick="alert('It is not finished yet!')">
+    <div class="item">
+    <!--<div class="item" onclick="alert('It is not finished yet!')">-->
       <div class="item-left">
         <p id="postname">{{internship.name}}</p>
         <p class="postdetail">Duree: {{internship.period}}</p>
@@ -9,10 +10,10 @@
       </div>
       <div class="item-center">
         <ul class="detail">
-          <li>A ete reconduit en {{internship.contract}}</li>
+          <!--<li>A ete reconduit en {{internship.contract}}</li>-->
           <li>Salaire: {{internship.salary}}</li>
           <li>Loge: {{internship.residence}}</li>
-          <li *ngIf="internship.ifHasCar ;else elseBlock">Voiture de fonction</li>
+          <!--<li *ngIf="internship.ifHasCar ;else elseBlock">Voiture de fonction</li>-->
           <ng-template #elseBlock>
             <li>Pas de voiture</li>
           </ng-template>

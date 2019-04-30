@@ -37,10 +37,10 @@ export class InternshipService {
   //     this.companies$.next(value);
   //   });
   // }
-  filterInternships(jsoninternship) {
-    this.http.post(this.internshipUrl + 'filterresult', jsoninternship).subscribe(res => {
-      console.log(res);
+  filterInternships(contractRenewed= null, hasCompanyCar= null) {
+    this.http.get<Internship[]>(this.internshipUrl + 'search/?contract=' + contractRenewed + '&hasCompanyCar=' + hasCompanyCar).subscribe(value => {
+      this.internshipList = value;
+      this.internships$.next(value);
     });
-    console.log(URL);
   }
 }
