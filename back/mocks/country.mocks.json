@@ -8,7 +8,8 @@
     "someInformation": "Très beau pays",
     "visaDifficulty": 3,
     "visaInformation": "https://www.rapidevisa.fr/Visa/Thailande.html",
-    "hiringOpportunities": "Aucune"
+    "hiringOpportunities": "Aucune",
+    "continent": "Asie"
   },
   {
     "id": 3,
@@ -19,6 +20,7 @@
     "someInformation": "Gigantesque pays très urbanisé",
     "visaDifficulty": 4,
     "visaInformation": "https://www.rapidevisa.fr/Visa/Thailande.html",
-    "hiringOpportunities": "Plein"
+    "hiringOpportunities": "Plein",
+    "continent": "Amérique du Nord"
   }
 ]

@@ -6,6 +6,7 @@ const PartnerHousingRouter = require('./partnersHousings');
 const InternshipRouter = require('./internships');
 const Specialty = require('./specialties');
 const Sector = require('./sectors');
+const SomeInformationCountry  = require('./someInformationCountry');
 
 const router = new Router();
 router.get('/status', (req, res) => res.status(200).json('ok'));
@@ -16,5 +17,6 @@ router.use('/partnersHousings', PartnerHousingRouter);
 router.use('/internships', InternshipRouter);
 router.use('/specialties', Specialty);
 router.use('/sectors', Sector);
+router.use('/someInformationCountry', SomeInformationCountry);
 
 module.exports = router;

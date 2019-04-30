@@ -42,17 +42,20 @@ module.exports = class BaseModel {
   }
 
   /* Company */
-  getWithFilter(countryId, sector, specialty){
+  getWithFilter(countryId, sector, specialty) {
     var companies = this.items;
 
-    if (countryId){
+    if (countryId) {
       companies = companies.filter(i => i.countryId == countryId);
+      console.log(companies);
     }
 
-    if (sector){
+    if (sector) {
       const { Internship } = require('../models');
 
-      companies = companies.filter(i => Internship.getWithCompanyIdAndSector(i.id, sector, specialty).length != 0);
+      companies = companies.filter(
+        i => Internship.getWithCompanyIdAndSector(i.id, sector, specialty).length != 0,
+      );
     }
 
     return companies;
@@ -60,25 +63,32 @@ module.exports = class BaseModel {
 
   /* Internship */
 
-  getWithCompanyIdAndSector(companyId, sector, specialty){
+  getWithCompanyIdAndSector(companyId, sector, specialty) {
     const { Student } = require('../models');
+    
     return this.items.filter(
-      internship => internship.companyId == companyId 
-      && Student.getWithStudentFilter(internship.studentId, sector, specialty).length != 0);
+      internship => internship.companyId == companyId
+      && Student.getWithStudentFilter(internship.studentId, sector, specialty).length != 0,
+    );
   }
 
   /* Student */
 
-  getWithStudentFilter(studentId, sector, specialty){
-    return this.items.filter(i => 
-      studentId == i.id 
-      && sector == i.sector 
+  getWithStudentFilter(studentId, sector, specialty) {
+    return this.items.filter(i => studentId == i.id
+      && sector == i.sector
       && (specialty == null || specialty == i.specialty));
   }
 
   /* partnerHousing */
 
   getByCountryId(id) {
+    const items = this.items.filter(i => i.countryId === id);
+    return items;
+  }
+
+  /* internships */
+  getByCompanyId(id) {
     const items = this.items.filter(i => i.countryId === id);
     return items;
   }
@@ -94,17 +104,59 @@ module.exports = class BaseModel {
   }
 
   getBySomeInformation(filiere, specialite) {
-    console.log(1);
-    const item = this.items.find(i => (i.filiere === filiere) || (i.specialite === specialite));
-    console.log(item);
-    if (!item) throw new NotFoundError(`Cannot get ${this.name} filiere=${filiere} : not found`);
+    const item = this.items.filter(i => (i.sector === filiere) && (i.specialty === specialite));
+    if (!item) throw new NotFoundError('Cannot get : not found');
     return item;
   }
 
-  filterCompany(company) {
-    const item = this.items.find(i => i.stage.filiere === company.filiere);
-    if (!item) throw new NotFoundError(`Cannot get ${this.name} filiere=${company.filiere} : not found`);
+  getByContractRenewedAndHasCompanyCar(contractRenewed, hasCompanyCar) {
+    const item = this.items.filter(i => (i.contractRenewed === contractRenewed) && (i.hasCompanyCar === hasCompanyCar));
+    if (!item) throw new NotFoundError('Cannot get : not found');
     return item;
+  }
+
+  filterCountry(continent) {
+    if (continent === 'all') {
+      console.log('continent = all');
+      return this.items;
+    }
+    const countries = this.items.filter(i => (i.continent === continent));
+    return countries;
+  }
+
+  getBySector(secteur) {
+    if (secteur === 'all') {
+      return this.items;
+    }
+    const companies = this.items.filter(i => i.secteur === secteur);
+    return companies;
+  }
+
+  getByTaile(taile) {
+    if (taile === 'all') {
+      return this.items;
+    }
+    let lowerbound;
+    let higherbound;
+    switch (taile) {
+      case '1-50': {
+        lowerbound = 1;
+        higherbound = 50;
+        break;
+      }
+      case '51-300': {
+        lowerbound = 51;
+        higherbound = 300;
+        break;
+      }
+      default: {
+        lowerbound = 301;
+        higherbound = 100000;
+      }
+    }
+    const companies = this.items.filter(i => (lowerbound < i.numberEmployees)
+      && (i.numberEmployees < higherbound));
+    return companies;
   }
 
   create(obj = {}) {

@@ -11,23 +11,17 @@ import { FormGroup } from '@angular/forms';
 export class CompanyService {
   private companyList: Company[] = [];
   private companiesFiltered: Company[] = [];
-  private searchTerms = new Subject<Company>();
   public companies$: BehaviorSubject<Company[]> = new BehaviorSubject(this.companyList);
   public countryId: number = null;
 
   private companiesUrl = 'http://localhost:9428/api/companies/';
 
   constructor(private http: HttpClient) {
-  }
-
-  Companyfilter() {
-    this.loadCompanies(URL);
-    return this.companiesFiltered;
-
+    this.loadCompanies(this.companiesUrl);
   }
   loadCompanies(URL): void {
     this.http.get<Company[]>(URL).subscribe( companies => {
-      this.companiesFiltered = companies;
+      this.companyList = companies;
       this.companies$.next(companies);
     });
   }
@@ -40,17 +34,16 @@ export class CompanyService {
   }
 
   public formChange(form: FormGroup){
-
     this.http.get<Company[]>(this.companiesUrl + '?countryId=' + this.countryId
-      + (form.getRawValue().sector && form.getRawValue().sector != '- Filière -' ? ("&sector=" + form.getRawValue().sector) : "")
-      + (form.getRawValue().specialty && form.getRawValue().specialty != '- Spécialité -' ? ("&specialty=" + form.getRawValue().specialty) : "")
+      + (form.getRawValue().sector && form.getRawValue().sector != '- Filière -' ? ("&sector=" + form.getRawValue().sector) : '')
+      + (form.getRawValue().specialty && form.getRawValue().specialty != '- Spécialité -' ? ("&specialty=" + form.getRawValue().specialty) : '')
     ).subscribe(value => {
       this.companyList = value;
       this.companies$.next(value);
     });
   }
  public filterCompanies(filiere= null, specialite= null, continent= null, secteur= null, taile= null) {
-   this.http.get<Company[]>(this.companiesUrl + 'filiere=' + filiere + '&specialite=' + specialite + '&continent=' +
+   this.http.get<Company[]>(this.companiesUrl + 'search/?filiere=' + filiere + '&specialite=' + specialite + '&continent=' +
      continent + '&secteur=' + secteur + '&taile=' + taile).subscribe(value => {
      this.companyList = value;
      this.companies$.next(value);

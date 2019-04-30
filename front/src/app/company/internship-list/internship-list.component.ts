@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {Internship} from '../../../models/internship';
 import {InternshipService} from '../../../services/internship/internship.service';
+import {SearchFormComponent} from "../search-form";
 
 @Component({
   selector: 'app-internship-list',
@@ -17,5 +18,9 @@ export class InternshipListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  showResluts(){
+
   }
 }

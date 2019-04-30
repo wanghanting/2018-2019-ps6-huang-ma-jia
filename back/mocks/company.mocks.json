@@ -2,35 +2,38 @@
     {
         "id": 1,
         "name": "Company 1 Thaï",
-        "iconImage": "",
+        "iconImage": "http://image.tupian114.com/20140416/14435270.png",
         "countryId": 1,
         "address": "",
         "rating": 2,
         "numberEmployees": 2000,
         "creationDate": "",
         "opportunity": 0,
-        "internshipType": ""
+        "internshipType": "",
+        "secteur": "produit"
     }, {
         "id": 2,
         "name": "Company 2 Thaï",
-        "iconImage": "",
+        "iconImage": "http://image.tupian114.com/20140416/14435270.png",
         "countryId": 1,
         "address": "",
         "rating": 2,
         "numberEmployees": 2000,
         "creationDate": "",
         "opportunity": 0,
-        "internshipType": ""
+        "internshipType": "",
+        "secteur": "produit"
     }, {
         "id": 3,
         "name": "Company 3 USA",
-        "iconImage": "",
+        "iconImage": "http://image.tupian114.com/20140416/14435270.png",
         "countryId": 3,
         "address": "",
         "rating": 2,
         "numberEmployees": 2000,
         "creationDate": "",
         "opportunity": 0,
-        "internshipType": ""
+        "internshipType": "",
+        "secteur": "produit"
     }
 ]

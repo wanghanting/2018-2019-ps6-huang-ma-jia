@@ -1,5 +1,5 @@
 export interface SomeInformationCountry {
-  id?: number;
+  id?: string;
   name?: string;
   pathFlag?: string;
   visaStar?: number;

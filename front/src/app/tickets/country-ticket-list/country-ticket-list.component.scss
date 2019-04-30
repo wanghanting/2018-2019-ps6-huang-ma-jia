@@ -5,7 +5,7 @@ app-ticket {
 
 .ticket {
   width: auto;
-  height: auto;
+  height: 50%;
   margin-right: 5%;
   margin-left: 5%;
 }
@@ -19,27 +19,4 @@ app-ticket {
   border-width: 1px;
   margin-right: 5%;
   margin-left: 5%;
-}
-
-.title, button{
-  margin-top: 2%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.mapWorld {
-  width: 70%;
-}
-
-.mapWorld path{
-  fill: #a4ced2;
-  stroke: #FFF;
-  stroke-width: 1px;
-  transition: fill 0.3s;
-}
-
-.mapWorld path:hover{
-  fill: #2925d2;
 }
