@@ -40,28 +40,28 @@
 
                 Filtre :
 
-                <select class="custom-select" name="Filliere" [formControlName]="'sector'" (change)="sectorChange($event.target.value)">
+                <select class="custom-select" [formControlName]="'sector'" (change)="sectorChange($event.target.value)">
                     <option>- Filière -</option>
                     <option *ngFor="let sector of sectorArray">
                             {{sector}}
                     </option>
                 </select>
 
-                <select class="custom-select" name="Specialite" [formControlName]="'specialty'" (change)="formChange()">
+                <select class="custom-select" [formControlName]="'specialty'" (change)="formChange()">
                     <option>- Spécialité -</option>
                     <option *ngFor="let specialty of specialtyArray">
                             {{specialty}}
                     </option>
                 </select>
 
-                <select class="custom-select" name="Secteur" [formControlName]="'secteur'">
+                <select class="custom-select" [formControlName]="'activitySector'" (change)="formChange()">
                     <option>- Secteur d'activité -</option>
-                    <option *ngFor="let secteur of secteurArray">
-                            {{secteur}}
+                    <option *ngFor="let activitySector of activitySectorArray">
+                            {{activitySector}}
                     </option>
                 </select>
 
-                <select class="custom-select" name="Size" [formControlName]="'size'">
+                <select class="custom-select" [formControlName]="'size'" (change)="formChange()">
                     <option>- Taille de l'entreprise -</option>
                     <option *ngFor="let size of sizeArray">
                             {{size}}

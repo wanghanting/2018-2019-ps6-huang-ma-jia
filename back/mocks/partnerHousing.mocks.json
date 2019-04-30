@@ -1,25 +1,25 @@
 [
     {
       "id": 1,
-      "countryId": 1,
+      "countryId": "TH",
       "name": "Thaïlande hostel 1",
       "webSite": "aza.fr"
     },
     {
         "id": 2,
-        "countryId": 1,
+        "countryId": "TH",
         "name": "Thaïlande hostel 2",
         "webSite": "aza.fr"
     },
     {
         "id": 3,
-        "countryId": 1,
+        "countryId": "TH",
         "name": "Thaïlande hostel 3",
         "webSite": "aza.fr"
     },
     {
         "id": 4,
-        "countryId": 3,
+        "countryId": "US",
         "name": "USA hostel 1",
         "webSite": "aza.fr"
     }

@@ -35,7 +35,7 @@ export class CountryPageComponent implements OnInit {
     public visaEmptyStarsArray: any[]
     public sectorArray: any[]
     public specialtyArray: any[]
-    public secteurArray: any[]
+    public activitySectorArray: any[]
     public sizeArray: any[]
 
   constructor(public formBuilder: FormBuilder,
@@ -47,7 +47,7 @@ export class CountryPageComponent implements OnInit {
     private route: ActivatedRoute) {
     this.sectorArray = [];
     this.specialtyArray = [];
-    this.secteurArray = [];
+    this.activitySectorArray = [];
     this.sizeArray = [];
 
     this.oneCountryService.country$.subscribe((country) => {
@@ -78,7 +78,7 @@ export class CountryPageComponent implements OnInit {
     this.countryPageForm = this.formBuilder.group({
       sector: [''],
       specialty: [''],
-      secteur: [''],
+      activitySector: [''],
       size: ['']
     });
   }
@@ -88,7 +88,12 @@ export class CountryPageComponent implements OnInit {
 
   sectorChange(value){
     this.specialtyService.setSectorName(value);
-    //this.countryPageForm.getRawValue().sprecialty = 'ee';
+    /*console.log('dif :');
+    console.log(this.countryPageForm.getRawValue().specialty);
+    this.countryPageForm.patchValue({
+      specialty: 'aa'
+    });
+    console.log(this.countryPageForm.getRawValue().specialty);*/
     this.formChange();
   }
 

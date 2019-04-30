@@ -29,7 +29,7 @@ export class PartnerHousingService {
     }
 
     public setCountryId(id : number) {
-        this.http.get<PartnerHousing[]>(this.partnersHousingsUrl + "country=" + id).subscribe(value => {
+        this.http.get<PartnerHousing[]>(this.partnersHousingsUrl + "?countryId=" + id).subscribe(value => {
             this.partnerHousingList = value;
             this.partnersHousings$.next(value);
         });

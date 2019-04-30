@@ -10,7 +10,7 @@
         "creationDate": "",
         "opportunity": 0,
         "internshipType": "",
-        "secteur": "produit"
+        "activitySector": "produit"
     }, {
         "id": 2,
         "name": "Company 2 Thaï",
@@ -22,7 +22,7 @@
         "creationDate": "",
         "opportunity": 0,
         "internshipType": "",
-        "secteur": "produit"
+        "activitySector": "produit"
     }, {
         "id": 3,
         "name": "Company 3 USA",
@@ -34,6 +34,6 @@
         "creationDate": "",
         "opportunity": 0,
         "internshipType": "",
-        "secteur": "produit"
+        "activitySector": "produit"
     }
 ]
