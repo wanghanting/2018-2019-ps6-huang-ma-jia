@@ -9,8 +9,7 @@ import { SomeInformationCountry } from '../../../models/someInformationCountry';
 })
 export class InteractiveMapComponent implements OnInit {
 
-  @Output('country-ticket')
-  ticketEvent = new EventEmitter<SomeInformationCountry>();
+  @Output() ticketEvent = new EventEmitter<SomeInformationCountry>();
 
   public countryTicketList: SomeInformationCountry[] = [];
 
@@ -26,7 +25,6 @@ export class InteractiveMapComponent implements OnInit {
     for (let i = 0; i < this.countryTicketList.length; i++) {
       if (this.countryTicketList[i].id === id) {
         this.ticketEvent.emit(this.countryTicketList[i]);
-        console.log('entrée dans : ' + id);
       }
     }
   }
@@ -34,7 +32,6 @@ export class InteractiveMapComponent implements OnInit {
     for (let i = 0; i < this.countryTicketList.length; i++) {
       if (this.countryTicketList[i].id === id) {
         this.ticketEvent.emit(null);
-        console.log('sortie de: ' + id);
       }
     }
   }

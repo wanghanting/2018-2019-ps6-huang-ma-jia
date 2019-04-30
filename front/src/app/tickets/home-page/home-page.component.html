@@ -3,12 +3,16 @@
 </div>
 
 <div class="mapWorld">
-  <app-map-world></app-map-world>
+  <app-map-world
+  (ticketEvent)="ticketEvent($event)"></app-map-world>
 </div>
 
 <div class="countryList">
-  <app-country-ticket-list></app-country-ticket-list>
+  <app-country-ticket-list
+    (ticketEventList)="ticketEvent($event)"></app-country-ticket-list>
 </div>
+
+<app-card-information [ticket]="this.countrySelected" [visaFullStarsArray]="this.visaFullStarsArray" [visaEmptyStarsArray]="this.visaEmptyStarsArray" ></app-card-information>
 
 <div class="button">
   <button onclick="window.location.href = 'http://http://localhost:4200/country';"> Je ne sais pas dans quel pays je veux partir</button>

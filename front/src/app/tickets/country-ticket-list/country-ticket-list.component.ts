@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { SomeInformationCountryService } from '../../../services/someInformationCountry/someInformationCountry.service';
 import { SomeInformationCountry } from '../../../models/someInformationCountry';
 
@@ -8,6 +8,8 @@ import { SomeInformationCountry } from '../../../models/someInformationCountry';
   styleUrls: ['./country-ticket-list.component.scss']
 })
 export class CountryTicketListComponent implements OnInit {
+
+  @Output() ticketEventList = new EventEmitter<SomeInformationCountry>();
 
   public countryTicketList: SomeInformationCountry[] = [];
 
@@ -21,5 +23,9 @@ export class CountryTicketListComponent implements OnInit {
 
   clickPays(idPays: string) {
     console.log(idPays);
+  }
+
+  ticketEvent(someInformationCountry: SomeInformationCountry) {
+    this.ticketEventList.emit(someInformationCountry);
   }
 }

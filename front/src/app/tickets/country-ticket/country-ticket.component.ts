@@ -8,14 +8,12 @@ import { SomeInformationCountry } from '../../../models/someInformationCountry';
 })
 export class CountryTicketComponent implements OnInit {
 
+  @Output() ticketEventTicket = new EventEmitter<SomeInformationCountry>();
+
   @Input()
   ticket: SomeInformationCountry;
-  showInformation: boolean;
-  public visaFullStarsArray: any[]
-  public visaEmptyStarsArray: any[]
 
   constructor() {
-    this.showInformation = false;
 
   }
 
@@ -23,12 +21,10 @@ export class CountryTicketComponent implements OnInit {
   }
 
   mouseEnter() {
-    this.visaFullStarsArray = Array(this.ticket.visaStar);
-    this.visaEmptyStarsArray = Array(5 - this.ticket.visaStar);
-    this.showInformation = true;
+    this.ticketEventTicket.emit(this.ticket);
   }
 
   mouseLeave() {
-    this.showInformation = false;
+    this.ticketEventTicket.emit(null);
   }
 }
