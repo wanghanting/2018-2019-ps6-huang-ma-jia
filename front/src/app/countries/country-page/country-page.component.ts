@@ -88,6 +88,7 @@ export class CountryPageComponent implements OnInit {
 
   sectorChange(value){
     this.specialtyService.setSectorName(value);
+    //this.countryPageForm.getRawValue().sprecialty = 'ee';
     this.formChange();
   }
 

@@ -43,7 +43,7 @@ module.exports = class BaseModel {
 
   /* Company */
   getWithFilter(countryId, sector, specialty, continent) {
-    var companies = this.items;
+    let companies = this.items;
 
     if (countryId) {
       companies = companies.filter(i => i.countryId == countryId);

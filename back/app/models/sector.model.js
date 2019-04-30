@@ -2,57 +2,57 @@ const sector = {
   SI: {
     name: 'SI',
     specialties: {
-      specialitySI1: 'specialitySI1',
-      specialitySI2: 'specialitySI2',
-      specialitySI3: 'specialitySI3',
+      specialtySI1: 'specialtySI1',
+      specialtySI2: 'specialtySI2',
+      specialtySI3: 'specialtySI3',
     },
   },
   GE: {
     name: 'GE',
     specialties: {
-      specialityGE1: 'specialityGE1',
-      specialityGE2: 'specialityGE2',
-      specialityGE3: 'specialityGE3',
+      specialtyGE1: 'specialtyGE1',
+      specialtyGE2: 'specialtyGE2',
+      specialtyGE3: 'specialtyGE3',
     },
   },
   GB: {
     name: 'GB',
     specialties: {
-      specialityGB1: 'specialityGB1',
-      specialityGB2: 'specialityGB2',
-      specialityGB3: 'specialityGB3',
+      specialtyGB1: 'specialtyGB1',
+      specialtyGB2: 'specialtyGB2',
+      specialtyGB3: 'specialtyGB3',
     },
   },
   MAM: {
     name: 'MAM',
     specialties: {
-      specialityMAM1: 'specialityMAM1',
-      specialityMAM2: 'specialityMAM2',
-      specialityMAM3: 'specialityMAM3',
+      specialtyMAM1: 'specialtyMAM1',
+      specialtyMAM2: 'specialtyMAM2',
+      specialtyMAM3: 'specialtyMAM3',
     },
   },
   ELEC: {
     name: 'ELEC',
     specialties: {
-      specialityELEC1: 'specialityELEC1',
-      specialityELEC2: 'specialityELEC2',
-      specialityELEC3: 'specialityELEC3',
+      specialtyELEC1: 'specialtyELEC1',
+      specialtyELEC2: 'specialtyELEC2',
+      specialtyELEC3: 'specialtyELEC3',
     },
   },
   BAT: {
     name: 'BAT',
     specialties: {
-      specialityBAT1: 'specialityBAT1',
-      specialityBAT2: 'specialityBAT2',
-      specialityBAT3: 'specialityBAT3',
+      specialtyBAT1: 'specialtyBAT1',
+      specialtyBAT2: 'specialtyBAT2',
+      specialtyBAT3: 'specialtyBAT3',
     },
   },
   IT2I: {
     name: 'IT2I',
     specialties: {
-      specialityIT2I1: 'specialityIT2I1',
-      specialityIT2I2: 'specialityIT2I2',
-      specialityIT2I3: 'specialityIT2I3',
+      specialtyIT2I1: 'specialtyIT2I1',
+      specialtyIT2I2: 'specialtyIT2I2',
+      specialtyIT2I3: 'specialtyIT2I3',
     },
   },
 };
