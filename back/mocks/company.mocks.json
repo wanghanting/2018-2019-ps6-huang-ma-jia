@@ -22,7 +22,7 @@
         "creationDate": "",
         "opportunity": 0,
         "internshipType": "",
-        "activitySector": "produit"
+        "activitySector": "food"
     }, {
         "id": 3,
         "name": "Company 3 USA",
@@ -34,6 +34,6 @@
         "creationDate": "",
         "opportunity": 0,
         "internshipType": "",
-        "activitySector": "produit"
+        "activitySector": "velo"
     }
 ]

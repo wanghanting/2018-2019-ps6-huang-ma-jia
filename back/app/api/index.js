@@ -4,9 +4,10 @@ const StudentRouter = require('./students');
 const CompanyRouter = require('./companies');
 const PartnerHousingRouter = require('./partnersHousings');
 const InternshipRouter = require('./internships');
-const Specialty = require('./specialties');
-const Sector = require('./sectors');
+const SpecialtyRouter = require('./specialties');
+const SectorRouter = require('./sectors');
 const SomeInformationCountry  = require('./someInformationCountry');
+const ActivitySectorsRouter  = require('./activitySectors');
 
 const router = new Router();
 router.get('/status', (req, res) => res.status(200).json('ok'));
@@ -15,8 +16,9 @@ router.use('/students', StudentRouter);
 router.use('/companies', CompanyRouter);
 router.use('/partnersHousings', PartnerHousingRouter);
 router.use('/internships', InternshipRouter);
-router.use('/specialties', Specialty);
-router.use('/sectors', Sector);
+router.use('/specialties', SpecialtyRouter);
+router.use('/sectors', SectorRouter);
 router.use('/someInformationCountry', SomeInformationCountry);
+router.use('/activitySectors', ActivitySectorsRouter);
 
 module.exports = router;

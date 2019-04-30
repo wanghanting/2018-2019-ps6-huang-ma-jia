@@ -10,6 +10,7 @@ import { PartnerHousingService } from '../../../services/partnerHousing/partnerH
 import { CompanyService } from '../../../services/company/company.service';
 import { SectorService } from '../../../services/sector/sector.service';
 import { SpecialtyService } from '../../../services/specialty/specialty.service';
+import { ActivitySectorService } from '../../../services/activitySector/activitySector.service';
 
 /*
   Models
@@ -44,6 +45,7 @@ export class CountryPageComponent implements OnInit {
     public companyService: CompanyService,
     public sectorService: SectorService,
     public specialtyService: SpecialtyService,
+    public activitySectorService: ActivitySectorService,
     private route: ActivatedRoute) {
     this.sectorArray = [];
     this.specialtyArray = [];
@@ -73,6 +75,9 @@ export class CountryPageComponent implements OnInit {
     });
     this.specialtyService.specialties$.subscribe((specialties) => {
       this.specialtyArray = specialties;
+    });
+    this.activitySectorService.activitySectors$.subscribe((activitySectors) => {
+      this.activitySectorArray = activitySectors;
     });
 
     this.countryPageForm = this.formBuilder.group({

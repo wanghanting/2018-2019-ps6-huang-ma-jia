@@ -64,6 +64,13 @@ module.exports = class BaseModel {
     return companies;
   }
 
+  getActivitySectors(){
+    let activitySectors = [];
+    this.items.every(i => activitySectors.push(i.activitySector));
+
+    return [...new Set(activitySectors)];
+  }
+
   /* Internship */
 
   getWithCompanyIdAndSector(companyId, sector, specialty) {
