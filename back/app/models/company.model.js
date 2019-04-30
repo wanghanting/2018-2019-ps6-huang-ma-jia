@@ -5,7 +5,7 @@ module.exports = new BaseModel('Company', {
   id: Joi.number().required(),
   name: Joi.string().required(),
   iconImage: Joi.string().required(),
-  countryId: Joi.number().required(),
+  countryId: Joi.string().required(),
   address: Joi.string().required(),
   rating: Joi.number().required(),
   numberEmployees: Joi.number().required(),

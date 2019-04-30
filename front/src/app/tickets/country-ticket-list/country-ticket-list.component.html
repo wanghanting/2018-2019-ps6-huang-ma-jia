@@ -2,7 +2,7 @@
   <div class="ticket" *ngFor="let countryTicket of countryTicketList">
       <!--Inputs & Output allow communication between parent & child components.-->
       <!--More information: https://angular.io/guide/component-interaction-->
-      <app-country-ticket [ticket]="countryTicket" (ticketEventTicket)="ticketEvent($event)"></app-country-ticket>
+      <app-country-ticket [ticket]="countryTicket" (ticketEventTicket)="ticketEvent($event)" (clickEventTicket)="onClick($event)"></app-country-ticket>
 
   </div>
 </div>

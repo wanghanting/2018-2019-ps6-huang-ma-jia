@@ -1,15 +1,15 @@
 <h3>Quel sont tes criteres?</h3>
 <form class="form" [formGroup]="searchForm">
   <label>A propos de toi:
-    <select id="filiere" [formControlName]="'filiere'">
+    <select id="filiere" [formControlName]="'filiere'" (change)="sectorChange($event.target.value)">
       <option value="all" selected disabled hidden>filiere</option>
-      <option *ngFor="let currentFiliere of FILIERE_LIST" [value]="currentFiliere">
+      <option *ngFor="let currentFiliere of sectorArray" [value]="currentFiliere">
         {{currentFiliere}}
       </option>
     </select>
     <select  id="specialite" [formControlName]="'specialite'">
       <option value="all" selected disabled hidden>specialite</option>
-      <option *ngFor="let currentSpecialite of SPECIALITE_LIST" [value]="currentSpecialite">
+      <option *ngFor="let currentSpecialite of specialtyArray" [value]="currentSpecialite">
       {{currentSpecialite}}
       </option>
     </select>

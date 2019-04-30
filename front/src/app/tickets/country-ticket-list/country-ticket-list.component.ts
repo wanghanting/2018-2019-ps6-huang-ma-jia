@@ -10,6 +10,7 @@ import { SomeInformationCountry } from '../../../models/someInformationCountry';
 export class CountryTicketListComponent implements OnInit {
 
   @Output() ticketEventList = new EventEmitter<SomeInformationCountry>();
+  @Output() clickEventList = new EventEmitter<String>();
 
   public countryTicketList: SomeInformationCountry[] = [];
 
@@ -21,8 +22,8 @@ export class CountryTicketListComponent implements OnInit {
 
   }
 
-  clickPays(idPays: string) {
-    console.log(idPays);
+  onClick(idPays: string) {
+    this.clickEventList.emit(idPays);
   }
 
   ticketEvent(someInformationCountry: SomeInformationCountry) {

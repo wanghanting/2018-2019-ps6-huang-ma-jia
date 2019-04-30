@@ -20,6 +20,10 @@ export class HomePageComponent implements OnInit {
 
   }
 
+  onClick(idPays: string) {
+    window.location.href = 'http://localhost:4200/country/?id=' + idPays;
+  }
+
   ticketEvent(someInformationCountry: SomeInformationCountry) {
     this.countrySelected = someInformationCountry;
     this.visaFullStarsArray = Array(someInformationCountry.visaStar);
