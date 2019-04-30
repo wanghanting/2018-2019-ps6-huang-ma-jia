@@ -42,7 +42,7 @@ module.exports = class BaseModel {
   }
 
   /* Company */
-  getWithFilter(countryId, sector, specialty) {
+  getWithFilter(countryId, sector, specialty, continent) {
     var companies = this.items;
 
     if (countryId) {
@@ -55,6 +55,10 @@ module.exports = class BaseModel {
       companies = companies.filter(
         i => Internship.getWithCompanyIdAndSector(i.id, sector, specialty).length != 0,
       );
+    }
+
+    if (continent) {
+      //companies = companies.filter();
     }
 
     return companies;
