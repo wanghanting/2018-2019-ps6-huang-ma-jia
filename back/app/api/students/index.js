@@ -15,7 +15,7 @@ function getStudent(name, items) {
 }
 
 const router = new Router();
-router.get('/', (req, res) => res.status(200).json(Student.get()));
+router.get('/', (req, res) => res.status(200).json(Student.getWithStudentFilter(req.query)));
 router.get('/recup/:id', (req, res) => res.status(200).json(getStudent(req.params.id, Student.get())));
 router.get('/:studentId', (req, res) => res.status(200).json(Student.getById(req.params.studentId)));
 router.delete('/:studentId', (req, res) => res.status(200).json(Student.delete(req.params.studentId)));

@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Company} from '../../models/company';
 import {BehaviorSubject, Subject} from 'rxjs';
-import {COMPANIES_MOCKED} from '../../mocks/companies';
 import {HttpClient} from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 

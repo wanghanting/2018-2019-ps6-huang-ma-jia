@@ -42,28 +42,34 @@ module.exports = class BaseModel {
   }
 
   /* Company */
-  getWithFilter(countryId, sector, specialty, continent, activitySector) {
+  getWithCompanyFilter(query) {
     let companies = this.items;
 
-    if (countryId) {
-      companies = companies.filter(company => company.countryId == countryId);
+    if (query.countryId) {
+      companies = companies.filter(company => company.countryId == query.countryId);
     }
 
-    if (sector) {
+    if (query.sector) {
       const { Internship } = require('../models');
 
       companies = companies.filter(
-        company => Internship.getWithIntershipFilter(company.id, sector, specialty).length != 0,
+        company => Internship.getWithIntershipFilter({
+              'companyId': company.id, 
+              'sector': query.sector, 
+              'specialty': query.specialty
+          }).length != 0
       );
     }
 
-    if (continent) {
+    if (query.continent) {
       //companies = companies.filter();
     }
 
-    if (activitySector) {
-      companies = companies.filter(company => company.activitySector == activitySector);
+    if (query.activitySector) {
+      companies = companies.filter(company => company.activitySector == query.activitySector);
     }
+
+    this.addRating();
 
     return companies;
   }
@@ -75,23 +81,43 @@ module.exports = class BaseModel {
     return [...new Set(activitySectors)];
   }
 
+  addRating(){
+    this.items.forEach(company => {
+      const { Internship } = require('../models');
+      
+      company.rating = Internship.getRating(company.id);
+    });
+  }
+
   /* Internship */
 
-  getWithIntershipFilter(companyId, sector, specialty) {
+  getWithIntershipFilter(query) {
     const { Student } = require('../models');
     
     return this.items.filter(
-      internship => internship.companyId == companyId
-        && Student.getWithStudentFilter(internship.studentId, sector, specialty).length != 0,
+      internship => 
+        (query.companyId == null || internship.companyId == query.companyId)
+        && (query.sector == null || Student.items.find(student => student.id == internship.studentId).sector == query.sector)
+        && (query.specialty == null || Student.items.find(student => student.id == internship.studentId).specialty == query.specialty)
     );
+  }
+
+  getRating(companyId){
+    let sum = 0;
+
+    let internships = this.items.filter(internship => internship.companyId == companyId);
+    
+    internships.forEach(internship => sum += internship.rating);
+
+    return sum / internships.length;
   }
 
   /* Student */
 
-  getWithStudentFilter(studentId, sector, specialty) {
-    return this.items.filter(student => studentId == student.id
-      && sector == student.sector
-      && (specialty == null || specialty == student.specialty));
+  getWithStudentFilter(query) {
+    return this.items.filter(student => 
+      (query.sector == null || query.sector == student.sector)
+      && (query.specialty == null || query.specialty == student.specialty));
   }
 
   /* partnerHousing */

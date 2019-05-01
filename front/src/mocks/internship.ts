@@ -1,7 +1,5 @@
 import {Internship} from '../models/internship';
 import {STUDENTS_MOCKED} from './students.mock';
-import {Student} from "../models/student";
-import {Company} from "../models/company";
 
 export const INTERNSHIP_MOCKED: Internship[] = [
   {

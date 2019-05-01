@@ -11,7 +11,7 @@
     "salary": "Haut",
     "residence": "Loge",
     "hasCompanyCar": true,
-    "rating": 5,
+    "rating": 1,
     "tuteur": "Jean MEDECIN"
   },
   {
@@ -26,7 +26,7 @@
     "salary": "Moyenne",
     "residence": "Loge",
     "hasCompanyCar": false,
-    "rating": 4,
+    "rating": 2,
     "tuteur": "Jiazen Liu"
   },
   {
@@ -41,11 +41,11 @@
     "salary": "Moyenne",
     "residence": "Loge",
     "hasCompanyCar": false,
-    "rating": 4,
+    "rating": 3,
     "tuteur": "Jiazen Liu"
   },
   {
-    "id": 3,
+    "id": 4,
     "name": "Back-end Designer",
     "studentId": 3,
     "companyId": 2,
