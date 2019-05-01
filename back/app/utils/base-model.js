@@ -42,18 +42,18 @@ module.exports = class BaseModel {
   }
 
   /* Company */
-  getWithFilter(countryId, sector, specialty, continent) {
+  getWithFilter(countryId, sector, specialty, continent, activitySector) {
     let companies = this.items;
 
     if (countryId) {
-      companies = companies.filter(i => i.countryId == countryId);
+      companies = companies.filter(company => company.countryId == countryId);
     }
 
     if (sector) {
       const { Internship } = require('../models');
 
       companies = companies.filter(
-        i => Internship.getWithCompanyIdAndSector(i.id, sector, specialty).length != 0,
+        company => Internship.getWithIntershipFilter(company.id, sector, specialty).length != 0,
       );
     }
 
@@ -61,45 +61,49 @@ module.exports = class BaseModel {
       //companies = companies.filter();
     }
 
+    if (activitySector) {
+      companies = companies.filter(company => company.activitySector == activitySector);
+    }
+
     return companies;
   }
 
   getActivitySectors(){
     let activitySectors = [];
-    this.items.every(i => activitySectors.push(i.activitySector));
+    this.items.every(company => activitySectors.push(company.activitySector));
 
     return [...new Set(activitySectors)];
   }
 
   /* Internship */
 
-  getWithCompanyIdAndSector(companyId, sector, specialty) {
+  getWithIntershipFilter(companyId, sector, specialty) {
     const { Student } = require('../models');
     
     return this.items.filter(
       internship => internship.companyId == companyId
-      && Student.getWithStudentFilter(internship.studentId, sector, specialty).length != 0,
+        && Student.getWithStudentFilter(internship.studentId, sector, specialty).length != 0,
     );
   }
 
   /* Student */
 
   getWithStudentFilter(studentId, sector, specialty) {
-    return this.items.filter(i => studentId == i.id
-      && sector == i.sector
-      && (specialty == null || specialty == i.specialty));
+    return this.items.filter(student => studentId == student.id
+      && sector == student.sector
+      && (specialty == null || specialty == student.specialty));
   }
 
   /* partnerHousing */
 
   getByCountryId(id) {
-    const items = this.items.filter(i => i.countryId === id);
+    const items = this.items.filter(parnterHousing => parnterHousing.countryId === id);
     return items;
   }
 
   /* internships */
   getByCompanyId(id) {
-    const items = this.items.filter(i => i.countryId === id);
+    const items = this.items.filter(internship => internship.countryId === id);
     return items;
   }
 

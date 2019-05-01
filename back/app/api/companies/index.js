@@ -28,7 +28,7 @@ function filterCompany(filiere, specialite, continent, secteur, taile) {
 }
 
 const router = new Router();
-router.get('/', (req, res) => res.status(200).json(Company.getWithFilter(req.query.countryId, req.query.sector, req.query.specialty, req.query.continent)));
+router.get('/', (req, res) => res.status(200).json(Company.getWithFilter(req.query.countryId, req.query.sector, req.query.specialty, req.query.continent, req.query.activitySector)));
 router.get('/search/', (req, res) => res.status(200).json(filterCompany(req.query.filiere, req.query.specialite, req.query.continent, req.query.secteur, req.query.taile)));
 router.delete('/:companyId', (req, res) => res.status(200).json(Company.delete(req.params.companyId)));
 router.put('/:companyId', (req, res) => res.status(200).json(Company.update(req.params.companyId, req.body)));

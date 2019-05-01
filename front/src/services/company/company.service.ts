@@ -37,6 +37,7 @@ export class CompanyService {
     this.http.get<Company[]>(this.companiesUrl + '?countryId=' + this.countryId
       + (form.getRawValue().sector && form.getRawValue().sector != '- Filière -' ? ("&sector=" + form.getRawValue().sector) : '')
       + (form.getRawValue().specialty && form.getRawValue().specialty != '- Spécialité -' ? ("&specialty=" + form.getRawValue().specialty) : '')
+      + (form.getRawValue().activitySector && form.getRawValue().activitySector != '- Secteur d\'activité -' ? ("&activitySector=" + form.getRawValue().activitySector) : '')
     ).subscribe(value => {
       this.companyList = value;
       this.companies$.next(value);
