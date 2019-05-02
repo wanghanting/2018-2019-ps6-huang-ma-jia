@@ -48,14 +48,14 @@
                     </option>
                 </select>
 
-                <select class="custom-select" [formControlName]="'specialty'" (change)="formChange()">
+                <select class="custom-select" [formControlName]="'specialty'">
                     <option>- Spécialité -</option>
                     <option *ngFor="let specialty of specialtyArray">
                             {{specialty}}
                     </option>
                 </select>
 
-                <select class="custom-select" [formControlName]="'activitySector'" (change)="formChange()">
+                <select class="custom-select" [formControlName]="'activitySector'">
                     <option>- Secteur d'activité -</option>
                     <option *ngFor="let activitySector of activitySectorArray">
                             {{activitySector}}
