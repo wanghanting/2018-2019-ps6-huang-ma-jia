@@ -8,7 +8,7 @@ module.exports = new BaseModel('Company', {
   countryId: Joi.string().required(),
   address: Joi.string().required(),
   rating: Joi.number().required(),
-  numberEmployees: Joi.number().required(),
+  employeesNumber: Joi.number().required(),
   creationDate: Joi.string().required(),
   opportunity: Joi.number().required(),
   internshipType: Joi.string().required(),

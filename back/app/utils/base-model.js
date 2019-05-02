@@ -65,8 +65,16 @@ module.exports = class BaseModel {
       //companies = companies.filter();
     }
 
-    if (query.size) {
-      //companies = companies.filter(company => company )
+    if (query.size1 && query.size2 && query.size3) {
+      if (query.size1 == "0"){
+        companies = companies.filter(company => !(company.employeesNumber <= 49));
+      }
+      if (query.size1 == "1"){
+        companies = companies.filter(company => !(company.employeesNumber >= 50 && company.employeesNumber <= 499));
+      }
+      if (query.size1 == "2"){
+        companies = companies.filter(company => !(company.employeesNumber >= 500));
+      }
     }
 
     if (query.activitySector) {
@@ -196,8 +204,8 @@ module.exports = class BaseModel {
         higherbound = 100000;
       }
     }
-    const companies = this.items.filter(i => (lowerbound < i.numberEmployees)
-      && (i.numberEmployees < higherbound));
+    const companies = this.items.filter(i => (lowerbound < i.employeesNumber)
+      && (i.employeesNumber < higherbound));
     return companies;
   }
 

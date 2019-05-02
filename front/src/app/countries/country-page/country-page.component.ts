@@ -11,6 +11,7 @@ import { CompanyService } from '../../../services/company/company.service';
 import { SectorService } from '../../../services/sector/sector.service';
 import { SpecialtyService } from '../../../services/specialty/specialty.service';
 import { ActivitySectorService } from '../../../services/activitySector/activitySector.service';
+import { CompanySizeService } from 'src/services/companySize/companySize.service';
 
 /*
   Models
@@ -44,11 +45,13 @@ export class CountryPageComponent implements OnInit {
     public sectorService: SectorService,
     public specialtyService: SpecialtyService,
     public activitySectorService: ActivitySectorService,
+    public companySizeService: CompanySizeService,
     private route: ActivatedRoute) {
+
     this.sectorArray = [];
     this.specialtyArray = [];
     this.activitySectorArray = [];
-    this.sizeArray = ['PME','TPE','MI'];
+    this.sizeArray = [];
 
     this.oneCountryService.country$.subscribe((country) => {
         this.country = country;
@@ -77,14 +80,22 @@ export class CountryPageComponent implements OnInit {
     this.activitySectorService.activitySectors$.subscribe((activitySectors) => {
       this.activitySectorArray = activitySectors;
     });
+    this.companySizeService.companySizes$.subscribe((companySizes) => {
+      this.sizeArray = companySizes;
+      /*for (let companySize of companySizes){
+        this.countryPageForm.addControl(companySize.id, null);
+      }*/
+    });
 
     this.countryPageForm = this.formBuilder.group({
       sector: [''],
       specialty: [''],
       activitySector: [''],
-      size: ['']
+      size1: [''],
+      size2: [''],
+      size3: ['']
     });
-    
+
     this.countryPageForm.patchValue({
       specialty: '- Spécialité -'
     });
@@ -98,7 +109,6 @@ export class CountryPageComponent implements OnInit {
     this.countryPageForm.patchValue({
       specialty: '- Spécialité -'
     });
-    this.formChange();
   }
 
   formChange(){

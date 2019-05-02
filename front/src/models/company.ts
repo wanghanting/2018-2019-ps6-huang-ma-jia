@@ -6,7 +6,7 @@ export interface Company {
   countryId?: Country;
   address?: string;
   rating?: number;
-  numberEmployees?: number;
+  employeesNumber?: number;
   creationDate?: Date;
   opportunity?: number;
   internshipType?: string;

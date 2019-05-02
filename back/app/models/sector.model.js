@@ -42,9 +42,9 @@ const sectors = {
   BAT: {
     name: 'BAT',
     specialties: [
-        'specialtySI1',
-        'specialtySI2',
-        'specialtySI3',
+        'specialtyBAT1',
+        'specialtyBAT2',
+        'specialtyBAT3',
     ],
   },
   IT2I: {

@@ -10,6 +10,7 @@ import {StudentService} from '../services/student/student.service';
 import {CountryService} from '../services/country/country.service';
 import {ActivitySectorService} from '../services/activitySector/activitySector.service';
 import {OneCountryService} from '../services/country/one-country.service';
+import {CompanySizeService} from '../services/companySize/companySize.service';
 import {SearchCompanyPageComponent} from './search-companies/search-company-page';
 import {SearchCompanyComponent} from './search-companies/search-company';
 import {SearchCompanyFormComponent} from './search-companies/search-company-form';
@@ -52,7 +53,7 @@ import { CardInformationComponent } from './tickets/card-information/card-inform
     AppRoutingModule// , // Import all dependencies
     // AppRoutingModule
   ],
-  providers: [StudentService, CountryService, OneCountryService, ActivitySectorService], // All the services need to be provided
+  providers: [StudentService, CountryService, OneCountryService, ActivitySectorService, CompanySizeService], // All the services need to be provided
   bootstrap: [AppComponent]
 })
 export class AppModule {

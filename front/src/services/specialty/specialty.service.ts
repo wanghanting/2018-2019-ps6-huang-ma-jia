@@ -18,11 +18,9 @@ export class SpecialtyService {
     }
 
     public setSectorName(name: string) {
-      if (name == '- Filiere -'){
-        this.http.get<String[]>(this.specialtiesUrl).subscribe(value => {
-          this.specialtyList = value;
-          this.specialties$.next(value);
-        });
+      if (name == '- Filière -'){
+        this.specialtyList = [];
+        this.specialties$.next([]);
       } else {
         this.http.get<String[]>(this.specialtiesUrl + "?sector=" + name).subscribe(value => {
             this.specialtyList = value;

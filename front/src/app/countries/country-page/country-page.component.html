@@ -37,7 +37,7 @@
     <fieldset>
         <legend>Liste des entreprises où des étudiants on fait leur stage</legend>
         <div class="company-array">
-            <form class="country-page-form" [formGroup]="countryPageForm">
+            <form class="country-page-form" [formGroup]="countryPageForm" (change)="formChange()">
 
                 Filtre :
 
@@ -63,7 +63,7 @@
                 </select>
 
                 <div class="sizeArray" *ngFor="let size of sizeArray" style="display:inline;">
-                    <input type="checkbox" [formControlName]="'size'" checked>{{size}}
+                    <input type="checkbox" [formControlName]="size.id">{{size.str}}
                 </div>
             </form>
 
