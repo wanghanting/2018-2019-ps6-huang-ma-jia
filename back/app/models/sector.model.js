@@ -1,4 +1,4 @@
-const sector = {
+const sectors = {
   SI: {
     name: 'SI',
     specialties: [
@@ -57,4 +57,4 @@ const sector = {
   },
 };
 
-module.exports = sector;
+module.exports = sectors;
