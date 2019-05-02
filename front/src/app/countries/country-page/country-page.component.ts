@@ -18,8 +18,6 @@ import { ActivitySectorService } from '../../../services/activitySector/activity
 import { Country } from '../../../models/country';
 import { PartnerHousing } from '../../../models/partnerHousing';
 import { Company } from '../../../models/company';
-import { Sector } from '../../../models/sector';
-import { Specialty } from '../../../models/specialty';
 
 @Component({
   selector: 'app-country-page',
@@ -50,7 +48,7 @@ export class CountryPageComponent implements OnInit {
     this.sectorArray = [];
     this.specialtyArray = [];
     this.activitySectorArray = [];
-    this.sizeArray = [];
+    this.sizeArray = ['PME','TPE','MI'];
 
     this.oneCountryService.country$.subscribe((country) => {
         this.country = country;
@@ -86,6 +84,10 @@ export class CountryPageComponent implements OnInit {
       activitySector: [''],
       size: ['']
     });
+    
+    this.countryPageForm.patchValue({
+      specialty: '- Spécialité -'
+    });
   }
 
   ngOnInit() {
@@ -93,12 +95,9 @@ export class CountryPageComponent implements OnInit {
 
   sectorChange(value){
     this.specialtyService.setSectorName(value);
-    /*console.log('dif :');
-    console.log(this.countryPageForm.getRawValue().specialty);
     this.countryPageForm.patchValue({
-      specialty: 'aa'
+      specialty: '- Spécialité -'
     });
-    console.log(this.countryPageForm.getRawValue().specialty);*/
     this.formChange();
   }
 

@@ -6,28 +6,28 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 
-export class SectorService {
+export class companySizeService {
   /**
    * Services Documentation:
    * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
    */
 
   //private countryList: Country[] = []; A remettre quand le back marche
-  private sectorList: String[];
+  private companySizeList: String[];
 
-  private sectorsUrl = 'http://localhost:9428/api/sectors/';
+  private companySizesUrl = 'http://localhost:9428/api/companySizes/';
 
   /**
    * Observable which contains the list of the country.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
-  public sectors$: BehaviorSubject<String[]> = new BehaviorSubject(this.sectorList);
+  public companySizes$: BehaviorSubject<String[]> = new BehaviorSubject(this.companySizeList);
 
   constructor(
     private http: HttpClient) {
-        this.http.get<String[]>(this.sectorsUrl).subscribe(value => {
-            this.sectorList = value;
-            this.sectors$.next(value);
+        this.http.get<String[]>(this.companySizesUrl).subscribe(value => {
+            this.companySizeList = value;
+            this.companySizes$.next(value);
         });
     }
 }

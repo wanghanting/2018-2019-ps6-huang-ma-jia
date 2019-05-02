@@ -65,6 +65,10 @@ module.exports = class BaseModel {
       //companies = companies.filter();
     }
 
+    if (query.size) {
+      //companies = companies.filter(company => company )
+    }
+
     if (query.activitySector) {
       companies = companies.filter(company => company.activitySector == query.activitySector);
     }

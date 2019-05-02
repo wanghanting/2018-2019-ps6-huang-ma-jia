@@ -1,12 +1,12 @@
 <div class="country-page" *ngIf="country != null">
 
-        <!--Inputs & Output allow communication between parent & child components.-->
-        <!--More information: https://angular.io/guide/component-interaction-->
-        <h1>{{country.name}}</h1>
+    <h1>{{country.name}}</h1>
+    
+    <fieldset>
+        <legend>Information sur le pays</legend>
         <table>
             <tr>
                 <td class="country-infos-td ">
-                    <div class="subTitle">Information sur le pays</div>
                     <div class="country-infos">
                         {{country.information}}<br>
                         <br>
@@ -30,12 +30,13 @@
                 </td>
             </tr>
         </table>
+    </fieldset>
 
-        <br>
+    <br>
 
-        <div class="list-of-company">
-            <div class="subTitle">Liste des entreprises où des étudiants on fait leur stage</div>
-            
+    <fieldset>
+        <legend>Liste des entreprises où des étudiants on fait leur stage</legend>
+        <div class="company-array">
             <form class="country-page-form" [formGroup]="countryPageForm">
 
                 Filtre :
@@ -61,17 +62,17 @@
                     </option>
                 </select>
 
-                <select class="custom-select" [formControlName]="'size'" (change)="formChange()">
-                    <option>- Taille de l'entreprise -</option>
-                    <option *ngFor="let size of sizeArray">
-                            {{size}}
-                    </option>
-                </select>
+                <div class="sizeArray" *ngFor="let size of sizeArray" style="display:inline;">
+                    <input type="checkbox" [formControlName]="'size'" checked>{{size}}
+                </div>
             </form>
+
+            <br>
             
-            <div class="tabulation" *ngFor="let company of companyList">
+            <div *ngFor="let company of companyList">
                 - {{company.name}}
             </div>
         </div>
+    </fieldset>
   </div>
   
