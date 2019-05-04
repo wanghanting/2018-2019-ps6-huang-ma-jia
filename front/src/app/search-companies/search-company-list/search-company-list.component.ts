@@ -9,7 +9,7 @@ import {Company} from '../../../models/company';
 })
 export class SearchCompanyListComponent implements OnInit {
 
-  public companyList: Company[] = [];
+  public companyList: Company[];
 
   constructor(public companyService: CompanyService) {
     this.companyService.companies$.subscribe((companies) => this.companyList = companies);

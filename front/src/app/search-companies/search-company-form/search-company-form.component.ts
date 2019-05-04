@@ -19,15 +19,11 @@ export class SearchCompanyFormComponent implements OnInit {
    * More information about Reactive Forms: https://angular.io/guide/reactive-forms
    */
   public searchForm: FormGroup;
-  public FILIERE_LIST: string[] = ['SI4', 'SI5', 'MAM4', 'MAM5', 'ELEC4', 'ELEC5'];
   public CONTINENT_LIST: string[] = ['Amérique du Nord',  'Asie', 'Europe', 'Amérique du Sud', 'Océanie', 'Afrique'];
-  public SPECIALITE_LIST: string[] = ['IHM', 'SECURITE'];
-  public TAILE_LIST: string[] = ['1-50', '51-300', '301+'];
+  public TAILLE_LIST: string[] = ['1-50', '51-300', '301+'];
   public SECTEUR_LIST: string[] = ['produit', 'marketing', 'exploitation et maintenance' ];
   public sectorArray: any[];
   public specialtyArray: any[];
-  public secteurArray: any[];
-  public sizeArray: any[];
   constructor(public formBuilder: FormBuilder, public  companyservice: CompanyService, public sectorService: SectorService,
   public specialtyService: SpecialtyService) {
     this.sectorService.sectors$.subscribe((sectors) => {
@@ -37,11 +33,11 @@ export class SearchCompanyFormComponent implements OnInit {
       this.specialtyArray = specialties;
     });
     this.searchForm = this.formBuilder.group({
-      filiere: ['all'],
-      specialite: ['all'],
+      sector: ['all'],
+      specialty: ['all'],
       continent: ['all'],
       secteur: ['all'],
-      taile: ['all'],
+      size: ['all'],
     });
     // You can also add validators to your inputs such as required, maxlength or even create your own validator!
     // More information: https://angular.io/guide/reactive-forms#simple-form-validation
@@ -51,11 +47,13 @@ export class SearchCompanyFormComponent implements OnInit {
   ngOnInit() {
   }
   companyFilter() {
-    const conditionsCompany: Searchcompany = this.searchForm.getRawValue() as Searchcompany;
-    this.companyservice.filterCompanies(conditionsCompany.filiere, conditionsCompany.specialite, conditionsCompany.continent,
-      conditionsCompany.secteur, conditionsCompany.taile);
+    // const conditionsCompany: Searchcompany = this.searchForm.getRawValue() as Searchcompany;
+    this.companyservice.formChange(this.searchForm);
   }
   sectorChange(value) {
     this.specialtyService.setSectorName(value);
+  }
+  formChange() {
+    this.companyservice.formChange(this.searchForm);
   }
 }
