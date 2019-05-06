@@ -17,8 +17,4 @@ export class CompanyPageComponent implements OnInit {
   constructor(public internshipService: InternshipService) {
   }
   ngOnInit() {}
-  displayInternshipsFiltered() {
-    this.internshipService.Internshipfilter();
-
-  }
 }
