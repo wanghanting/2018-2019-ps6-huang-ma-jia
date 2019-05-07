@@ -3,7 +3,7 @@ import { Company} from '../../../models/company';
 import {CompanyService} from '../../../services/company/company.service';
 
 @Component({
-  selector: 'app-company',
+  selector: 'app-company-search',
   templateUrl: './search-company.component.html',
   styleUrls: ['./search-company.component.scss']
 })

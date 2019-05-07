@@ -66,13 +66,13 @@ module.exports = class BaseModel {
     }
 
     if (query.size1 && query.size2 && query.size3) {
-      if (query.size1 == "0"){
+      if (query.size1 == 'false'){
         companies = companies.filter(company => !(company.employeesNumber <= 49));
       }
-      if (query.size1 == "1"){
+      if (query.size1 == 'false'){
         companies = companies.filter(company => !(company.employeesNumber >= 50 && company.employeesNumber <= 499));
       }
-      if (query.size1 == "2"){
+      if (query.size1 == 'false'){
         companies = companies.filter(company => !(company.employeesNumber >= 500));
       }
     }
@@ -81,7 +81,7 @@ module.exports = class BaseModel {
       companies = companies.filter(company => company.activitySector == query.activitySector);
     }
 
-    this.addRating();
+    this.addRating();//a mettre ailleurs
 
     return companies;
   }

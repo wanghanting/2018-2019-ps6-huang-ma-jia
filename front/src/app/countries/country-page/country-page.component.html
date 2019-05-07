@@ -70,7 +70,7 @@
             <br>
             
             <div *ngFor="let company of companyList">
-                - {{company.name}}
+                <app-company [company]="company"></app-company>
             </div>
         </div>
     </fieldset>

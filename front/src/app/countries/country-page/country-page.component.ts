@@ -96,8 +96,14 @@ export class CountryPageComponent implements OnInit {
       size3: ['']
     });
 
-    this.countryPageForm.patchValue({
-      specialty: '- Spécialité -'
+    
+    this.countryPageForm.setValue({
+      sector: '- Filière -',
+      specialty: '- Spécialité -',
+      activitySector: '- Secteur d\'activité -',
+      size1: true,
+      size2: true,
+      size3: true
     });
   }
 

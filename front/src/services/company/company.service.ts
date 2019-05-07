@@ -34,9 +34,12 @@ export class CompanyService {
 
   public formChange(form: FormGroup){
     this.http.get<Company[]>(this.companiesUrl + '?countryId=' + this.countryId
-      + (form.getRawValue().sector && form.getRawValue().sector != '- Filière -' ? ("&sector=" + form.getRawValue().sector) : '')
-      + (form.getRawValue().specialty && form.getRawValue().specialty != '- Spécialité -' ? ("&specialty=" + form.getRawValue().specialty) : '')
-      + (form.getRawValue().activitySector && form.getRawValue().activitySector != '- Secteur d\'activité -' ? ("&activitySector=" + form.getRawValue().activitySector) : '')
+      + (form.getRawValue().sector != '- Filière -' ? ("&sector=" + form.getRawValue().sector) : '')
+      + (form.getRawValue().specialty != '- Spécialité -' ? ("&specialty=" + form.getRawValue().specialty) : '')
+      + (form.getRawValue().activitySector != '- Secteur d\'activité -' ? ("&activitySector=" + form.getRawValue().activitySector) : '')
+      + ("&size1=" + form.getRawValue().size1)
+      + ("&size2=" + form.getRawValue().size2)
+      + ("&size3=" + form.getRawValue().size3)
     ).subscribe(value => {
       this.companyList = value;
       this.companies$.next(value);

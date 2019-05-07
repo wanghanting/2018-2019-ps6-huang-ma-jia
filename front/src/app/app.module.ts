@@ -6,11 +6,14 @@ import { CountryComponent, CountryListComponent, CountryPageComponent } from './
 import { CountryTicketListComponent, CountryTicketComponent} from './tickets';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
 import {StudentService} from '../services/student/student.service';
 import {CountryService} from '../services/country/country.service';
 import {ActivitySectorService} from '../services/activitySector/activitySector.service';
 import {OneCountryService} from '../services/country/one-country.service';
 import {CompanySizeService} from '../services/companySize/companySize.service';
+
+import {CompanyComponent} from './company/company';
 import {SearchCompanyPageComponent} from './search-companies/search-company-page';
 import {SearchCompanyComponent} from './search-companies/search-company';
 import {SearchCompanyFormComponent} from './search-companies/search-company-form';
@@ -30,6 +33,7 @@ import { CardInformationComponent } from './tickets/card-information/card-inform
     CountryComponent,
     CountryListComponent,
     CountryPageComponent,
+    CompanyComponent,
     SearchCompanyComponent,
     SearchCompanyFormComponent,
     SearchCompanyListComponent,
