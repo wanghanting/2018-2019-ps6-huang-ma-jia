@@ -35,6 +35,7 @@ function filterInternship(contractRenewed, hasCompanyCar) {
 const router = new Router();
 router.get('/', (req, res) => res.status(200).json(Internship.getWithInternFilter(req.query)));
 router.get('/search/', (req, res) => res.status(200).json(filterInternship(req.query.contractRenewed, req.query.hasCompanyCar)));
+router.get('/nbIntership', (req, res) => res.status(200).json(Internship.getNumberIntershipByCountryId(req.query)));
 router.delete('/:id', (req, res) => res.status(200).json(Internship.delete(req.params.id)));
 router.put('/:id', (req, res) => res.status(200).json(Internship.update(req.params.id, req.body)));
 
