@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SomeInformationCountry} from '../../../models/someInformationCountry';
+import {Country} from '../../../models/country';
 
 @Component({
   selector: 'app-home-page',
@@ -8,7 +8,7 @@ import {SomeInformationCountry} from '../../../models/someInformationCountry';
 })
 export class HomePageComponent implements OnInit {
 
-  public countrySelected: SomeInformationCountry = null;
+  public countrySelected: Country = null;
   public visaFullStarsArray: any[];
   public visaEmptyStarsArray: any[];
 
@@ -24,10 +24,10 @@ export class HomePageComponent implements OnInit {
     window.location.href = 'http://localhost:4200/country/?id=' + idPays;
   }
 
-  ticketEvent(someInformationCountry: SomeInformationCountry) {
-    this.countrySelected = someInformationCountry;
-    this.visaFullStarsArray = Array(someInformationCountry.visaStar);
-    this.visaEmptyStarsArray = Array(5 - someInformationCountry.visaStar);
+  ticketEvent(country: Country) {
+    this.countrySelected = country;
+    this.visaFullStarsArray = Array(country.visaDifficulty);
+    this.visaEmptyStarsArray = Array(5 - country.visaDifficulty);
   }
 
 }

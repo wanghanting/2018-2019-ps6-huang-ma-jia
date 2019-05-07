@@ -13,10 +13,11 @@ export class CountryService {
    * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
    */
 
-  //private countryList: Country[] = []; A remettre quand le back marche
   private countryList: Country[] = [];
 
   private countriesUrl = 'http://localhost:9428/api/countries/';
+  private companiesUrl = 'http://localhost:9428/api/companies/';
+  private internshipUrl = 'http://localhost:9428/api/internships/';
 
   /**
    * Observable which contains the list of the country.
@@ -25,5 +26,20 @@ export class CountryService {
   public countries$: BehaviorSubject<Country[]> = new BehaviorSubject(this.countryList);
 
   constructor(
-    private http: HttpClient) {}
+    private http: HttpClient) {
+    this.getCountries();
+  }
+
+  public getCountries() {
+    this.http.get<Country[]>(this.countriesUrl).subscribe(value => {
+      value.forEach(value2 => {
+        this.http.get<number>(this.companiesUrl + 'companyNb?countryId=' + value2.id).subscribe(number =>
+        value2.nbCompany = number);
+        this.http.get<number>(this.internshipUrl + 'nbIntership?countryId=' + value2.id).subscribe(number =>
+          value2.nbIntership = number);
+      });
+      this.countryList = value;
+      this.countries$.next(value);
+    });
+  }
 }

@@ -1,5 +1,5 @@
 export interface Country {
-    string?: number;
+    id?: string;
     name?: string;
     flagPath?: string;
     photoPath?: string;
@@ -8,6 +8,7 @@ export interface Country {
     visaDifficulty?: number;
     visaInformation?: string;
     hiringOpportunities?: string;
-    //Liste des logements partenaires
-    //Liste des entreprise
+    continent?: string;
+    nbIntership?: number;
+    nbCompany?: number;
 }

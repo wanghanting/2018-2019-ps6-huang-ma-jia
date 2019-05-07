@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {SomeInformationCountry} from '../../../models/someInformationCountry';
+import {Country} from '../../../models/country';
 
 @Component({
   selector: 'app-card-information',
@@ -9,7 +9,7 @@ import {SomeInformationCountry} from '../../../models/someInformationCountry';
 export class CardInformationComponent implements OnInit {
 
   @Input()
-  ticket: SomeInformationCountry;
+  ticket: Country;
   @Input()
   visaFullStarsArray: any[];
   @Input()

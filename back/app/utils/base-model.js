@@ -135,6 +135,18 @@ module.exports = class BaseModel {
     });
   }
 
+  /* Company */
+  getNumberCompanyByCountryId(query){
+    console.log(query);
+    let companies = this.items;
+
+    if (query.countryId !== null) {
+      companies = companies.filter(company => company.countryId == query.countryId);
+    }
+
+    return companies.length;
+  }
+
   /* Internship */
 
   getWithIntershipFilter(query) {
@@ -180,8 +192,23 @@ module.exports = class BaseModel {
 
   /* internships */
   getByCompanyId(id) {
-    const items = this.items.filter(internship => internship.countryId === id);
+    const items = this.items.filter(internship => internship.companyId === id);
     return items;
+  }
+
+  /* internships */
+  getNumberIntershipByCountryId(query){
+    var companies = [];
+    var intership = [];
+    var step;
+
+    if (query.countryId !== null) {
+      companies = companies.filter(company => company.countryId == query.countryId);
+      for (step = 0; step<companies.length; step++) {
+        intership.addAll(intership.filter(intership => intership.companyId == companies[step].companyId));
+      }
+    }
+    return intership.length;
   }
 
   /* Ticket */
