@@ -2,12 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CountryComponent, CountryListComponent, CountryPageComponent } from './countries';
+import { CountryPageComponent } from './countries';
 import { CountryTicketListComponent, CountryTicketComponent} from './tickets';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import {StudentService} from '../services/student/student.service';
 import {CountryService} from '../services/country/country.service';
 import {ActivitySectorService} from '../services/activitySector/activitySector.service';
 import {OneCountryService} from '../services/country/one-country.service';
@@ -29,8 +28,6 @@ import { CardInformationComponent } from './tickets/card-information/card-inform
 @NgModule({
   declarations: [
     AppComponent,
-    CountryComponent,
-    CountryListComponent,
     CountryPageComponent,
     SearchCompanyComponent,
     SearchCompanyFormComponent,
@@ -55,7 +52,7 @@ import { CardInformationComponent } from './tickets/card-information/card-inform
     AppRoutingModule// , // Import all dependencies
     // AppRoutingModule
   ],
-  providers: [StudentService, CountryService, OneCountryService, ActivitySectorService, CompanySizeService], // All the services need to be provided
+  providers: [CountryService, OneCountryService, ActivitySectorService, CompanySizeService], // All the services need to be provided
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Internship} from '../../models/internship';
 import {BehaviorSubject, Subject} from 'rxjs';
-import {INTERNSHIP_MOCKED} from '../../mocks/internship';
 import {HttpClient} from '@angular/common/http';
 import {Company} from '../../models/company';
 import {FormGroup} from "@angular/forms";
@@ -11,7 +10,7 @@ import {FormGroup} from "@angular/forms";
 })
 
 export class InternshipService {
-  private internshipList: Internship[] = INTERNSHIP_MOCKED;
+  private internshipList: Internship[] = [];
   private internshipFiltered: Internship[];
   private searchTerms = new Subject<Internship>();
   public internships$: BehaviorSubject<Internship[]> = new BehaviorSubject(this.internshipList);
