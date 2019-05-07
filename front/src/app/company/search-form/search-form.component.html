@@ -3,8 +3,9 @@
     <div class="search-input">
       <div><input type="text" id="txt" (focus)="onFocus()" (input)="onInput()" [formControlName]="'name'" placeholder="Input" value=""/></div>
         <select size="2" id="sel" (click)="onClick()" style="display:none">
-          <option>A ete reconduit CDD/CDI</option>
-          <option>Voiture de fonction</option>
+          <option *ngFor="let currentdetail of nameList" [value]="currentdetail">
+            {{currentdetail}}
+          </option>
         </select>
     </div>
     <!--<input type="text" (focus)="onFocus()" (ngModelChange)="onInput()" (focusout)="onBlur()" class="form-control" id="search" [formControlName]="'name'" (input)="onSearchChange($event.target.value)">-->
@@ -14,8 +15,8 @@
         <!--</ul>-->
       <!--</span>-->
   </span>
-  <span id="con" ><input type="checkbox" id="contract" [formControlName] ="'contractRenewed'" value=""  [checked]="false" >A ete reconduit CDD/CDI &nbsp;&nbsp;&nbsp;</span>
-  <span id="voi" ><input type="checkbox" id="car" [formControlName] ="'hasCompanyCar'" value="" [checked]="false" >Voiture de fonction &nbsp;&nbsp;&nbsp;</span>
+  <span ><input type="checkbox" id="contractCDD" [formControlName] ="'contractRenewed'" value=""  [checked]="false" >A ete reconduit CDD/CDI &nbsp;&nbsp;&nbsp;</span>
+  <span ><input type="checkbox" id="car" [formControlName] ="'hasCompanyCar'" value="" [checked]="false" >Voiture de fonction &nbsp;&nbsp;&nbsp;</span>
   <!--<span id="con" *ngIf="this.document.getElementById('txt').value === 'A ete reconduit CDD/CDI'"><input type="checkbox" id="contract" [formControlName] ="'contractRenewed'" value=""  [checked]="true" >A ete reconduit CDD/CDI &nbsp;&nbsp;&nbsp;</span>-->
   <!--<span id="voi" *ngIf="this.document.getElementById('txt').value === 'Voiture de fonction'"><input type="checkbox" id="car" [formControlName] ="'hasCompanyCar'" value="" [checked]="true" >Voiture de fonction &nbsp;&nbsp;&nbsp;</span>-->
   <button [value]="" (click)="internshipFilter()">submit</button>

@@ -1,5 +1,5 @@
 export interface searchInternship {
   name?: string;
-  contractRenewed?: boolean;
+  contractRenewed?: string;
   hasCompanyCar?: boolean;
 }

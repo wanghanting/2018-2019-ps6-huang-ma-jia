@@ -96,6 +96,30 @@ module.exports = class BaseModel {
     return companies;
   }
 
+  /* Internship */
+  getWithInternFilter(query) {
+    let internships = this.items;
+
+    if (query.companyId !== 'null') {
+      internships = internships.filter(internship => internship.companyId == query.companyId);
+    }
+
+    if (query.hasCompanyCar) {
+      internships = internships.filter(internship => internship.hasCompanyCar == true);
+    }else{
+      internships = internships.filter(internship => internship.hasCompanyCar == false);
+    }
+
+    if (query.contractRenewed) {
+      internships = internships.filter(internship => internship.contractRenewed != '');
+    }
+
+    this.addRating();
+
+    return internships;
+  }
+
+
   getActivitySectors(){
     let activitySectors = [];
     this.items.every(company => activitySectors.push(company.activitySector));
