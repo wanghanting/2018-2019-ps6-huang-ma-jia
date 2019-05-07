@@ -49,7 +49,7 @@ module.exports = class BaseModel {
       companies = companies.filter(company => company.countryId == query.countryId);
     }
 
-    if (query.sector) {
+    if (query.sector && query.sector !== 'all') {
       const { Internship } = require('../models');
 
       companies = companies.filter(
@@ -72,7 +72,7 @@ module.exports = class BaseModel {
       companies = companies.filter(
         i => Internship.getWithCompanyIdAndSecteur(i.id, query.secteur).length != 0,)
     }
-    if (query.size && query.size != 'all') {
+    if (query.size && query.size !== 'all') {
       companies = this.getByTaile(query.size);
     }
     if (query.size1 && query.size2 && query.size3) {

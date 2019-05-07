@@ -39,15 +39,12 @@ export class SearchCompanyFormComponent implements OnInit {
       secteur: ['all'],
       size: ['all'],
     });
-    // You can also add validators to your inputs such as required, maxlength or even create your own validator!
-    // More information: https://angular.io/guide/reactive-forms#simple-form-validation
-    // Advanced validation: https://angular.io/guide/form-validation#reactive-form-validation
+    this.companyFilter();
   }
 
   ngOnInit() {
   }
   companyFilter() {
-    // const conditionsCompany: Searchcompany = this.searchForm.getRawValue() as Searchcompany;
     this.companyservice.formChange(this.searchForm);
   }
   sectorChange(value) {
