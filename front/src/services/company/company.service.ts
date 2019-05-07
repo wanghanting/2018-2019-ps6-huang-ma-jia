@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Company} from '../../models/company';
-import {BehaviorSubject, Subject} from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 
@@ -9,7 +9,6 @@ import { FormGroup } from '@angular/forms';
 })
 export class CompanyService {
   private companyList: Company[] = [];
-  private companiesFiltered: Company[] = [];
   public companies$: BehaviorSubject<Company[]> = new BehaviorSubject(this.companyList);
   public countryId: number = null;
 
@@ -32,10 +31,12 @@ export class CompanyService {
     });
   }
 
-  public formChange(form: FormGroup){
+  public formChange(form: FormGroup) {
     this.http.get<Company[]>(this.companiesUrl + '?countryId=' + this.countryId
       + (form.getRawValue().sector != '- Filière -' ? ("&sector=" + form.getRawValue().sector) : '')
       + (form.getRawValue().specialty != '- Spécialité -' ? ("&specialty=" + form.getRawValue().specialty) : '')
+      + (form.getRawValue().continent ? ('&continent=' + form.getRawValue().continent) : '')
+      + (form.getRawValue().secteur ? ('&secteur=' + form.getRawValue().secteur) : '')
       + (form.getRawValue().activitySector != '- Secteur d\'activité -' ? ("&activitySector=" + form.getRawValue().activitySector) : '')
       + ("&size1=" + form.getRawValue().size1)
       + ("&size2=" + form.getRawValue().size2)
@@ -45,11 +46,4 @@ export class CompanyService {
       this.companies$.next(value);
     });
   }
- public filterCompanies(filiere= null, specialite= null, continent= null, secteur= null, taile= null) {
-   this.http.get<Company[]>(this.companiesUrl + 'search/?filiere=' + filiere + '&specialite=' + specialite + '&continent=' +
-     continent + '&secteur=' + secteur + '&taile=' + taile).subscribe(value => {
-     this.companyList = value;
-     this.companies$.next(value);
-   });
- }
 }

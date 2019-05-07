@@ -45,26 +45,36 @@ module.exports = class BaseModel {
   getWithCompanyFilter(query) {
     let companies = this.items;
 
-    if (query.countryId) {
+    if (query.countryId !== 'null') {
       companies = companies.filter(company => company.countryId == query.countryId);
     }
 
-    if (query.sector) {
+    if (query.sector && query.sector !== 'all') {
       const { Internship } = require('../models');
 
       companies = companies.filter(
         company => Internship.getWithIntershipFilter({
-              'companyId': company.id, 
-              'sector': query.sector, 
+              'companyId': company.id,
+              'sector': query.sector,
               'specialty': query.specialty
           }).length != 0
       );
     }
 
-    if (query.continent) {
-      //companies = companies.filter();
+    if (query.continent && query.continent !== 'all') {
+      const { Country } = require('../models');
+      companies = companies.filter(
+        i => Country.getByContinent(i.countryId, query.continent).length != 0,
+      );
     }
-
+    if (query.secteur && query.secteur !== 'all') {
+      const { Internship } = require('../models');
+      companies = companies.filter(
+        i => Internship.getWithCompanyIdAndSecteur(i.id, query.secteur).length != 0,)
+    }
+    if (query.size && query.size !== 'all') {
+      companies = this.getByTaile(query.size);
+    }
     if (query.size1 && query.size2 && query.size3) {
       if (query.size1 == 'false'){
         companies = companies.filter(company => !(company.employeesNumber <= 49));
@@ -86,6 +96,30 @@ module.exports = class BaseModel {
     return companies;
   }
 
+  /* Internship */
+  getWithInternFilter(query) {
+    let internships = this.items;
+
+    if (query.companyId !== 'null') {
+      internships = internships.filter(internship => internship.companyId == query.companyId);
+    }
+
+    if (query.hasCompanyCar) {
+      internships = internships.filter(internship => internship.hasCompanyCar == true);
+    }else{
+      internships = internships.filter(internship => internship.hasCompanyCar == false);
+    }
+
+    if (query.contractRenewed) {
+      internships = internships.filter(internship => internship.contractRenewed != '');
+    }
+
+    this.addRating();
+
+    return internships;
+  }
+
+
   getActivitySectors(){
     let activitySectors = [];
     this.items.every(company => activitySectors.push(company.activitySector));
@@ -96,7 +130,7 @@ module.exports = class BaseModel {
   addRating(){
     this.items.forEach(company => {
       const { Internship } = require('../models');
-      
+
       company.rating = Internship.getRating(company.id);
     });
   }
@@ -105,9 +139,9 @@ module.exports = class BaseModel {
 
   getWithIntershipFilter(query) {
     const { Student } = require('../models');
-    
+
     return this.items.filter(
-      internship => 
+      internship =>
         (query.companyId == null || internship.companyId == query.companyId)
         && (query.sector == null || Student.items.find(student => student.id == internship.studentId).sector == query.sector)
         && (query.specialty == null || Student.items.find(student => student.id == internship.studentId).specialty == query.specialty)
@@ -118,7 +152,7 @@ module.exports = class BaseModel {
     let sum = 0;
 
     let internships = this.items.filter(internship => internship.companyId == companyId);
-    
+
     internships.forEach(internship => sum += internship.rating);
 
     return sum / internships.length;
@@ -127,9 +161,14 @@ module.exports = class BaseModel {
   /* Student */
 
   getWithStudentFilter(query) {
-    return this.items.filter(student => 
+    return this.items.filter(student =>
       (query.sector == null || query.sector == student.sector)
       && (query.specialty == null || query.specialty == student.specialty));
+  }
+
+  getByContinent(countryID, continent) {
+    this.items = this.items.filter(i => countryID === i.id && i.continent === continent);
+    return this.items;
   }
 
   /* partnerHousing */

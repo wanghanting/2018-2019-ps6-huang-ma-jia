@@ -1,13 +1,13 @@
-<h3>Quel sont tes criteres?</h3>
+<h3>Quels sont tes criteres?</h3>
 <form class="form" [formGroup]="searchForm">
   <label>A propos de toi:
-    <select id="filiere" [formControlName]="'filiere'" (change)="sectorChange($event.target.value)">
+    <select id="sector" [formControlName]="'sector'" (change)="sectorChange($event.target.value)">
       <option value="all" selected disabled hidden>filiere</option>
       <option *ngFor="let currentFiliere of sectorArray" [value]="currentFiliere">
         {{currentFiliere}}
       </option>
     </select>
-    <select  id="specialite" [formControlName]="'specialite'">
+    <select  id="specialty" [formControlName]="'specialty'">
       <option value="all" selected disabled hidden>specialite</option>
       <option *ngFor="let currentSpecialite of specialtyArray" [value]="currentSpecialite">
       {{currentSpecialite}}
@@ -28,10 +28,10 @@
           {{currentSecteur}}
       </option>
     </select>
-    <select  id="taile" [formControlName]="'taile'">
-      <option value="all" selected disabled hidden>taile</option>
-      <option *ngFor="let currentTaile of TAILE_LIST" [value]="currentTaile">
-            {{currentTaile}}
+    <select  id="size" [formControlName]="'size'">
+      <option value="all" selected disabled hidden>taille</option>
+      <option *ngFor="let currentTaille of TAILLE_LIST" [value]="currentTaille">
+            {{currentTaille}}
       </option>
     </select>
   </label>

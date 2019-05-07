@@ -13,7 +13,6 @@ import {ActivitySectorService} from '../services/activitySector/activitySector.s
 import {OneCountryService} from '../services/country/one-country.service';
 import {CompanySizeService} from '../services/companySize/companySize.service';
 
-import {CompanyComponent} from './company/company';
 import {SearchCompanyPageComponent} from './search-companies/search-company-page';
 import {SearchCompanyComponent} from './search-companies/search-company';
 import {SearchCompanyFormComponent} from './search-companies/search-company-form';
@@ -33,7 +32,6 @@ import { CardInformationComponent } from './tickets/card-information/card-inform
     CountryComponent,
     CountryListComponent,
     CountryPageComponent,
-    CompanyComponent,
     SearchCompanyComponent,
     SearchCompanyFormComponent,
     SearchCompanyListComponent,

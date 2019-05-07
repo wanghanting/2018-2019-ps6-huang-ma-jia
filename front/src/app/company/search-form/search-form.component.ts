@@ -10,14 +10,13 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 })
 export class SearchFormComponent implements OnInit {
 
-  public internshipForm: FormGroup;
-  private nameList = ['A ete reconduit CDD/CDI', 'Voiture de fonction'];
+  public searchForm: FormGroup;
+  public nameList = ['A ete reconduit CDD/CDI', 'Voiture de fonction'];
 
 
   constructor(public formBuilder: FormBuilder, public  internshipservice: InternshipService) {
     // Form creation
-    this.internshipForm = this.formBuilder.group({
-      name:[''],
+    this.searchForm = this.formBuilder.group({
       contractRenewed: [''],
       hasCompanyCar: [''],
     });
@@ -36,44 +35,50 @@ export class SearchFormComponent implements OnInit {
   }
 
   internshipFilter() {
-    const conditionsInternship: searchInternship = this.internshipForm.getRawValue() as searchInternship;
-    const obj = {name: conditionsInternship.name, hasCDIouCDD: conditionsInternship.contractRenewed, hasVoiture: conditionsInternship.hasCompanyCar};
+    const conditionsInternship: searchInternship = this.searchForm.getRawValue() as searchInternship;
+    const obj = {hasCDIouCDD: conditionsInternship.contractRenewed, hasVoiture: conditionsInternship.hasCompanyCar};
     console.log(obj);
-    this.internshipservice.filterInternships(conditionsInternship.contractRenewed, conditionsInternship.hasCompanyCar);
+    // this.internshipservice.filterInternships(conditionsInternship.contractRenewed, conditionsInternship.hasCompanyCar);
+    this.internshipservice.formChange(this.searchForm)
   }
 
-  onFocus() {
-    const itemDiv = document.getElementById('item-div');
-    this.listFor(this.nameList);
-    itemDiv.style.display = 'table';
-  };
-
-  listFor(listNow) {
-    const list = document.getElementById('list');
-    listNow.forEach(item => {
-      const node = document.createElement("li");
-      const textnode = document.createTextNode(item);
-      node.appendChild(textnode);
-      list.appendChild(node)
-    });
-  }
+  // listFor(listNow) {
+  //   const list = document.getElementById('sel');
+  //   listNow.forEach(item => {
+  //     const node = document.createElement("li");
+  //     const textnode = document.createTextNode(item);
+  //     node.appendChild(textnode);
+  //     list.appendChild(node)
+  //   });
+  // }
 
   onInput() {
     // const searchDom = document.getElementById('search');
-    const list = document.getElementById('list');
-    const inputValue = (<HTMLInputElement>document.getElementById('search')).value;
+    const list = document.getElementById('sel');
+    const inputValue = (<HTMLInputElement>document.getElementById('search-input')).value;
     const newList = this.nameList.filter(item => {
       return item.toLowerCase().indexOf(inputValue.toLowerCase()) > -1;
     });
     list.innerHTML = '';
-    this.listFor(newList);
+    // this.listFor(newList);
   }
 
-  onBlur() {
-    const itemDiv = document.getElementById('item-div');
-    const list = document.getElementById('list');
-    itemDiv.style.display = 'none';
-    list.innerHTML = '';
+
+  onFocus(){
+    const selList = document.getElementById('sel');
+    selList.style.display = 'block';
+  }
+
+  onClick(){
+    const input = (<HTMLSelectElement>document.getElementById('txt'))
+    const selList = (<HTMLSelectElement>document.getElementById('sel'))
+    selList.style.display = "none"
+    input.value = selList.options[selList.selectedIndex].text;
+    const conditionsInternship: searchInternship = this.searchForm.getRawValue() as searchInternship;
+    conditionsInternship.name = selList.options[selList.selectedIndex].text;
+    // if(input.value === 'A ete reconduit CDD/CDI'){
+    //   contract.spellcheck
+    // }
   }
 
 }
