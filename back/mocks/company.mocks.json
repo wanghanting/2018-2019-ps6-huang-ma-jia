@@ -10,6 +10,7 @@
         "creationDate": "",
         "opportunity": 0,
         "internshipType": "",
+        "secteur": "produit",
         "activitySector": "food"
     }, {
         "id": 2,
@@ -22,6 +23,7 @@
         "creationDate": "",
         "opportunity": 0,
         "internshipType": "",
+        "secteur": "produit",
         "activitySector": "velo"
     }, {
         "id": 3,
@@ -34,6 +36,7 @@
         "creationDate": "",
         "opportunity": 0,
         "internshipType": "",
+        "secteur": "produit",
         "activitySector": "food"
     }
 ]
