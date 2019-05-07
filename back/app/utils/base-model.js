@@ -68,9 +68,9 @@ module.exports = class BaseModel {
       );
     }
     if (query.secteur && query.secteur !== 'all') {
-      const { Internship } = require('../models');
       companies = companies.filter(
-        i => Internship.getWithCompanyIdAndSecteur(i.id, query.secteur).length != 0,)
+        i => i.secteur.includes(query.secteur),
+      );
     }
     if (query.size && query.size !== 'all') {
       companies = this.getByTaile(query.size);
@@ -167,8 +167,8 @@ module.exports = class BaseModel {
   }
 
   getByContinent(countryID, continent) {
-    this.items = this.items.filter(i => countryID === i.id && i.continent === continent);
-    return this.items;
+    const countries = this.items.filter(i => countryID === i.id && i.continent === continent);
+    return countries;
   }
 
   /* partnerHousing */
