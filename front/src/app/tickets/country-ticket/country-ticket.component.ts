@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SomeInformationCountry } from '../../../models/someInformationCountry';
+import {Country} from '../../../models/country';
 
 @Component({
   selector: 'app-country-ticket',
@@ -8,11 +8,11 @@ import { SomeInformationCountry } from '../../../models/someInformationCountry';
 })
 export class CountryTicketComponent implements OnInit {
 
-  @Output() ticketEventTicket = new EventEmitter<SomeInformationCountry>();
+  @Output() ticketEventTicket = new EventEmitter<Country>();
   @Output() clickEventTicket = new EventEmitter<String>();
 
   @Input()
-  ticket: SomeInformationCountry;
+  ticket: Country;
 
   constructor() {
 
@@ -26,6 +26,7 @@ export class CountryTicketComponent implements OnInit {
   }
 
   mouseEnter() {
+    console.log('Ticket ' + this.ticket.flagPath);
     this.ticketEventTicket.emit(this.ticket);
   }
 

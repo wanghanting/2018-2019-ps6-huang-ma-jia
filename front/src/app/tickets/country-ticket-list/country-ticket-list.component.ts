@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { SomeInformationCountryService } from '../../../services/someInformationCountry/someInformationCountry.service';
-import { SomeInformationCountry } from '../../../models/someInformationCountry';
+import {CountryService} from '../../../services/country/country.service';
+import {Country} from '../../../models/country';
 
 @Component({
   selector: 'app-country-ticket-list',
@@ -9,13 +9,13 @@ import { SomeInformationCountry } from '../../../models/someInformationCountry';
 })
 export class CountryTicketListComponent implements OnInit {
 
-  @Output() ticketEventList = new EventEmitter<SomeInformationCountry>();
+  @Output() ticketEventList = new EventEmitter<Country>();
   @Output() clickEventList = new EventEmitter<String>();
 
-  public countryTicketList: SomeInformationCountry[] = [];
+  public countryTicketList: Country[] = [];
 
-  constructor(public someInformationCountryService: SomeInformationCountryService) {
-    this.someInformationCountryService.someInformationCountry$.subscribe((countries) => this.countryTicketList = countries);
+  constructor(public someInformationCountryService: CountryService) {
+    this.someInformationCountryService.countries$.subscribe((countries) => this.countryTicketList = countries);
   }
 
   ngOnInit() {
@@ -26,7 +26,7 @@ export class CountryTicketListComponent implements OnInit {
     this.clickEventList.emit(idPays);
   }
 
-  ticketEvent(someInformationCountry: SomeInformationCountry) {
+  ticketEvent(someInformationCountry: Country) {
     this.ticketEventList.emit(someInformationCountry);
   }
 }
