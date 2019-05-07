@@ -1,7 +1,7 @@
 <form class="form" [formGroup]="searchForm">
   <span>
     <div class="search-input">
-      <div><input type="text" id="txt" (focus)="onFocus()" (input)="onInput()" [formControlName]="'name'" placeholder="Input" value=""/></div>
+      <div><input type="text" id="txt" (focus)="onFocus()" (input)="onInput()" placeholder="Input" value=""/></div>
         <select size="2" id="sel" (click)="onClick()" style="display:none">
           <option *ngFor="let currentdetail of nameList" [value]="currentdetail">
             {{currentdetail}}
