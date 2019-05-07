@@ -1,10 +1,20 @@
 const cors = require('cors');
 const morgan = require('morgan');
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const api = require('./api');
 
+const dbUrl = 'mongodb://127.0.0.1:27017/mydb';
+
 module.exports = (cb) => {
+  mongoose.connect(dbUrl, {
+    useNewUrlParser: true,
+  }).then(() => {
+    console.log('mongoDB Connected');
+  }).catch( (err) => {
+    console.log(err);
+  })
   const app = express();
   app.disable('x-powered-by');
   app.use(cors());
