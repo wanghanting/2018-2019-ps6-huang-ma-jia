@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const internshipSchema = new mongoose.Schema({
   id: {
@@ -21,37 +21,37 @@ const internshipSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  endDate:{
+  endDate: {
     type: String,
     required: true,
   },
-  period:{
+  period: {
     type: String,
     required: true,
   },
-  contractRenewed:{
+  contractRenewed: {
     type: String,
     required: true,
   },
-  salary:{
+  salary: {
     type: String,
     required: true,
   },
-  residence:{
+  residence: {
     type: String,
     required: true,
   },
-  hasCompanyCar:{
+  hasCompanyCar: {
     type: Boolean,
     required: true,
   },
-  rating:{
+  rating: {
     type: Number,
     required: true,
   },
-  tuteur:{
+  tuteur: {
     type: String,
     required: true,
-  }
-})
-module.exports = mongoose.model('Internship', internshipSchema);
+  },
+});
+module.exports = mongoose.model('Internship', internshipSchema, 'internship');
