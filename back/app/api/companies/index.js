@@ -1,29 +1,8 @@
 const { Router } = require('express');
 const { Company } = require('../../models');
-const { Internship } = require('../../models');
+
 
 const router = new Router();
-router.get('/', (req, res) => {
-  if(req.query.specialty){
-
-  }
-  if(req.query.sector){
-    Company.find({activitySector: req.query.sector},{id:1,_id:0},function (err, company) {
-      console.log(company)})
-  }
-  if(req.query.employeesnumber){
-    Company.find({employeesNumber: req.query.employeesnumber},{id:1,_id:0},function (err, company) {
-      console.log(company)})
-  }
-  if(req.query.period) {
-    Internship.find({period: req.query.period},{_id:0},function (err, internship) {
-      console.log(internship)})
-  }
-  if(req.query.start) {
-    Internship.find({startDate: req.query.start},{_id:0},function (err, internship) {
-      console.log(internship)})
-  }
-});
 // router.get('/', (req, res) => res.status(200).json(Company.getWithCompanyFilter(req.query)));
 router.get('/companyNb', (req, res) => res.status(200).json(Company.getNumberCompanyByCountryId(req.query)));
 
