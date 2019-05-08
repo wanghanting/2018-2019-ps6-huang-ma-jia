@@ -10,4 +10,4 @@ const sectorSchema = new mongoose.Schema({
     required: true,
   },
 });
-module.exports = mongoose.model('sector', sectorSchema);
+module.exports = mongoose.model('ActivitySector', sectorSchema, 'activitySector');

@@ -30,4 +30,4 @@ const countrySchema = new mongoose.Schema({
     required: true,
   },
 });
-module.exports = mongoose.model('Country', countrySchema);
+module.exports = mongoose.model('Country', countrySchema,'countries');

@@ -10,4 +10,4 @@ const employeesNumberSchema = new mongoose.Schema({
     required: true,
   },
 })
-module.exports = mongoose.model('EmploeesNumber', employeesNumberSchema);
+module.exports = mongoose.model('EmploeesNumber', employeesNumberSchema,'employeenumber');
