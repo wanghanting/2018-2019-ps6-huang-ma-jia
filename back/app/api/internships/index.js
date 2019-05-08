@@ -1,14 +1,24 @@
 const { Router } = require('express');
 const { Internship } = require('../../models');
 const { Company } = require('../../models');
+const { Student } = require('../../models');
+let internshiplist;
 
 
 const router = new Router();
 router.get('/', (req, res) => {
-  if (req.query.specialty) {
-
-  }
   if (req.query.sector) {
+    Student.find({ sector: req.query.sector }, { id:1, _id: 0 }, (err, student) => {
+      console.log(student);
+    });
+  }
+  if (req.query.specialty) {
+    Student.find({ specialty: req.query.specialty }, { id: 1, _id: 0 }, (err, student) => {
+      console.log(student);
+    });
+  }
+
+  if (req.query.sectorCompany) {
     Company.find({ activitySector: req.query.sector }, { id: 1, _id: 0 }, (err, company) => {
       console.log(company);
     });
@@ -21,6 +31,7 @@ router.get('/', (req, res) => {
   if (req.query.period) {
     Internship.find({ period: req.query.period }, { _id: 0 }, (err, internship) => {
       console.log(internship);
+      internshiplist = internship;
     });
   }
   if (req.query.start) {
