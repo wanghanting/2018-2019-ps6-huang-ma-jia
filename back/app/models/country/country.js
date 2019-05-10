@@ -9,7 +9,15 @@ const countrySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  flagImage: {
+  shortName:{
+    type: String,
+    required: true,
+  },
+  flagPath: {
+    type: String,
+    required: true,
+  },
+  photoPath:{
     type: String,
     required: true,
   },
@@ -21,11 +29,11 @@ const countrySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  visaInformation: {
+  visaWeb: {
     type: String,
     required: true,
   },
-  information: {
+  introduction: {
     type: String,
     required: true,
   },

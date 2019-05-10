@@ -5,7 +5,7 @@ const startDateSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  startDate: {
+  name: {
     type: String,
     required: true,
   },
