@@ -2,8 +2,13 @@ const { Router } = require('express');
 const { Student } = require('../../models');
 
 const router = new Router();
-router.get('/', (req, res) => res.status(200).json(Student.getWithStudentFilter(req.query)));
-router.get('/:studentId', (req, res) => res.status(200).json(Student.getById(req.params.studentId)));
-
-
+router.get('/', (req, res) => {
+  Student.find(req.query, {
+    id: 1,
+    name: 1,
+    _id: 0
+  }, (err, student) => {
+    res.send(student);
+  });
+});
 module.exports = router;
