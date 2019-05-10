@@ -1,4 +1,7 @@
 <h3>Quels sont tes criteres?</h3>
+
+<br>
+
 <form class="form" [formGroup]="searchForm" (change)="companyFilter()">
   <label>A propos de toi:
     <select id="sector" [formControlName]="'sector'" (change)="sectorChange($event.target.value)">

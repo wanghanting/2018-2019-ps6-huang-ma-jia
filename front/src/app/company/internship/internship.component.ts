@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Company} from '../../../models/company';
 import { Internship} from '../../../models/internship';
-import {CompanyService} from '../../../services/company/company.service';
 import {InternshipService} from "../../../services/internship/internship.service";
 
 @Component({

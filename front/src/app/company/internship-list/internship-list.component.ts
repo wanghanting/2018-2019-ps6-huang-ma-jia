@@ -20,7 +20,4 @@ export class InternshipListComponent implements OnInit {
   ngOnInit() {
   }
 
-  showResluts(){
-
-  }
 }

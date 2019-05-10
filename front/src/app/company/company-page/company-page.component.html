@@ -1,27 +1,45 @@
-<div class="company">
-  <div class="header">
-    <span>Apple Iconsiam - Bangkok </span>
-  </div>
-  <div class="main">
-    <div class="left">
-      <span>Address: 299 Charoen Nakhon Rd, Khwaeng Khlong Ton Sai, Khet Khlong San</span>
-      <p>Krung Thep Maha Nakhon 10600, Thailand</p>
-      <span>nombre d'employee: 2000</span>
-      <p>***************************</p>
-      <p>***************************</p>
-      <p>***************************</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<ul class="navigation">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Products</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+<body ng-app="myApp">
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="header">
+        <h1>Apple Iconsiam - Bangkok </h1>
+      </div>
     </div>
-    <div class="right">
-        <img src="http://static.asiawebdirect.com/m/bangkok/portals/bangkok-com/homepage/pagePropertiesOgImage/bangkok.jpg.jpg" alt="image">
+
+    <br>
+
+    <div class="row">
+        <div class="main">
+          <div class="col">
+            <div class="left">
+              <span>Address: 299 Charoen Nakhon Rd, Khwaeng Khlong Ton Sai, Khet Khlong San</span>
+              <p>Krung Thep Maha Nakhon 10600, Thailand</p>
+              <span>nombre d'employee: 2000</span>
+              <p>***************************</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="right">
+              <img src="http://static.asiawebdirect.com/m/bangkok/portals/bangkok-com/homepage/pagePropertiesOgImage/bangkok.jpg.jpg" >
+            </div>
+          </div>
+        </div>
     </div>
+
+    <br>
+
+    <br>
+
+    <app-search-form></app-search-form>
+    <app-internship-list></app-internship-list>
   </div>
-  <!--<div class="search">-->
-    <!--<span><input type="text">&nbsp;&nbsp;&nbsp;</span>-->
-    <!--<span><input type="checkbox" name="category" value="A ete reconduit CDD/CDI">A ete reconduit CDD/CDI &nbsp;&nbsp;&nbsp;</span>-->
-    <!--<span><input type="checkbox" name="category" value="Voiture de fonction">Voiture de fonction&nbsp;&nbsp;&nbsp;</span>-->
-    <!--<span><input type="button" name="comfirm" value="verifier" id="confirm_button">&nbsp;&nbsp;&nbsp;</span>-->
-    <!--<span style="display: inline-block; float: right; margin-right: 50px">9 resultats</span>-->
-  <!--</div>-->
-  <app-search-form></app-search-form>
-  <app-internship-list></app-internship-list>
 </div>
+</body>
