@@ -6,7 +6,7 @@ const PartnerHousingRouter = require('./partnersHousings');
 const InternshipRouter = require('./internships');
 const SpecialtyRouter = require('./specialties');
 const SectorRouter = require('./sectors');
-const CompanySizeRouter = require('./companySizes');
+const CompanySizeRouter = require('./employeesNumber');
 const ActivitySectorsRouter  = require('./activitySectors');
 
 const router = new Router();
@@ -18,7 +18,7 @@ router.use('/partnersHousings', PartnerHousingRouter);
 router.use('/internships', InternshipRouter);
 router.use('/specialties', SpecialtyRouter);
 router.use('/sectors', SectorRouter);
-router.use('/companySizes', CompanySizeRouter);
+router.use('/employeesNumber', CompanySizeRouter);
 router.use('/activitySectors', ActivitySectorsRouter);
 
 module.exports = router;

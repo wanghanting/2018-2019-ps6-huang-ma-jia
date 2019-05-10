@@ -1,15 +1,10 @@
 const { Router } = require('express');
 const { Company } = require('../../models');
-const { Internship } = require('../../models');
-
 
 const router = new Router();
+
 router.get('/', (req, res) => {
-  Company.find({ id: 1 }, {
-    name: 1,
-    _id: 0,
-  }, (err, company) => {
-    console.log(company);
+  Company.find(req.query, { id: 1, _id: 0 }, (err, company) => {
     res.send(company);
   });
 });
