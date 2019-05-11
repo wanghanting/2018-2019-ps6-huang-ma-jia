@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Internship} from '../../../models/internship';
-import {InternshipService} from "../../../services/internship/internship.service";
+import {Student} from '../../../models/student';
+import {StudentService} from '../../../services/student/student.service';
 
 @Component({
   selector: 'app-internship',
@@ -16,12 +17,10 @@ export class InternshipComponent implements OnInit {
   @Input()
   internship: Internship;
 
-  public internshipList: Internship[] = [];
-
-  constructor(public internshipService: InternshipService) {
-    this.internshipService.internships$.subscribe((internship) => this.internshipList = internship);
+  constructor() {
   }
 
   ngOnInit() {
+
   }
 }

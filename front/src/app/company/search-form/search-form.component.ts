@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {searchInternship} from "../../../models/searchInternship";
-import { InternshipService } from "../../../services/internship/internship.service";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {searchInternship} from '../../../models/searchInternship';
+import { InternshipService } from '../../../services/internship/internship.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-search-form',
@@ -72,7 +72,7 @@ export class SearchFormComponent implements OnInit {
   onClick(){
     const input = (<HTMLSelectElement>document.getElementById('txt'))
     const selList = (<HTMLSelectElement>document.getElementById('sel'))
-    selList.style.display = "none"
+    selList.style.display = 'none'
     input.value = selList.options[selList.selectedIndex].text;
     const conditionsInternship: searchInternship = this.searchForm.getRawValue() as searchInternship;
     conditionsInternship.name = selList.options[selList.selectedIndex].text;

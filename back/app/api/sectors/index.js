@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const {Sector}  = require('../../models');
+const {Sector} = require('../../models');
 
 const router = new Router();
 router.get('/', (req, res) => {

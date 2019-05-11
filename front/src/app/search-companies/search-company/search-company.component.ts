@@ -21,15 +21,13 @@ export class SearchCompanyComponent implements OnInit {
 
   // public companyList: Company[] = [];
 
-  constructor(public companyService: CompanyService,public internshipService: InternshipService) {
-    // this.companyService.companies$.subscribe((company) => this.companyList = company);
+  constructor() {
   }
 
   ngOnInit() {
   }
 
   onClick(id) {
-    this.internshipService.setCompanyId(id);
     this.clickEventCompany.emit(id);
   }
 

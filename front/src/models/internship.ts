@@ -4,15 +4,17 @@ import {Student} from './student';
 export interface Internship {
   id?: number;
   name?: string;
-  student?: Student;
-  company: Company;
-  startDate?: Date;
-  endDate?: Date;
-  period?: String;
-  contractRenewed?: String;
-  salary?: String;
-  residence?: String;
+  studentId?: number;
+  companyId: number;
+  startDate?: string;
+  endDate?: string;
+  period?: string;
+  contractRenewed?: string;
+  salary?: string;
+  residence?: string;
   hasCompanyCar?: Boolean;
   rating?: number;
-  tuteur?: String;
+  tuteur?: string;
+  stuProfile?: string;
+  stuName?: string;
 }

@@ -11,7 +11,7 @@ import {CountryService} from '../services/country/country.service';
 import {ActivitySectorService} from '../services/activitySector/activitySector.service';
 import {OneCountryService} from '../services/country/one-country.service';
 import {CompanySizeService} from '../services/companySize/companySize.service';
-import {StudentService} from "../services/student/student.service";
+import {StudentService} from '../services/student/student.service';
 
 import {SearchCompanyPageComponent} from './search-companies/search-company-page';
 import {SearchCompanyComponent} from './search-companies/search-company';
@@ -54,8 +54,7 @@ import { StudentPageComponent } from './student/student';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule// , // Import all dependencies
-    // AppRoutingModule
+    AppRoutingModule
   ],
   providers: [CountryService, OneCountryService, ActivitySectorService, CompanySizeService, StudentService], // All the services need to be provided
   bootstrap: [AppComponent]

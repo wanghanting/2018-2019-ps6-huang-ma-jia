@@ -53,5 +53,13 @@ const internshipSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  stuProfile: {
+    type: String,
+    required: true,
+  },
+  stuName: {
+    type: String,
+    required: true,
+  },
 });
 module.exports = mongoose.model('Internship', internshipSchema, 'internship');

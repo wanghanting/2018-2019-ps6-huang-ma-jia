@@ -7,7 +7,7 @@ const InternshipRouter = require('./internships');
 const SpecialtyRouter = require('./specialties');
 const SectorRouter = require('./sectors');
 const CompanySizeRouter = require('./employeesNumber');
-const ActivitySectorsRouter  = require('./activitySectors');
+const ActivitySectorsRouter = require('./activitySectors');
 
 const router = new Router();
 router.get('/status', (req, res) => res.status(200).json('ok'));

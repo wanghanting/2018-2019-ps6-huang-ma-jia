@@ -3,7 +3,7 @@ import {Internship} from '../../models/internship';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Company} from '../../models/company';
-import {FormGroup} from "@angular/forms";
+import {FormGroup} from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -19,31 +19,19 @@ export class InternshipService {
   private companyId: number = null;
 
   constructor(private http: HttpClient) {
-    this.loadInternships(this.internshipUrl)
+    // this.loadInternships(this.internshipUrl)
   }
 
-  // Internshipfilter() {
-  //   this.loadInternships(URL);
-  //   return this.internshipFiltered;
+  // loadInternships(URL): void {
+  //   this.http.get<Internship[]>(URL).subscribe( internships => {
+  //     this.internshipFiltered = internships;
+  //     this.internships$.next(internships);
+  //   });
   // }
 
-  loadInternships(URL): void {
-    this.http.get<Internship[]>(URL).subscribe( internships => {
-      this.internshipFiltered = internships;
-      this.internships$.next(internships);
-    });
-  }
-
-  public setCompanyId(id : number) {
+  public setCompanyId(id: number) {
     this.companyId = id;
-    this.http.get<Internship[]>(this.internshipUrl + "?company=" + id).subscribe(value => {
-      this.internshipList = value;
-      this.internships$.next(value);
-    });
-  }
-
-  filterInternships(contractRenewed= null, hasCompanyCar= null) {
-    this.http.get<Internship[]>(this.internshipUrl + 'search/?contract=' + contractRenewed + '&hasCompanyCar=' + hasCompanyCar).subscribe(value => {
+    this.http.get<Internship[]>(this.internshipUrl + '?companyId=' + id).subscribe(value => {
       this.internshipList = value;
       this.internships$.next(value);
     });
