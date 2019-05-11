@@ -45,6 +45,12 @@ export class SearchInternshipFormComponent implements OnInit {
   constructor(public formBuilder: FormBuilder, public  companyservice: CompanyService, public activitySectorService: ActivitySectorService,
               public companySize: CompanySizeService, public specialtyService: SpecialtyService, public sectorService: SectorService,
               public  internshipService: InternshipService, public studentService: StudentService, public countryService: CountryService ) {
+    this.studentService.student$.subscribe((student) => {this.studentList = student;
+    this.internshipFilter();
+    });
+    this.companyservice.companies$.subscribe((companies) => {this.companyList = companies;
+    this.internshipFilter();
+    });
     this.countryService.countries$.subscribe((country) => {
       this.COUNTRY_LIST = country;
     });
@@ -73,6 +79,8 @@ export class SearchInternshipFormComponent implements OnInit {
        secteur: [''],
        size: [''],
     });
+    this.stuformChange();
+    this.comformChange();
 
   }
 
@@ -82,25 +90,16 @@ export class SearchInternshipFormComponent implements OnInit {
     this.urlExtra = '';
     this.studentList.forEach(i => this.urlExtra = this.urlExtra + '&studentId=' + i.id);
     this.companyList.forEach(i => this.urlExtra = this.urlExtra + '&companyId=' + i.id);
-    console.log(this.urlExtra);
     this.internshipService.filterIntern(this.urlExtra);
     this.internshipService.internships$.subscribe((internship) => this.internshipList = internship);
   }
   sectorChange(value) {
     this.specialtyService.setSectorName(value);
-    this.stuformChange();
   }
   stuformChange() {
     this.studentService.formChange(this.stuForm);
-    this.studentService.student$.subscribe((student) => this.studentList = student);
-    this.internshipFilter();
   }
   comformChange() {
     this.companyservice.formChange(this.companyForm);
-    this.companyservice.companies$.subscribe((companies) => {this.companyList = companies; })
-    console.log(this.companyList);
-    this.internshipFilter();
-
-
   }
 }

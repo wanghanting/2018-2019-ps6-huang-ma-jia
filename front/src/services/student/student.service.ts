@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Student} from '../../models/student';
 import {Company} from '../../models/company';
 import {FormGroup} from '@angular/forms';
+import {Internship} from '../../models/internship';
 
 @Injectable({
   providedIn: 'root'
@@ -20,14 +21,19 @@ export class StudentService {
   public student$: BehaviorSubject<Student[]> = new BehaviorSubject(this.studentList);
 
   constructor(private http: HttpClient) {
+    this.http.get<Student[]>(this.studentUrl).subscribe( internships => {
+      this.studentList = internships;
+      this.student$.next(internships);
+  })
   }
   public formChange(form: FormGroup) {
     this.http.get<Student[]>(this.studentUrl + '?'
-      + (form.getRawValue().sector ? ('&sector=' + form.getRawValue().sector) : '')
+      + (form.getRawValue().sector ? ('sector=' + form.getRawValue().sector) : '')
       + (form.getRawValue().specialty ? ('&specialty=' + form.getRawValue().specialty) : '')
     ).subscribe(value => {
       this.studentList = value;
       this.student$.next(value);
+      console.log(value)
     });
   }
   public OneStudentService(id) {

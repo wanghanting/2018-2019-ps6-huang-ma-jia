@@ -20,9 +20,6 @@ export class SearchFormComponent implements OnInit {
       contractRenewed: [''],
       hasCompanyCar: [''],
     });
-    // You can also add validators to your inputs such as required, maxlength or even create your own validator!
-    // More information: https://angular.io/guide/reactive-forms#simple-form-validation
-    // Advanced validation: https://angular.io/guide/form-validation#reactive-form-validation
   }
 
 
@@ -30,55 +27,11 @@ export class SearchFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSearchChange(searchValue : string){
-    console.log(searchValue);
-  }
-
   internshipFilter() {
     const conditionsInternship: searchInternship = this.searchForm.getRawValue() as searchInternship;
     const obj = {hasCDIouCDD: conditionsInternship.contractRenewed, hasVoiture: conditionsInternship.hasCompanyCar};
     console.log(obj);
     // this.internshipservice.filterInternships(conditionsInternship.contractRenewed, conditionsInternship.hasCompanyCar);
-    this.internshipservice.formChange(this.searchForm)
+    this.internshipservice.formChange(this.searchForm);
   }
-
-  // listFor(listNow) {
-  //   const list = document.getElementById('sel');
-  //   listNow.forEach(item => {
-  //     const node = document.createElement("li");
-  //     const textnode = document.createTextNode(item);
-  //     node.appendChild(textnode);
-  //     list.appendChild(node)
-  //   });
-  // }
-
-  onInput() {
-    // const searchDom = document.getElementById('search');
-    const list = document.getElementById('sel');
-    const inputValue = (<HTMLInputElement>document.getElementById('search-input')).value;
-    const newList = this.nameList.filter(item => {
-      return item.toLowerCase().indexOf(inputValue.toLowerCase()) > -1;
-    });
-    list.innerHTML = '';
-    // this.listFor(newList);
-  }
-
-
-  onFocus(){
-    const selList = document.getElementById('sel');
-    selList.style.display = 'block';
-  }
-
-  onClick(){
-    const input = (<HTMLSelectElement>document.getElementById('txt'))
-    const selList = (<HTMLSelectElement>document.getElementById('sel'))
-    selList.style.display = 'none'
-    input.value = selList.options[selList.selectedIndex].text;
-    const conditionsInternship: searchInternship = this.searchForm.getRawValue() as searchInternship;
-    conditionsInternship.name = selList.options[selList.selectedIndex].text;
-    // if(input.value === 'A ete reconduit CDD/CDI'){
-    //   contract.spellcheck
-    // }
-  }
-
 }
