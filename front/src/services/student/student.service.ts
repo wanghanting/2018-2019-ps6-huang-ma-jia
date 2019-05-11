@@ -3,6 +3,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Student} from '../../models/student';
 import {Company} from '../../models/company';
+import {FormGroup} from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,15 @@ export class StudentService {
   public student$: BehaviorSubject<Student[]> = new BehaviorSubject(this.studentList);
 
   constructor(private http: HttpClient) {
+  }
+  public formChange(form: FormGroup) {
+    this.http.get<Student[]>(this.studentUrl + '?'
+      + (form.getRawValue().sector ? ('&sector=' + form.getRawValue().sector) : '')
+      + (form.getRawValue().specialty ? ('&specialty=' + form.getRawValue().specialty) : '')
+    ).subscribe(value => {
+      this.studentList = value;
+      this.student$.next(value);
+    });
   }
   public OneStudentService(id) {
     this.http.get<Student[]>(this.studentUrl + '?id=' + id).subscribe(value => {

@@ -6,7 +6,7 @@
 <br>
 
   <div class="row">
-    <form class="form" [formGroup]="searchForm" (change)="companyFilter()">
+    <form class="form" [formGroup]="stuForm" (change)="stuformChange()">
       <div class="row">
         <div class="col-4">
           <label>A propos de vous:</label>
@@ -15,32 +15,34 @@
           <select id="sector" [formControlName]="'sector'" (change)="sectorChange($event.target.value)">
             <option value="" selected disabled hidden>filiere</option>
             <option value = "">filiere</option>
-            <option *ngFor="let currentFiliere of sectorArray" [value]="currentFiliere">
-              {{currentFiliere}}
+            <option *ngFor="let currentSector of SECTOR_LIST" [value]="currentSector.name">
+              {{currentSector.name}}
             </option>
           </select>
         </div>
         <div class="col-4">
           <select  id="specialty" [formControlName]="'specialty'">
             <option value="" selected disabled hidden>specialite</option>
-            <option value = "">specialite</option>
-            <option *ngFor="let currentSpecialite of specialtyArray" [value]="currentSpecialite">
-              {{currentSpecialite}}
+            <option value = "">specialty</option>
+            <option *ngFor="let currentSpecialty of SPECIALTY_LIST" [value]="currentSpecialty.name">
+              {{currentSpecialty.name}}
             </option>
           </select>
         </div>
       </div>
+    </form>
+    <form class="form" [formGroup]="companyForm" (change)="comformChange()">
       <br>
       <div class="row">
         <div class="col-3">
           <label>A propos de entreprise:</label>
         </div>
         <div class="col-3">
-          <select  id="continent" [formControlName]="'continent'">
-            <option value="" selected disabled hidden>continent</option>
-            <option value = "">continent</option>
-            <option *ngFor="let currentContinent of CONTINENT_LIST" [value]="currentContinent">
-              {{currentContinent}}
+          <select  id="country" [formControlName]="'country'">
+            <option value="" selected disabled hidden>country</option>
+            <option value = "">country</option>
+            <option *ngFor="let currentCountry of COUNTRY_LIST" [value]="currentCountry.name">
+              {{currentCountry.name}}
             </option>
           </select>
         </div>

@@ -3,10 +3,10 @@ import {CompanyService} from '../../../services/company/company.service';
 
 @Component({
   selector: 'app-searchcompany-page',
-  templateUrl: './search-company-page.component.html',
-  styleUrls: ['./search-company-page.component.scss']
+  templateUrl: './search-internship-page.component.html',
+  styleUrls: ['./search-internship-page.component.scss']
 })
-export class SearchCompanyPageComponent implements OnInit {
+export class SearchInternshipPageComponent implements OnInit {
   constructor(public companyService: CompanyService) {
   }
   ngOnInit() {}

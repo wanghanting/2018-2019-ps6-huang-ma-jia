@@ -11,7 +11,6 @@ import {FormGroup} from '@angular/forms';
 
 export class InternshipService {
   private internshipList: Internship[] = [];
-  private internshipFiltered: Internship[];
   private searchTerms = new Subject<Internship>();
   public internships$: BehaviorSubject<Internship[]> = new BehaviorSubject(this.internshipList);
 
@@ -19,15 +18,15 @@ export class InternshipService {
   private companyId: number = null;
 
   constructor(private http: HttpClient) {
-    // this.loadInternships(this.internshipUrl)
+     this.loadInternships(this.internshipUrl)
   }
 
-  // loadInternships(URL): void {
-  //   this.http.get<Internship[]>(URL).subscribe( internships => {
-  //     this.internshipFiltered = internships;
-  //     this.internships$.next(internships);
-  //   });
-  // }
+  loadInternships(URL): void {
+    this.http.get<Internship[]>(URL).subscribe( internships => {
+      this.internshipList = internships;
+      this.internships$.next(internships);
+    });
+  }
 
   public setCompanyId(id: number) {
     this.companyId = id;

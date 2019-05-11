@@ -15,7 +15,9 @@ export class InternshipListComponent implements OnInit {
 
   constructor(public internshipService: InternshipService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
-      this.internshipService.setCompanyId(params['id']);
+      if (params['id']) {
+        this.internshipService.setCompanyId(params['id']);
+      }
     });
     this.internshipService.internships$.subscribe((intern) => this.internshipList = intern);
   }

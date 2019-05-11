@@ -12,7 +12,8 @@ import {ActivitySectorService} from '../services/activitySector/activitySector.s
 import {OneCountryService} from '../services/country/one-country.service';
 import {CompanySizeService} from '../services/companySize/companySize.service';
 import {StudentService} from '../services/student/student.service';
-
+import {SearchInternshipPageComponent} from './search-internship/search-internship-page';
+import {SearchInternshipFormComponent} from './search-internship/search-internship-form';
 import {SearchCompanyPageComponent} from './search-companies/search-company-page';
 import {SearchCompanyComponent} from './search-companies/search-company';
 import {SearchCompanyFormComponent} from './search-companies/search-company-form';
@@ -48,6 +49,8 @@ import { StudentPageComponent } from './student/student';
     HomePageComponent,
     CardInformationComponent,
     StudentPageComponent,
+    SearchInternshipPageComponent,
+    SearchInternshipFormComponent,
   ],
   imports: [
     HttpClientModule,
