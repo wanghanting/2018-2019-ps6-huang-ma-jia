@@ -11,6 +11,7 @@ import {CountryService} from '../services/country/country.service';
 import {ActivitySectorService} from '../services/activitySector/activitySector.service';
 import {OneCountryService} from '../services/country/one-country.service';
 import {CompanySizeService} from '../services/companySize/companySize.service';
+import {StudentService} from "../services/student/student.service";
 
 import {SearchCompanyPageComponent} from './search-companies/search-company-page';
 import {SearchCompanyComponent} from './search-companies/search-company';
@@ -24,6 +25,7 @@ import { SearchFormComponent } from './company/search-form/search-form.component
 import { InteractiveMapComponent} from './tickets/interactive-map/interactive-map.component';
 import { HomePageComponent} from './tickets/home-page/home-page.component';
 import { CardInformationComponent } from './tickets/card-information/card-information.component';
+import { StudentPageComponent } from "./student/student";
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { CardInformationComponent } from './tickets/card-information/card-inform
     SearchFormComponent,
     InteractiveMapComponent,
     HomePageComponent,
-    CardInformationComponent
+    CardInformationComponent,
+    StudentPageComponent,
   ],
   imports: [
     HttpClientModule,
@@ -52,7 +55,7 @@ import { CardInformationComponent } from './tickets/card-information/card-inform
     AppRoutingModule// , // Import all dependencies
     // AppRoutingModule
   ],
-  providers: [CountryService, OneCountryService, ActivitySectorService, CompanySizeService], // All the services need to be provided
+  providers: [CountryService, OneCountryService, ActivitySectorService, CompanySizeService, StudentService], // All the services need to be provided
   bootstrap: [AppComponent]
 })
 export class AppModule {
