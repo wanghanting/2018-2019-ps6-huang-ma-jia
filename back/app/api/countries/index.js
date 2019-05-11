@@ -7,6 +7,6 @@ router.get('/', (req, res) => {
     res.send(company);
   });
 });
-router.get('/:countryId', (req, res) => res.status(200).json(Country.getById(req.params.countryId)));
+// router.get('/:countryId', (req, res) => res.status(200).json(Country.getById(req.params.countryId)));
 
 module.exports = router;

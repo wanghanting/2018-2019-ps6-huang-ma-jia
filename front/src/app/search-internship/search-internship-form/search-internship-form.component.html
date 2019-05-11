@@ -41,7 +41,7 @@
           <select  id="country" [formControlName]="'country'">
             <option value="" selected disabled hidden>country</option>
             <option value = "">country</option>
-            <option *ngFor="let currentCountry of COUNTRY_LIST" [value]="currentCountry.name">
+            <option *ngFor="let currentCountry of COUNTRY_LIST" [value]="currentCountry.id">
               {{currentCountry.name}}
             </option>
           </select>
@@ -50,8 +50,8 @@
           <select id="secteur" [formControlName]="'secteur'" >
             <option value="" selected disabled hidden>secteur</option>
             <option value = "">secteur</option>
-            <option *ngFor="let currentSecteur of SECTEUR_LIST" [value]="currentSecteur">
-              {{currentSecteur}}
+            <option *ngFor="let currentSecteur of SECTEUR_LIST" [value]="currentSecteur.name">
+              {{currentSecteur.name}}
             </option>
           </select>
         </div>
@@ -59,8 +59,8 @@
           <select  id="size" [formControlName]="'size'">
             <option value="" selected disabled hidden>taille</option>
             <option value = "">taille</option>
-            <option *ngFor="let currentTaille of TAILLE_LIST" [value]="currentTaille">
-              {{currentTaille}}
+            <option *ngFor="let currentTaille of TAILLE_LIST" [value]="currentTaille.num">
+              {{currentTaille.num}}
             </option>
           </select>
         </div>

@@ -14,7 +14,7 @@ const companySchema = new mongoose.Schema({
     required: true,
   },
   countryId: {
-    type: String,
+    type: Number,
     required: true,
   },
   address: {

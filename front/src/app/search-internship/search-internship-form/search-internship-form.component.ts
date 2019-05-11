@@ -31,8 +31,8 @@ export class SearchInternshipFormComponent implements OnInit {
    * TicketForm: Object which manages the form in our component.
    * More information about Reactive Forms: https://angular.io/guide/reactive-forms
    */
-  public studentList: Student[];
-  public companyList: Company[];
+  public studentList: Student[] = [];
+  public companyList: Company[] = [];
   public internshipList: Internship[];
   public stuForm: FormGroup;
   public companyForm: FormGroup;
@@ -41,6 +41,7 @@ export class SearchInternshipFormComponent implements OnInit {
   public SPECIALTY_LIST: Specialty[];
   public TAILLE_LIST: CompanySize[] = [];
   public SECTEUR_LIST: ActivitySector[] = [];
+  public urlExtra: string;
   constructor(public formBuilder: FormBuilder, public  companyservice: CompanyService, public activitySectorService: ActivitySectorService,
               public companySize: CompanySizeService, public specialtyService: SpecialtyService, public sectorService: SectorService,
               public  internshipService: InternshipService, public studentService: StudentService, public countryService: CountryService ) {
@@ -72,24 +73,34 @@ export class SearchInternshipFormComponent implements OnInit {
        secteur: [''],
        size: [''],
     });
-    this.internshipFilter();
+
   }
 
   ngOnInit() {
   }
   internshipFilter() {
-    this.companyservice.formChange(this.companyForm);
-
+    this.urlExtra = '';
+    this.studentList.forEach(i => this.urlExtra = this.urlExtra + '&studentId=' + i.id);
+    this.companyList.forEach(i => this.urlExtra = this.urlExtra + '&companyId=' + i.id);
+    console.log(this.urlExtra);
+    this.internshipService.filterIntern(this.urlExtra);
+    this.internshipService.internships$.subscribe((internship) => this.internshipList = internship);
   }
   sectorChange(value) {
     this.specialtyService.setSectorName(value);
+    this.stuformChange();
   }
   stuformChange() {
     this.studentService.formChange(this.stuForm);
     this.studentService.student$.subscribe((student) => this.studentList = student);
+    this.internshipFilter();
   }
   comformChange() {
     this.companyservice.formChange(this.companyForm);
-    this.companyservice.companies$.subscribe((companies) => this.companyList = companies);
+    this.companyservice.companies$.subscribe((companies) => {this.companyList = companies; })
+    console.log(this.companyList);
+    this.internshipFilter();
+
+
   }
 }

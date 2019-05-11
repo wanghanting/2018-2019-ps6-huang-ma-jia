@@ -18,11 +18,11 @@ export class InternshipService {
   private companyId: number = null;
 
   constructor(private http: HttpClient) {
-     this.loadInternships(this.internshipUrl)
+     this.loadInternships();
   }
 
-  loadInternships(URL): void {
-    this.http.get<Internship[]>(URL).subscribe( internships => {
+  loadInternships(): void {
+    this.http.get<Internship[]>(this.internshipUrl).subscribe( internships => {
       this.internshipList = internships;
       this.internships$.next(internships);
     });
@@ -41,6 +41,12 @@ export class InternshipService {
     + (searchForm.getRawValue().contractRenewed ? ('&contractRenewed=' + searchForm.getRawValue().contractRenewed) : '')
     + (searchForm.getRawValue().hasCompanyCar ? ('&hasCompanyCar=' + searchForm.getRawValue().hasCompanyCar) : '')
     ).subscribe(value => {
+      this.internshipList = value;
+      this.internships$.next(value);
+    });
+  }
+  filterIntern(urlExtra: string) {
+    this.http.get<Internship[]>(this.internshipUrl + '?' + urlExtra).subscribe(value => {
       this.internshipList = value;
       this.internships$.next(value);
     });

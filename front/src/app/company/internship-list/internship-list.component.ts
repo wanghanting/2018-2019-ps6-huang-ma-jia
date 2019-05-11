@@ -11,14 +11,14 @@ import {ActivatedRoute} from '@angular/router';
 export class InternshipListComponent implements OnInit {
 
   public internshipList: Internship[] = [];
-  public id: number;
 
   constructor(public internshipService: InternshipService, private route: ActivatedRoute) {
-    this.route.queryParams.subscribe(params => {
-      if (params['id']) {
-        this.internshipService.setCompanyId(params['id']);
-      }
-    });
+      this.route.queryParams.subscribe(params => {
+        console.log(params['id']);
+        if (params['id']) {
+          this.internshipService.setCompanyId(params['id']);
+        }
+      });
     this.internshipService.internships$.subscribe((intern) => this.internshipList = intern);
   }
 

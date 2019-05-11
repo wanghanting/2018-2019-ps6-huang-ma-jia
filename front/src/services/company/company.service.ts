@@ -17,7 +17,7 @@ export class CompanyService {
   private companiesUrl = 'http://localhost:9428/api/companies/';
 
   constructor(private http: HttpClient) {
-    this.loadCompanies(this.companiesUrl);
+    //this.loadCompanies(this.companiesUrl);
   }
   loadCompanies(URL): void {
     this.http.get<Company[]>(URL).subscribe( companies => {
@@ -44,10 +44,11 @@ export class CompanyService {
   }
 
   public formChange(form: FormGroup) {
-    this.http.get<Company[]>(this.companiesUrl + '?' + (this.countryId == null ? '' : 'countryId=' + this.countryId)
+    this.http.get<Company[]>(this.companiesUrl + '?' + (this.countryId != null ?  'countryId=' + this.countryId : '')
+      + (form.getRawValue().country ? ('&countryId=' + form.getRawValue().country) : '')
       + (form.getRawValue().secteur ? ('&activitySector=' + form.getRawValue().secteur) : '')
       + (form.getRawValue().size ? ('&employeesNumber=' + form.getRawValue().size) : '')
-      + ((form.getRawValue().activitySector ) ? ('&activitySector=' + form.getRawValue().activitySector) : '')
+      + (form.getRawValue().activitySector  ? ('&activitySector=' + form.getRawValue().activitySector) : '')
       + (form.getRawValue().size1 ? ('&size1=' + form.getRawValue().size1) : '')
       + (form.getRawValue().size2 ? ('&size2=' + form.getRawValue().size2) : '')
       + (form.getRawValue().size3 ? ('&size3=' + form.getRawValue().size3) : '')
