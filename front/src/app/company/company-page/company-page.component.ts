@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Internship} from "../../../models/internship";
-import {Company} from "../../../models/company";
+import {Company} from '../../../models/company';
 import {InternshipService} from "../../../services/internship/internship.service";
 import {CompanyService} from "../../../services/company/company.service";
 

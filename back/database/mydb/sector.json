@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5cd2b86afa2e5d8ce12b1de3"},"id":1,"name":"SI"}
+{"_id":{"$oid":"5cd2b8b0fa2e5d8ce12b1e11"},"id":2,"name":"MAM"}
+{"_id":{"$oid":"5cd5bd2da515d852bda0c5e1"},"id":3,"name":"GE"}
+{"_id":{"$oid":"5cd5bd45a515d852bda0c5ed"},"id":4,"name":"BAT"}
+{"_id":{"$oid":"5cd5bd6da515d852bda0c5f5"},"id":5,"name":"ELE"}
+{"_id":{"$oid":"5cd5bd82a515d852bda0c5ff"},"id":6,"name":"BIO"}

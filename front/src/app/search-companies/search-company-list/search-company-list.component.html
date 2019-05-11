@@ -3,16 +3,14 @@
   <a href="#" class="list-group-item list-group-item-action active">
     Cras justo odio
   </a>
-  <a href="#" class="list-group-item list-group-item-action active">
+  <a href="#" class="list-group-item list-group-item-action active">  </a>
   <div class="company-list">
     <div class="company" *ngFor="let company of companyList">
-      <!--Inputs & Output allow communication between parent & child components.-->
-      <!--More information: https://angular.io/guide/component-interaction-->
       <div class="company">
-        <app-company-search [company]="company"></app-company-search>
+        <app-company-search [company]="company" (clickEventCompany)="onClick($event)"></app-company-search>
       </div>
     <br>
     </div>
   </div>
-  </a>
+
 </div>

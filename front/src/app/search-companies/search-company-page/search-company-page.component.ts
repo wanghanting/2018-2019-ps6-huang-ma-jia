@@ -10,4 +10,7 @@ export class SearchCompanyPageComponent implements OnInit {
   constructor(public companyService: CompanyService) {
   }
   ngOnInit() {}
+  onClick(idCompany) {
+    window.location.href = 'http://localhost:4200/company/?id=' + idCompany;
+  }
 }

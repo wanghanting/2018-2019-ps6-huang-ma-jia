@@ -21,16 +21,18 @@ import {AppRoutingModule} from './app.AppRoutingModule';
 import {InternshipComponent} from './company/internship';
 import {InternshipListComponent} from './company/internship-list';
 import {CompanyPageComponent} from './company/company-page';
+import {CompanyComponent} from './company/company';
 import { SearchFormComponent } from './company/search-form/search-form.component';
 import { InteractiveMapComponent} from './tickets/interactive-map/interactive-map.component';
 import { HomePageComponent} from './tickets/home-page/home-page.component';
 import { CardInformationComponent } from './tickets/card-information/card-information.component';
-import { StudentPageComponent } from "./student/student";
+import { StudentPageComponent } from './student/student';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountryPageComponent,
+    CompanyComponent,
     SearchCompanyComponent,
     SearchCompanyFormComponent,
     SearchCompanyListComponent,

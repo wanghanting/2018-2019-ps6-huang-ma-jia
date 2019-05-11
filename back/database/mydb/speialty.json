@@ -1,0 +1,10 @@
+{"_id":{"$oid":"5cd2cf6bfa2e5d8ce12b29e9"},"id":1,"name":"IHM","sector":"SI"}
+{"_id":{"$oid":"5cd2cf8afa2e5d8ce12b2a01"},"id":2,"name":"WEB","sector":"SI"}
+{"_id":{"$oid":"5cd2cf9bfa2e5d8ce12b2a0f"},"id":3,"name":"SD","sector":"SI"}
+{"_id":{"$oid":"5cd2cfaffa2e5d8ce12b2a23"},"id":4,"name":"SD","sector":"MAM"}
+{"_id":{"$oid":"5cd5be5ca515d852bda0c639"},"id":5,"name":"AL","sector":"SI"}
+{"_id":{"$oid":"5cd5be6ca515d852bda0c643"},"id":6,"name":"IAM","sector":"SI"}
+{"_id":{"$oid":"5cd5befea515d852bda0c66c"},"id":7,"name":"SD","sector":"MAM"}
+{"_id":{"$oid":"5cd5bf10a515d852bda0c674"},"id":8,"name":"INUM","sector":"MAM"}
+{"_id":{"$oid":"5cd5bfcea515d852bda0c6a3"},"id":9,"name":"CCS","sector":"ELE"}
+{"_id":{"$oid":"5cd5bff2a515d852bda0c6bf"},"id":9,"name":"GSE","sector":"ELE"}

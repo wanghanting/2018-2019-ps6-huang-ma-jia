@@ -54,22 +54,22 @@ export class CountryPageComponent implements OnInit {
     this.sizeArray = [];
 
     this.oneCountryService.country$.subscribe((country) => {
-        this.country = country;
-        if (country != null) {
-            this.visaFullStarsArray = Array(country.visaDifficulty);
-            this.visaEmptyStarsArray = Array(5 - country.visaDifficulty);
-        }
+      this.country = country;
+      if (country != null) {
+        this.visaFullStarsArray = Array(country.visaDifficulty);
+        this.visaEmptyStarsArray = Array(5 - country.visaDifficulty);
+      }
     });
     this.partnerHousingService.partnersHousings$.subscribe((partnerHousings) => {
-        this.partnerHousingList = partnerHousings;
+      this.partnerHousingList = partnerHousings;
     });
     this.companyService.companies$.subscribe((companies) => {
-        this.companyList = companies;
+      this.companyList = companies;
     });
     this.route.queryParams.subscribe(params => {
-        this.oneCountryService.setCountryId(params['id']);
-        this.partnerHousingService.setCountryId(params['id']);
-        this.companyService.setCountryId(params['id']);
+      this.oneCountryService.setCountryId(params['id']);
+      this.partnerHousingService.setCountryId(params['id']);
+      this.companyService.setCountryId(params['id']);
     });
     this.sectorService.sectors$.subscribe((sectors) => {
       this.sectorArray = sectors;
@@ -96,7 +96,7 @@ export class CountryPageComponent implements OnInit {
       size3: ['']
     });
 
-    
+
     this.countryPageForm.setValue({
       sector: '- Filière -',
       specialty: '- Spécialité -',

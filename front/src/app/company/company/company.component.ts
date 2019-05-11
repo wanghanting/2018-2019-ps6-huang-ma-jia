@@ -2,13 +2,14 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Company} from '../../../models/company';
 import {CompanyService} from '../../../services/company/company.service';
 import {InternshipService} from '../../../services/internship/internship.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-company-search',
-  templateUrl: './search-company.component.html',
-  styleUrls: ['./search-company.component.scss']
+  selector: 'app-company-card',
+  templateUrl: './company.component.html',
+  styleUrls: ['./company.component.scss']
 })
-export class SearchCompanyComponent implements OnInit {
+export class CompanyComponent implements OnInit {
 
   /**
    * Inputs & Output allow communication between parent & child components.
@@ -19,17 +20,18 @@ export class SearchCompanyComponent implements OnInit {
   @Output()
   clickEventCompany = new EventEmitter<String>();
 
-  // public companyList: Company[] = [];
-
-  constructor(public companyService: CompanyService,public internshipService: InternshipService) {
-    // this.companyService.companies$.subscribe((company) => this.companyList = company);
+  constructor(public companyService: CompanyService, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      this.companyService.OneCompanyService(params['id']);
+    });
+     this.companyService.company$.subscribe((company) => this.company = company.pop());
   }
 
   ngOnInit() {
   }
 
   onClick(id) {
-    this.internshipService.setCompanyId(id);
+    // this.internshipService.setCompanyId(id);
     this.clickEventCompany.emit(id);
   }
 

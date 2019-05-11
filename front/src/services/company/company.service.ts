@@ -8,8 +8,10 @@ import { FormGroup } from '@angular/forms';
   providedIn: 'root'
 })
 export class CompanyService {
+  private  onecompany: Company[] = [];
   private companyList: Company[] = [];
   public companies$: BehaviorSubject<Company[]> = new BehaviorSubject(this.companyList);
+  public company$: BehaviorSubject<Company[]> = new BehaviorSubject(this.onecompany);
   public countryId: number = null;
 
   private companiesUrl = 'http://localhost:9428/api/companies/';
@@ -29,6 +31,16 @@ export class CompanyService {
       this.companyList = value;
       this.companies$.next(value);
     });
+  }
+  public OneCompanyService(id) {
+    this.http.get<Company[]>(this.companiesUrl + '?id=' + id).subscribe(value => {
+      this.onecompany = value;
+      this.company$.next(value);
+    });
+
+  }
+  public getOneCompany() {
+    return this.onecompany;
   }
 
   public formChange(form: FormGroup) {

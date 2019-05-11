@@ -4,7 +4,7 @@ import {CountryPageComponent} from './countries/country-page';
 import {SearchCompanyPageComponent} from './search-companies/search-company-page';
 import {CompanyPageComponent} from './company/company-page';
 import {HomePageComponent} from './tickets/home-page';
-import {StudentPageComponent} from "./student/student";
+import {StudentPageComponent} from './student/student';
 
 // import {UserListComponent} from './users/user-list/user-list.component';
 

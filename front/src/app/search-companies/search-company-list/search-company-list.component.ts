@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {CompanyService} from '../../../services/company/company.service';
 import {Company} from '../../../models/company';
 
@@ -10,11 +10,15 @@ import {Company} from '../../../models/company';
 export class SearchCompanyListComponent implements OnInit {
 
   public companyList: Company[];
+  @Output() clickEventList = new EventEmitter<String>();
 
   constructor(public companyService: CompanyService) {
     this.companyService.companies$.subscribe((companies) => this.companyList = companies);
   }
 
   ngOnInit() {
+  }
+  onClick(id) {
+    this.clickEventList.emit(id);
   }
 }

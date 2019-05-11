@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit {
 
   }
 
-  onClick(idPays: string) {
+  onClick(idPays) {
     window.location.href = 'http://localhost:4200/country/?id=' + idPays;
   }
 

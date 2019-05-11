@@ -21,7 +21,7 @@ export class CountryTicketComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick(idPays: String) {
+  onClick(idPays) {
     this.clickEventTicket.emit(idPays);
   }
 

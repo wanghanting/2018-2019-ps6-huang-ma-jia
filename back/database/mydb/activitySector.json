@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5cd1c30255b915282467ec63"},"id":1,"name":"consulting"}
+{"_id":{"$oid":"5cd1c35d55b915282467ec64"},"id":2,"name":"IT"}
+{"_id":{"$oid":"5cd1c37255b915282467ec65"},"id":3,"name":"marketing"}
+{"_id":{"$oid":"5cd1c38d55b915282467ec66"},"id":4,"name":"bank"}
+{"_id":{"$oid":"5cd5c03ea515d852bda0c6e1"},"id":5,"name":"produit"}
