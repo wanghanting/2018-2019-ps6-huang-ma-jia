@@ -4,7 +4,7 @@ const { Company } = require('../../models');
 const router = new Router();
 
 router.get('/', (req, res) => {
-  Company.find(req.query, { id: 1, _id: 0 }, (err, company) => {
+  Company.find(req.query, { }, (err, company) => {
     res.send(company);
   });
 });

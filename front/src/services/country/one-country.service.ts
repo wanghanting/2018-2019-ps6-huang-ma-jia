@@ -29,7 +29,7 @@ export class OneCountryService {
      }
 
   public setCountryId(id : number) {
-    this.http.get<Country>(this.countriesUrl+id).subscribe(value => {
+    this.http.get<Country>(this.countriesUrl + '?id=' + id).subscribe(value => {
       this.country = value;
       this.country$.next(value);
     });

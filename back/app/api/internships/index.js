@@ -4,7 +4,7 @@ const { Internship } = require('../../models');
 
 const router = new Router();
 router.get('/', (req, res) => {
-  Internship.find(req.query, { id: 1, _id: 0 }, (err, internship) => {
+  Internship.find(req.query, {}, (err, internship) => {
     res.send(internship);
   });
 });
