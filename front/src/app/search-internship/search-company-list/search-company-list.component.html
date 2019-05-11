@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+    Cras justo odio
+  </a>
+  <a href="#" class="list-group-item list-group-item-action active">  </a>
+  <div class="company-list">
+    <div class="company" *ngFor="let company of companyList">
+      <div class="company">
+        <app-company-search [company]="company" (clickEventCompany)="onClick($event)"></app-company-search>
+      </div>
+    <br>
+    </div>
+  </div>
+
+</div>

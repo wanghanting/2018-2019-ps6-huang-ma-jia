@@ -8,15 +8,9 @@ import {HttpClient} from '@angular/common/http';
 })
 
 export class CompanySizeService {
-  /**
-   * Services Documentation:
-   * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
-   */
+  private companySizeList: CompanySize[] = [];
 
-  //private countryList: Country[] = []; A remettre quand le back marche
-  private companySizeList: CompanySize[];
-
-  private companySizesUrl = 'http://localhost:9428/api/companySizes/';
+  private companySizesUrl = 'http://localhost:9428/api/employeesNumber/';
 
   /**
    * Observable which contains the list of the country.

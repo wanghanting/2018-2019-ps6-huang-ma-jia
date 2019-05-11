@@ -44,11 +44,9 @@ export class CompanyService {
   }
 
   public formChange(form: FormGroup) {
-    this.http.get<Company[]>(this.companiesUrl + (this.countryId == null ? '' : '?countryId=' + this.countryId)
-      + (form.getRawValue().sector  ? ('&sector=' + form.getRawValue().sector) : '')
-      + (form.getRawValue().specialty  ? ('&specialty=' + form.getRawValue().specialty) : '')
-      + (form.getRawValue().continent ? ('&continent=' + form.getRawValue().continent) : '')
-      + (form.getRawValue().secteur ? ('&secteur=' + form.getRawValue().secteur) : '')
+    this.http.get<Company[]>(this.companiesUrl + '?' + (this.countryId == null ? '' : 'countryId=' + this.countryId)
+      + (form.getRawValue().secteur ? ('&activitySector=' + form.getRawValue().secteur) : '')
+      + (form.getRawValue().size ? ('&employeesNumber=' + form.getRawValue().size) : '')
       + ((form.getRawValue().activitySector ) ? ('&activitySector=' + form.getRawValue().activitySector) : '')
       + (form.getRawValue().size1 ? ('&size1=' + form.getRawValue().size1) : '')
       + (form.getRawValue().size2 ? ('&size2=' + form.getRawValue().size2) : '')

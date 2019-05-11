@@ -4,10 +4,6 @@ import {Searchcompany} from '../../../models/searchcompany';
 import {CompanyService} from '../../../services/company/company.service';
 import {SectorService} from '../../../services/sector/sector.service';
 import {SpecialtyService} from '../../../services/specialty/specialty.service';
-import {ActivitySectorService} from '../../../services/activitySector/activitySector.service';
-import {ActivitySector} from '../../../models/activitySector';
-import {CompanySize} from '../../../models/companySize';
-import {CompanySizeService} from '../../../services/companySize/companySize.service';
 
 @Component({
   selector: 'app-company-form',
@@ -23,17 +19,23 @@ export class SearchCompanyFormComponent implements OnInit {
    * More information about Reactive Forms: https://angular.io/guide/reactive-forms
    */
   public searchForm: FormGroup;
-  public TAILLE_LIST: CompanySize[] = [];
-  public SECTEUR_LIST: ActivitySector[] = [];
-  constructor(public formBuilder: FormBuilder, public  companyservice: CompanyService, public activitySectorService: ActivitySectorService,
-  public companySize: CompanySizeService, public specialtyService: SpecialtyService) {
-    this.activitySectorService.activitySectors$.subscribe((sectors) => {
-      this.SECTEUR_LIST = sectors;
+  public CONTINENT_LIST: string[] = ['Amérique du Nord',  'Asie', 'Europe', 'Amérique du Sud', 'Océanie', 'Afrique'];
+  public TAILLE_LIST: string[] = ['1-50', '51-300', '301+'];
+  public SECTEUR_LIST: string[] = ['produit', 'marketing', 'exploitation et maintenance' ];
+  public sectorArray: any[];
+  public specialtyArray: any[];
+  constructor(public formBuilder: FormBuilder, public  companyservice: CompanyService, public sectorService: SectorService,
+  public specialtyService: SpecialtyService) {
+    this.sectorService.sectors$.subscribe((sectors) => {
+      this.sectorArray = sectors;
     });
-    this.companySize.companySizes$.subscribe((sizes) => {
-      this.TAILLE_LIST = sizes;
+    this.specialtyService.specialties$.subscribe((specialties) => {
+      this.specialtyArray = specialties;
     });
     this.searchForm = this.formBuilder.group({
+      sector: [''],
+      specialty: [''],
+      continent: [''],
       secteur: [''],
       size: [''],
     });

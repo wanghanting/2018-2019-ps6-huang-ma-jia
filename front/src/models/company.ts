@@ -1,4 +1,4 @@
-import {Country} from './country';
+
 export interface Company {
   id?: number;
   name?: string;

@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container">
+  <div class="row">
+    <h3>Quels sont vos critères?</h3>
+  </div>
+<br>
+
+  <div class="row">
+    <form class="form" [formGroup]="searchForm" (change)="companyFilter()">
+      <div class="row">
+        <div class="col-4">
+          <label>A propos de vous:</label>
+        </div>
+        <div class="col-4">
+          <select id="sector" [formControlName]="'sector'" (change)="sectorChange($event.target.value)">
+            <option value="" selected disabled hidden>filiere</option>
+            <option value = "">filiere</option>
+            <option *ngFor="let currentFiliere of sectorArray" [value]="currentFiliere">
+              {{currentFiliere}}
+            </option>
+          </select>
+        </div>
+        <div class="col-4">
+          <select  id="specialty" [formControlName]="'specialty'">
+            <option value="" selected disabled hidden>specialite</option>
+            <option value = "">specialite</option>
+            <option *ngFor="let currentSpecialite of specialtyArray" [value]="currentSpecialite">
+              {{currentSpecialite}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-3">
+          <label>A propos de entreprise:</label>
+        </div>
+        <div class="col-3">
+          <select  id="continent" [formControlName]="'continent'">
+            <option value="" selected disabled hidden>continent</option>
+            <option value = "">continent</option>
+            <option *ngFor="let currentContinent of CONTINENT_LIST" [value]="currentContinent">
+              {{currentContinent}}
+            </option>
+          </select>
+        </div>
+        <div class="col-3">
+          <select id="secteur" [formControlName]="'secteur'" >
+            <option value="" selected disabled hidden>secteur</option>
+            <option value = "">secteur</option>
+            <option *ngFor="let currentSecteur of SECTEUR_LIST" [value]="currentSecteur">
+              {{currentSecteur}}
+            </option>
+          </select>
+        </div>
+        <div class="col-3">
+          <select  id="size" [formControlName]="'size'">
+            <option value="" selected disabled hidden>taille</option>
+            <option value = "">taille</option>
+            <option *ngFor="let currentTaille of TAILLE_LIST" [value]="currentTaille">
+              {{currentTaille}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
