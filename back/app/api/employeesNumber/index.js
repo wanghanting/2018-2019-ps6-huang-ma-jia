@@ -3,11 +3,7 @@ const {EmploeesNumber} = require ('../../models');
 
 const router = new Router();
 router.get('/', (req, res) => {
-  EmploeesNumber.find(req.query, {
-    id: 1,
-    _id: 0,
-    name: 1
-  }, (err, emploeesNumber) => {
+  EmploeesNumber.find(req.query, {}, (err, emploeesNumber) => {
     res.send(emploeesNumber);
   });
 })

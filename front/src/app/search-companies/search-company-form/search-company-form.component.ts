@@ -33,11 +33,11 @@ export class SearchCompanyFormComponent implements OnInit {
       this.specialtyArray = specialties;
     });
     this.searchForm = this.formBuilder.group({
-      sector: ['all'],
-      specialty: ['all'],
-      continent: ['all'],
-      secteur: ['all'],
-      size: ['all'],
+      sector: [''],
+      specialty: [''],
+      continent: [''],
+      secteur: [''],
+      size: [''],
     });
     this.companyFilter();
   }

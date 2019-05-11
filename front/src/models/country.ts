@@ -1,14 +1,12 @@
 export interface Country {
     id?: string;
     name?: string;
+    shortName?: string;
     flagPath?: string;
     photoPath?: string;
-    information?: string;
     someInformation?: string;
     visaDifficulty?: number;
-    visaInformation?: string;
+    visaWeb?: string;
     hiringOpportunities?: string;
-    continent?: string;
-    nbIntership?: number;
-    nbCompany?: number;
+    introduction?: string;
 }
