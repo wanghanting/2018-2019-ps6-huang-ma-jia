@@ -1,27 +1,19 @@
-@import '../../../styles/card.scss';
-
-.company {
-  width: 100%;
-  background: white;
-}
-
-.company:hover {
+//@import '../../../styles/card.scss';
+//
+.border:hover {
   cursor: pointer;
 }
-
-.icon {
-  border-color: #282828;
-  display: inline-block;
-
-}
-.companyInfo {
-  display:inline-block;
-  width: 70%;
-  margin-left: 30px;
+//
+//.icon {
+//  border-color: #282828;
+//  display: inline-block;
+//}
+.border {
+  width: 250px;
+  height: 500px;
 }
 
-[class*='col-'] {
-  float: left;
-  min-height: 1px;
-  width: 50%;
+.example-header-image {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqmzq1D6O3dU1oV8ke5FDABeYJdmGtg-yHY_3ib970uguET8ND');
+  background-size: cover;
 }

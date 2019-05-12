@@ -1,19 +1,38 @@
-<div class="company" xmlns="http://www.w3.org/1999/html" (click)="onClick(company.id)" >
-  <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
-  <img class="icon" [src]="company.iconImage" [height]="100" [width]="100" >
-  <div class="companyInfo">
-    <div class="row">
-      <label id="name of company" class="col-1">Nom entreprise:{{company.name}}</label>
-      <!--<label id="type intern" class="col-2">Type de stage proposé :{{company.internshipType}}</label>-->
-    </div>
-    <div class ="row">
-      <label id="secteur" class="col-1">Secteur:{{company.activitySector}}</label>
-      <!--<label id="opportunity" class="col-2">Opportunité d'embauche :{{company.opportunity}}</label>-->
-    </div>
-    <div class="row">
-      <label id="avis" class="col-1">Avis:{{company.rating}}</label>
-    </div>
+<!--<body>-->
+<!--<div class="card" (click)="onClick(company.id)" style="width: 14rem">-->
+  <!--&lt;!&ndash; we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data&ndash;&gt;-->
+  <!--<img src="{{company.iconImage}}" class="card-img-top" size=""  alt="">-->
+  <!--<div class="card-body">-->
+    <!--<h5 class="card-title">-->
+      <!--<label id="name of company" class="row">{{company.name}}</label>-->
+      <!--&lt;!&ndash;<label id="type intern" class="col-2">Type de stage proposé :{{company.internshipType}}</label>&ndash;&gt;-->
+    <!--</h5>-->
+    <!--<p class="card-text">-->
+      <!--<label id="secteur" class="row">Secteur: {{company.activitySector}}</label>-->
+      <!--<label id="avis" class="row">Avis: {{company.rating}}</label>-->
+    <!--</p>-->
+    <!--&lt;!&ndash;<label id="opportunity" class="col-2">Opportunité d'embauche :{{company.opportunity}}</label>&ndash;&gt;-->
+    <!--&lt;!&ndash;<a href="#" class="btn btn-primary" >See details</a>&ndash;&gt;-->
+  <!--</div>-->
+<!--</div>-->
+<!--</body>-->
 
-  </div>
+<mat-card class="border" (click)="onClick(company.id)">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+      {{company.name}}
+    </mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{company.iconImage}}" alt="">
+  <mat-card-content>
 
-</div>
+    <p>Secteur: {{company.activitySector}}</p>
+    <p>Avis: {{company.rating}}</p>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>See detailis</button>
+  </mat-card-actions>
+</mat-card>

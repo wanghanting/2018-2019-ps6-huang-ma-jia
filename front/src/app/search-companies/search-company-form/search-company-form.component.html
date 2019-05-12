@@ -1,12 +1,16 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <div class="container">
   <div class="row">
-    <h3>Quels sont vos critères?</h3>
+    <h1>Quels sont vos critères?</h1>
   </div>
 <br>
 
-  <div class="row">
     <form class="form" [formGroup]="searchForm" (change)="companyFilter()">
+      <div class="row">
+        <div class="col-6">
+          <h5>A porpos d'entreprise: </h5>
+        </div>
+      <div class="col-3">
           <select id="secteur" [formControlName]="'secteur'" >
             <option value="" selected disabled hidden>secteur d'entreprise </option>
             <option value = "">secteur d'entreprise</option>
@@ -14,6 +18,8 @@
               {{currentSecteur.name}}
             </option>
           </select>
+      </div>
+      <div class="col-3">
           <select  id="size" [formControlName]="'size'">
             <option value="" selected disabled hidden>taille</option>
             <option value = "">taille</option>
@@ -21,6 +27,7 @@
               {{currentTaille.num}}
             </option>
           </select>
+      </div>
+      </div>
     </form>
-  </div>
 </div>

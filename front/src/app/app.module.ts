@@ -6,6 +6,9 @@ import { CountryPageComponent } from './countries';
 import { CountryTicketListComponent, CountryTicketComponent} from './tickets';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {CountryService} from '../services/country/country.service';
 import {ActivitySectorService} from '../services/activitySector/activitySector.service';
@@ -53,11 +56,21 @@ import { StudentPageComponent } from './student/student';
     SearchInternshipFormComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
     HttpClientModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlexLayoutModule,
+    AppRoutingModule// , // Import all dependencies
+    // AppRoutingModule
   ],
   providers: [CountryService, OneCountryService, ActivitySectorService, CompanySizeService, StudentService], // All the services need to be provided
   bootstrap: [AppComponent]
