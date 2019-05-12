@@ -17,6 +17,10 @@ import {Company} from '../../../models/company';
 import {Internship} from '../../../models/internship';
 import {Country} from '../../../models/country';
 import {CountryService} from '../../../services/country/country.service';
+import {StartDate} from '../../../models/startDate';
+import {Period} from '../../../models/period';
+import {StartdateService} from '../../../services/startDate/startdate.service';
+import {PeriodService} from '../../../services/period/period.service';
 
 @Component({
   selector: 'app-internhsip-form',
@@ -36,15 +40,20 @@ export class SearchInternshipFormComponent implements OnInit {
   public internshipList: Internship[];
   public stuForm: FormGroup;
   public companyForm: FormGroup;
+  public internForm: FormGroup;
   public COUNTRY_LIST: Country[] ;
   public SECTOR_LIST: Sector[];
   public SPECIALTY_LIST: Specialty[];
   public TAILLE_LIST: CompanySize[] = [];
   public SECTEUR_LIST: ActivitySector[] = [];
+  public STARTDATE_LIST: StartDate[] = [];
+  public PERIOD_LIST: Period[] = [];
   public urlExtra: string;
+  public urlExtra2: string;
   constructor(public formBuilder: FormBuilder, public  companyservice: CompanyService, public activitySectorService: ActivitySectorService,
               public companySize: CompanySizeService, public specialtyService: SpecialtyService, public sectorService: SectorService,
-              public  internshipService: InternshipService, public studentService: StudentService, public countryService: CountryService ) {
+              public  internshipService: InternshipService, public studentService: StudentService, public countryService: CountryService,
+              public  startService: StartdateService, public  periodService: PeriodService) {
     this.studentService.student$.subscribe((student) => {this.studentList = student;
     this.internshipFilter();
     });
@@ -69,6 +78,12 @@ export class SearchInternshipFormComponent implements OnInit {
     this.internshipService.internships$.subscribe((internship) => {
       this.internshipList = internship;
     });
+    this.startService.startdates$.subscribe((start) => {
+      this.STARTDATE_LIST = start;
+    });
+    this.periodService.periods$.subscribe((period) => {
+      this.PERIOD_LIST = period;
+    });
 
     this.stuForm = this.formBuilder.group({
       sector: [''],
@@ -79,8 +94,13 @@ export class SearchInternshipFormComponent implements OnInit {
        secteur: [''],
        size: [''],
     });
+    this.internForm = this.formBuilder.group({
+      start: [''],
+      period: [''],
+    });
     this.stuformChange();
     this.comformChange();
+    this.internformChange();
 
   }
 
@@ -90,7 +110,7 @@ export class SearchInternshipFormComponent implements OnInit {
     this.urlExtra = '';
     this.studentList.forEach(i => this.urlExtra = this.urlExtra + '&studentId=' + i.id);
     this.companyList.forEach(i => this.urlExtra = this.urlExtra + '&companyId=' + i.id);
-    this.internshipService.filterIntern(this.urlExtra);
+    this.internshipService.filterIntern(this.urlExtra + this.urlExtra2);
     this.internshipService.internships$.subscribe((internship) => this.internshipList = internship);
   }
   sectorChange(value) {
@@ -101,5 +121,11 @@ export class SearchInternshipFormComponent implements OnInit {
   }
   comformChange() {
     this.companyservice.formChange(this.companyForm);
+  }
+  internformChange() {
+    this.urlExtra2 = '';
+    this.urlExtra2 = this.urlExtra2 + (this.internForm.getRawValue().start ? '&startDate=' + this.internForm.getRawValue().start : '')
+    + (this.internForm.getRawValue().period ? '&period=' + this.internForm.getRawValue().period : '' );
+    this.internshipFilter();
   }
 }

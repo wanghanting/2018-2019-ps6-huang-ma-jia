@@ -9,12 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import {PeriodService} from '../services/period/period.service';
 import {CountryService} from '../services/country/country.service';
 import {ActivitySectorService} from '../services/activitySector/activitySector.service';
 import {OneCountryService} from '../services/country/one-country.service';
 import {CompanySizeService} from '../services/companySize/companySize.service';
 import {StudentService} from '../services/student/student.service';
+import {StartdateService} from '../services/startDate/startdate.service';
 import {SearchInternshipPageComponent} from './search-internship/search-internship-page';
 import {SearchInternshipFormComponent} from './search-internship/search-internship-form';
 import {SearchCompanyPageComponent} from './search-companies/search-company-page';
@@ -69,10 +70,9 @@ import { StudentPageComponent } from './student/student';
     ReactiveFormsModule,
     AppRoutingModule,
     FlexLayoutModule,
-    AppRoutingModule// , // Import all dependencies
-    // AppRoutingModule
+    AppRoutingModule
   ],
-  providers: [CountryService, OneCountryService, ActivitySectorService, CompanySizeService, StudentService], // All the services need to be provided
+  providers: [CountryService, OneCountryService, ActivitySectorService, CompanySizeService, StudentService, StartdateService, PeriodService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
