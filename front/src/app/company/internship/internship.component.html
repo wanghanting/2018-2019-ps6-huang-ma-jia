@@ -44,7 +44,7 @@
   <!--</div>-->
 <!--</div>-->
 
-<div class="card">
+<div class="card" (click)="onclick(internship.studentId)">
   <div class="card-header">
     {{internship.name}}
   </div>
@@ -53,7 +53,8 @@
       <div class="container">
         <div class="row">
         <div class="col-3">
-          <img src="http://ku.90sjimg.com/element_origin_min_pic/17/04/25/67b3e05c5616b1f6c7899c0492f54837.jpg!/fwfh/804x803/quality/90/unsharp/true/compress/true" [height]="150" [width]="150">
+          <img [src]="internship.stuProfile" [height]="150" [width]="150">
+          <p>{{internship.stuName}}</p>
         </div>
         <div class="col-6">
         <div class="row">Durée:  {{internship.period}}</div>

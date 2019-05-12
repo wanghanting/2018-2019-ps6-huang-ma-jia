@@ -10,4 +10,7 @@ export class CompanyPageComponent implements OnInit {
   constructor() {
   }
   ngOnInit() {}
+  onClick(id) {
+    window.location.href = 'http://localhost:4200/student/?id=' + id;
+  }
 }

@@ -1,11 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Internship} from "../../../models/internship";
-import {Company} from "../../../models/company";
-import {InternshipService} from "../../../services/internship/internship.service";
-import {CompanyService} from "../../../services/company/company.service";
-import {Student} from "../../../models/student";
 
-import {StudentService} from "../../../services/student/student.service";
+import {Student} from '../../../models/student';
+
+import {StudentService} from '../../../services/student/student.service';
 
 @Component({
   selector: 'app-company-page',
@@ -14,10 +11,9 @@ import {StudentService} from "../../../services/student/student.service";
 })
 
 export class StudentPageComponent implements OnInit {
-  @Input()
-  student: Student;
-
+  public student: Student;
   constructor(public studentService: StudentService) {
+    this.studentService.student$.subscribe((stu) => this.student = stu.pop());
   }
   ngOnInit() {}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Internship} from '../../../models/internship';
 import {InternshipService} from '../../../services/internship/internship.service';
 import {ActivatedRoute} from '@angular/router';
@@ -17,6 +17,7 @@ export class InternshipListComponent implements OnInit {
   public internshipList: Internship[] = [];
   public studentList: Student[] = [];
   public companyList: Company[] = [];
+  @Output() clickEventList = new EventEmitter<number>();
 
   constructor(public internshipService: InternshipService, public studentService: StudentService, public companyService: CompanyService, private route: ActivatedRoute) {
       this.route.queryParams.subscribe(params => {
@@ -29,5 +30,8 @@ export class InternshipListComponent implements OnInit {
     this.companyService.companies$.subscribe((companies) => {this.companyList = companies; });
   }
   ngOnInit() {}
+  onClick(id) {
+    this.clickEventList.emit(id);
+  }
 
 }

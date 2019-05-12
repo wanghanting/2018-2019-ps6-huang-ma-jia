@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Internship} from '../../../models/internship';
 
 @Component({
@@ -9,11 +9,16 @@ import { Internship} from '../../../models/internship';
 export class InternshipComponent implements OnInit {
   @Input()
   internship: Internship;
+  @Output()
+  clickEvent = new EventEmitter<number>();
 
   constructor() {
   }
 
   ngOnInit() {
 
+  }
+  onclick(id){
+    this.clickEvent.emit(id);
   }
 }
