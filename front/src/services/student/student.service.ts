@@ -33,7 +33,6 @@ export class StudentService {
     ).subscribe(value => {
       this.studentList = value;
       this.student$.next(value);
-      console.log(value)
     });
   }
   public OneStudentService(id) {
