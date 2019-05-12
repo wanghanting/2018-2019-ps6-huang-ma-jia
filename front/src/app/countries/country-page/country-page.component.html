@@ -1,4 +1,5 @@
-<!--Navbar-->
+<div class="backhead" >
+  <p><br><br><br><br><br></p>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
   <!-- Navbar brand -->
@@ -24,8 +25,6 @@
       </li>
 
     </ul>
-    <!-- Links -->
-
     <form class="form-inline">
       <div class="md-form my-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -33,6 +32,7 @@
     </form>
   </div>
 </nav>
+</div>
 <div class="country-page" *ngIf="oneCountry != null">
 
     <h1>{{oneCountry.name}}</h1>
@@ -70,8 +70,7 @@
     <br>
 </div>
   <app-company-form></app-company-form>
-  <div *ngFor="let company of companyList">
-    <app-company-search [company]="company"></app-company-search>
-  </div>
+<app-company-list  (clickEventList)="onClick($event)"></app-company-list>
+
 
 

@@ -21,11 +21,20 @@
 .navigation a:hover {
   background: #00b7f5;
 }
+.backhead{
+  background: url("p1.jpg") no-repeat;
+  width: 100%;
+}
+
+.container-fluid {
+  background-color: white;
+}
 
 @media all and (max-width: 800px) {
   .navigation {
     justify-content: space-around;
   }
+
 }
 @media all and (max-width: 600px) {
   .navigation {
@@ -43,10 +52,6 @@
 
   .navigation li:last-of-type a {
     border-bottom: none;
-  }
-
-  .backhead{
-    color: #ffffff;
   }
 
 }

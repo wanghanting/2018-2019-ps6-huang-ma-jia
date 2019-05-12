@@ -47,4 +47,7 @@ export class CountryPageComponent implements OnInit {
 
   ngOnInit() {
   }
+  onClick(idCompany) {
+    window.location.href = 'http://localhost:4200/company/?id=' + idCompany;
+  }
 }
