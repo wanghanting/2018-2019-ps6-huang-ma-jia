@@ -8,20 +8,9 @@ import {Sector} from '../../models/sector';
 })
 
 export class SectorService {
-  /**
-   * Services Documentation:
-   * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
-   */
-
-  //private countryList: Country[] = []; A remettre quand le back marche
   private sectorList: Sector[];
 
   private sectorsUrl = 'http://localhost:9428/api/sectors/';
-
-  /**
-   * Observable which contains the list of the country.
-   * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
-   */
   public sectors$: BehaviorSubject<Sector[]> = new BehaviorSubject(this.sectorList);
 
   constructor(

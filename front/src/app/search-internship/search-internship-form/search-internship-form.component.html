@@ -66,5 +66,30 @@
         </div>
       </div>
     </form>
+    <form class="form" [formGroup]="internForm" (change)="internformChange()">
+      <div class="row">
+        <div class="col-4">
+          <label>A propos de stage:</label>
+        </div>
+        <div class="col-4">
+          <select id="start" [formControlName]="'start'">
+            <option value="" selected disabled hidden>start date</option>
+            <option value = "">start date</option>
+            <option *ngFor="let currentStart of STARTDATE_LIST" [value]="currentStart.name">
+              {{currentStart.name}}
+            </option>
+          </select>
+        </div>
+        <div class="col-4">
+          <select  id="period" [formControlName]="'period'">
+            <option value="" selected disabled hidden>period</option>
+            <option value = "">period</option>
+            <option *ngFor="let currentPeriod of PERIOD_LIST" [value]="currentPeriod.name">
+              {{currentPeriod.name}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
