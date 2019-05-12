@@ -1,28 +1,69 @@
-<div class="internship">
-  <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
-  <div class="internshipInfo">
-    <div class="item">
-    <!--<div class="item" onclick="alert('It is not finished yet!')">-->
-      <div class="item-left">
-        <p id="postname">{{internship.name}}</p>
-        <p class="postdetail">Duree: {{internship.period}}</p>
-        <p class="postdetail">Rating: {{internship.rating}}</p>
+<!--<div class="internship">-->
+  <!--&lt;!&ndash; we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data&ndash;&gt;-->
+  <!--<div class="internshipInfo">-->
+    <!--<div class="item">-->
+    <!--&lt;!&ndash;<div class="item" onclick="alert('It is not finished yet!')">&ndash;&gt;-->
+      <!--<div class="item-left">-->
+        <!--<p id="postname">{{internship.name}}</p>-->
+        <!--<p class="postdetail">Duree: {{internship.period}}</p>-->
+        <!--<p class="postdetail">Rating: {{internship.rating}}</p>-->
+      <!--</div>-->
+      <!--<div class="item-center">-->
+        <!--<ul class="detail">-->
+          <!--&lt;!&ndash;<li>A ete reconduit en {{internship.contract}}</li>&ndash;&gt;-->
+          <!--<li>Salaire: {{internship.salary}}</li>-->
+          <!--<li>Loge: {{internship.residence}}</li>-->
+          <!--&lt;!&ndash;<li *ngIf="internship.ifHasCar ;else elseBlock">Voiture de fonction</li>&ndash;&gt;-->
+          <!--<ng-template>-->
+            <!--<li>Pas de voiture</li>-->
+          <!--</ng-template>-->
+        <!--</ul>-->
+      <!--</div>-->
+      <!--<div class="item-right">-->
+        <!--<img [src]="internship.stuProfile" height="150" width="150">-->
+        <!--<p>{{internship.stuName}}</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="col-3">-->
+      <!--<img src="http://ku.90sjimg.com/element_origin_min_pic/17/04/25/67b3e05c5616b1f6c7899c0492f54837.jpg!/fwfh/804x803/quality/90/unsharp/true/compress/true" [height]="150" [width]="150">-->
+    <!--</div>-->
+    <!--<div class="col-3">-->
+      <!--<div class="row">{{internship.name}}</div>-->
+      <!--<div class="row">Durée:  {{internship.period}}</div>-->
+      <!--<div class="row">Rating:  {{internship.rating}}</div>-->
+    <!--</div>-->
+    <!--<div class="col-3">-->
+      <!--<div class="row">Salaire:  {{internship.salary}}</div>-->
+      <!--<div class="row">Logé:  {{internship.residence}}</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div class="card">
+  <div class="card-header">
+    {{internship.name}}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <div class="container">
+        <div class="row">
+        <div class="col-3">
+          <img src="http://ku.90sjimg.com/element_origin_min_pic/17/04/25/67b3e05c5616b1f6c7899c0492f54837.jpg!/fwfh/804x803/quality/90/unsharp/true/compress/true" [height]="150" [width]="150">
+        </div>
+        <div class="col-6">
+        <div class="row">Durée:  {{internship.period}}</div>
+        <div class="row">Rating:  {{internship.rating}}</div>
+        <div class="row">Salaire:  {{internship.salary}}</div>
+        <div class="row">Logé:  {{internship.residence}}</div>
+        </div>
       </div>
-      <div class="item-center">
-        <ul class="detail">
-          <!--<li>A ete reconduit en {{internship.contract}}</li>-->
-          <li>Salaire: {{internship.salary}}</li>
-          <li>Loge: {{internship.residence}}</li>
-          <!--<li *ngIf="internship.ifHasCar ;else elseBlock">Voiture de fonction</li>-->
-          <ng-template>
-            <li>Pas de voiture</li>
-          </ng-template>
-        </ul>
       </div>
-      <div class="item-right">
-        <img [src]="internship.stuProfile" height="150" width="150">
-        <p>{{internship.stuName}}</p>
-      </div>
-    </div>
+      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
   </div>
 </div>
