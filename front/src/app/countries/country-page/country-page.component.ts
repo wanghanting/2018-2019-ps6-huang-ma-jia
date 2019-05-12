@@ -1,24 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
-/*
-  Services
-*/
-import { OneCountryService } from '../../../services/country/one-country.service';
 import { PartnerHousingService } from '../../../services/partnerHousing/partnerHousing.service';
 import { CompanyService } from '../../../services/company/company.service';
-import { SectorService } from '../../../services/sector/sector.service';
-import { SpecialtyService } from '../../../services/specialty/specialty.service';
-import { ActivitySectorService } from '../../../services/activitySector/activitySector.service';
-import { CompanySizeService } from 'src/services/companySize/companySize.service';
-
-/*
-  Models
-*/
 import { Country } from '../../../models/country';
 import { PartnerHousing } from '../../../models/partnerHousing';
 import { Company } from '../../../models/company';
+import {CountryService} from '../../../services/country/country.service';
 
 @Component({
   selector: 'app-country-page',
@@ -27,97 +15,36 @@ import { Company } from '../../../models/company';
 })
 export class CountryPageComponent implements OnInit {
 
-    public country: Country
-    public countryPageForm: FormGroup
-    public partnerHousingList: PartnerHousing[]
-    public companyList: Company[]
-    public visaFullStarsArray: any[]
-    public visaEmptyStarsArray: any[]
-    public sectorArray: any[]
-    public specialtyArray: any[]
-    public activitySectorArray: any[]
-    public sizeArray: any[]
+    public country: Country[];
+    public oneCountry: Country;
+    public partnerHousingList: PartnerHousing[];
+    public companyList: Company[];
+    public visaFullStarsArray: any[];
+    public visaEmptyStarsArray: any[];
 
-  constructor(public formBuilder: FormBuilder,
-    public oneCountryService: OneCountryService,
-    public partnerHousingService: PartnerHousingService,
+  constructor(
+    public countryService: CountryService,
+    // public partnerHousingService: PartnerHousingService,
     public companyService: CompanyService,
-    public sectorService: SectorService,
-    public specialtyService: SpecialtyService,
-    public activitySectorService: ActivitySectorService,
-    public companySizeService: CompanySizeService,
     private route: ActivatedRoute) {
-
-    this.sectorArray = [];
-    this.specialtyArray = [];
-    this.activitySectorArray = [];
-    this.sizeArray = [];
-
-    this.oneCountryService.country$.subscribe((country) => {
-      this.country = country;
-      if (country != null) {
-        this.visaFullStarsArray = Array(country.visaDifficulty);
-        this.visaEmptyStarsArray = Array(5 - country.visaDifficulty);
-      }
+    this.route.queryParams.subscribe(params => {
+      this.countryService.oneCountryService(params['id']);
+      // this.partnerHousingService.setCountryId(params['id']);
+      this.companyService.setCountryId(params['id']);
     });
-    this.partnerHousingService.partnersHousings$.subscribe((partnerHousings) => {
-      this.partnerHousingList = partnerHousings;
+    this.countryService.countries$.subscribe((country) => {
+      this.oneCountry = country.pop();
+      if (this.oneCountry != null) {
+        this.visaFullStarsArray = Array(this.oneCountry.visaDifficulty);
+        this.visaEmptyStarsArray = Array(5 - this.oneCountry.visaDifficulty);
+      }
     });
     this.companyService.companies$.subscribe((companies) => {
       this.companyList = companies;
     });
-    this.route.queryParams.subscribe(params => {
-      this.oneCountryService.setCountryId(params['id']);
-      this.partnerHousingService.setCountryId(params['id']);
-      this.companyService.setCountryId(params['id']);
-    });
-    this.sectorService.sectors$.subscribe((sectors) => {
-      this.sectorArray = sectors;
-    });
-    this.specialtyService.specialties$.subscribe((specialties) => {
-      this.specialtyArray = specialties;
-    });
-    this.activitySectorService.activitySectors$.subscribe((activitySectors) => {
-      this.activitySectorArray = activitySectors;
-    });
-    this.companySizeService.companySizes$.subscribe((companySizes) => {
-      this.sizeArray = companySizes;
-      /*for (let companySize of companySizes){
-        this.countryPageForm.addControl(companySize.id, null);
-      }*/
-    });
 
-    this.countryPageForm = this.formBuilder.group({
-      sector: [''],
-      specialty: [''],
-      activitySector: [''],
-      size1: [''],
-      size2: [''],
-      size3: ['']
-    });
-
-
-    this.countryPageForm.setValue({
-      sector: '- Filière -',
-      specialty: '- Spécialité -',
-      activitySector: '- Secteur d\'activité -',
-      size1: true,
-      size2: true,
-      size3: true
-    });
   }
 
   ngOnInit() {
-  }
-
-  sectorChange(value){
-    this.specialtyService.setSectorName(value);
-    this.countryPageForm.patchValue({
-      specialty: '- Spécialité -'
-    });
-  }
-
-  formChange(){
-    this.companyService.formChange(this.countryPageForm);
   }
 }

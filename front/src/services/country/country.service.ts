@@ -29,4 +29,12 @@ export class CountryService {
       this.countries$.next(value);
     });
   }
+
+  oneCountryService(id) {
+    this.http.get<Country[]>(this.countriesUrl + '?id=' + id).subscribe(value => {
+      this.countryList = value;
+      this.countries$.next(value);
+      console.log(value);
+    });
+  }
 }
