@@ -1,22 +1,26 @@
-<div class="container" style="background: white">
+<div class="container-fluid" style="background: white">
   <div class="row">
     <div class="col-sm-3">
   <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
   <img class="icon" [src]="company.iconImage" [height]="150" [width]="150" >
       </div>
-  <div class="col-6">
-    <div class="row">
-      <label id="name of company" class="col">Nom entreprise:  {{company.name}}</label>
+  <div class="col-lg-6">
+    <div class="col">Nom de l'entreprise:</div>
+      <div id="company_name" class="col">{{company.name}}</div>
       <!--<label id="type intern" class="col-2">Type de stage proposé :{{company.internshipType}}</label>-->
-    </div>
-    <div class ="row">
-      <label id="secteur" class="col">Secteur:  {{company.activitySector}}</label>
-      <!--<label id="opportunity" class="col-2">Opportunité d'embauche :{{company.opportunity}}</label>-->
-    </div>
-    <div class="row">
-      <label id="avis" class="col">Avis:  {{company.rating}}</label>
-    </div>
 
   </div>
+    <div class="col-3 ">
+      <div class ="row">
+        <label id="secteur" class="col">Secteur:  {{company.activitySector}}</label>
+        <!--<label id="opportunity" class="col-2">Opportunité d'embauche :{{company.opportunity}}</label>-->
+      </div>
+      <div class="row">
+        <label id="avis" class="col">Avis:  {{company.rating}}</label>
+      </div>
+      <div class="row">
+        <label class="col">Adresse:  {{company.address}}</label>
+      </div>
+    </div>
   </div>
 </div>
