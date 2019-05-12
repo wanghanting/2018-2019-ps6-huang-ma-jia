@@ -1,3 +1,38 @@
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="http://www.polytech.unice.fr">
+    <img src="https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/209126/logo.png?1446572859" alt="">
+  </a>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="homePage">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="search-companies">Company</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="search-internship">Internship</a>
+      </li>
+
+    </ul>
+    <!-- Links -->
+
+    <form class="form-inline">
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      </div>
+    </form>
+  </div>
+</nav>
 <div class="country-page" *ngIf="oneCountry != null">
 
     <h1>{{oneCountry.name}}</h1>
