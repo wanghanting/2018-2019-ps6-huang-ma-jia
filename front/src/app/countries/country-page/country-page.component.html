@@ -13,23 +13,18 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="homePage">Home
+        <a class="nav-link" href="homePage" id="nav-home">Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="search-companies">Company</a>
+        <a class="nav-link" href="search-companies" id="nav-com">Entreprises</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="search-internship">Internship</a>
+        <a class="nav-link" href="search-internship" id="nav-intern">Stages</a>
       </li>
 
     </ul>
-    <form class="form-inline">
-      <div class="md-form my-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      </div>
-    </form>
   </div>
 </nav>
 </div>
@@ -71,6 +66,15 @@
 </div>
   <app-company-form></app-company-form>
 <app-company-list  (clickEventList)="onClick($event)"></app-company-list>
+<footer class="page-footer font-small blue pt-4">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="http://localhost:4200/homePage"> Huangmajia.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
 
 
 

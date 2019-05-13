@@ -29,11 +29,6 @@
   padding: 5px;
 }
 
-//.right{
-//  width: 40%;
-//  height: 100%;
-//}
-
 .right img{
   float: right;
   width: 60%;
@@ -86,4 +81,16 @@
   .navigation li:last-of-type a {
     border-bottom: none;
   }
+}
+
+#nav-home{
+  font-size: 30px;
+}
+
+#nav-com{
+  font-size: 30px;
+}
+
+#nav-intern{
+  font-size: 30px;
 }
