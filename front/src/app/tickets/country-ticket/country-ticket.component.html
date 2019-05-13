@@ -1,12 +1,31 @@
-<div class="card-ticket" (click)="onClick(ticket.id)" (mouseenter) ="mouseEnter() "  (mouseleave) ="mouseLeave()">
-  <!-- <img class="country-image" src={{ticket.pathFlag}}/>-->
-  <div class="content">
-    <img class="country-image" src={{ticket.flagPath}}/>
-  </div>
+<!--<div class="card-ticket" (click)="onClick(ticket.id)" (mouseenter) ="mouseEnter() "  (mouseleave) ="mouseLeave()">-->
+  <!--&lt;!&ndash; <img class="country-image" src={{ticket.pathFlag}}/>&ndash;&gt;-->
+  <!--<div class="content">-->
+    <!--<img class="country-image" src={{ticket.flagPath}}/>-->
+  <!--</div>-->
 
-  <div class="title">
-    <h1>{{ticket.name}}</h1>
-  </div>
+  <!--<div class="title">-->
+    <!--<h1>{{ticket.name}}</h1>-->
+  <!--</div>-->
 
-</div>
+<!--</div>-->
 
+<mat-card class="border" (click)="onClick(ticket.id)" (mouseenter) ="mouseEnter()" (mouseleave) ="mouseLeave()">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+      {{ticket.name}}
+    </mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{ticket.flagPath}}" style="width: 100%" alt="">
+  <!--<mat-card-content>-->
+
+    <!--<p>Secteur: {{company.activitySector}}</p>-->
+    <!--<p>Avis: {{company.rating}}</p>-->
+
+  <!--</mat-card-content>-->
+  <mat-card-actions>
+    <button mat-button>See detailis</button>
+  </mat-card-actions>
+</mat-card>

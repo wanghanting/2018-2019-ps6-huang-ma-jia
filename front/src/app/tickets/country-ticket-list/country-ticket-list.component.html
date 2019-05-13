@@ -1,8 +1,13 @@
-<div class="ticket-list">
-  <div class="ticket" *ngFor="let countryTicket of countryTicketList">
-      <!--Inputs & Output allow communication between parent & child components.-->
-      <!--More information: https://angular.io/guide/component-interaction-->
-      <app-country-ticket [ticket]="countryTicket" (ticketEventTicket)="ticketEvent($event)" (clickEventTicket)="onClick($event)"></app-country-ticket>
+<!--<div class="ticket-list">-->
+  <!--<div class="ticket" *ngFor="let countryTicket of countryTicketList">-->
+      <!--&lt;!&ndash;Inputs & Output allow communication between parent & child components.&ndash;&gt;-->
+      <!--&lt;!&ndash;More information: https://angular.io/guide/component-interaction&ndash;&gt;-->
+      <!--<app-country-ticket [ticket]="countryTicket" (ticketEventTicket)="ticketEvent($event)" (clickEventTicket)="onClick($event)"></app-country-ticket>-->
+  <!--</div>-->
+<!--</div>-->
 
-  </div>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="">
+  <mat-card class="ticket" *ngFor="let countryTicket of countryTicketList">
+    <app-country-ticket [ticket]="countryTicket" (ticketEventTicket)="ticketEvent($event)" (clickEventTicket)="onClick($event)"></app-country-ticket>
+  </mat-card>
 </div>
