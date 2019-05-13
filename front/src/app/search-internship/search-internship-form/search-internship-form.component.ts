@@ -108,8 +108,10 @@ export class SearchInternshipFormComponent implements OnInit {
   }
   internshipFilter() {
     this.urlExtra = '';
-    this.studentList.forEach(i => this.urlExtra = this.urlExtra + '&studentId=' + i.id);
-    this.companyList.forEach(i => this.urlExtra = this.urlExtra + '&companyId=' + i.id);
+      this.studentList.forEach(i => this.urlExtra = this.urlExtra + '&studentId=' + i.id);
+    //if (this.companyForm.getRawValue().country !== 'all' || this.companyForm.getRawValue().secteur !== 'all' || this.companyForm.getRawValue().size !== 'all') {
+      this.companyList.forEach(i => this.urlExtra = this.urlExtra + '&companyId=' + i.id);
+     //}
     this.internshipService.filterIntern(this.urlExtra + this.urlExtra2);
     this.internshipService.internships$.subscribe((internship) => this.internshipList = internship);
   }

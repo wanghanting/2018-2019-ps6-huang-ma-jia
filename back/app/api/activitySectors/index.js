@@ -3,7 +3,7 @@ const { ActivitySector } = require('../../models');
 
 const router = new Router();
 router.get('/', (req, res) => {
-  ActivitySector.find(req.query, { id: 1, _id: 0, name: 1 }, (err, activitySector) => {
+  ActivitySector.find(req.query, { _id: 0 }, (err, activitySector) => {
     res.send(activitySector);
   });
 });

@@ -16,7 +16,10 @@
         <!--<label id="opportunity" class="col-2">Opportunité d'embauche :{{company.opportunity}}</label>-->
       </div>
       <div class="row">
-        <label id="avis" class="col">Avis:  {{company.rating}}</label>
+        <label id="avis" class="col">Avis:
+          <i *ngFor="let item of visaFullStarsArray" class="fas fa-star"></i>
+          <i *ngFor="let item of visaEmptyStarsArray" class="far fa-star"></i>
+          <br></label>
       </div>
       <div class="row">
         <label class="col">Adresse:  {{company.address}}</label>

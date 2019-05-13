@@ -10,6 +10,8 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./company.component.scss']
 })
 export class CompanyComponent implements OnInit {
+  public visaFullStarsArray: any[];
+  public visaEmptyStarsArray: any[];
 
   /**
    * Inputs & Output allow communication between parent & child components.
@@ -24,7 +26,13 @@ export class CompanyComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.companyService.OneCompanyService(params['id']);
     });
-     this.companyService.company$.subscribe((company) => this.company = company.pop());
+     this.companyService.company$.subscribe((company) => {
+       this.company = company.pop();
+       if (this.company != null) {
+         this.visaFullStarsArray = Array(this.company.rating);
+         this.visaEmptyStarsArray = Array(5 - this.company.rating);
+       }
+     });
   }
 
   ngOnInit() {

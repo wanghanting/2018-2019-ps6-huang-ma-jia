@@ -17,10 +17,7 @@ export class CompanyService {
   private companiesUrl = 'http://localhost:9428/api/companies/';
 
   constructor(private http: HttpClient) {
-    //this.loadCompanies(this.companiesUrl);
-  }
-  loadCompanies(URL): void {
-    this.http.get<Company[]>(URL).subscribe( companies => {
+    this.http.get<Company[]>(this.companiesUrl).subscribe( companies => {
       this.companyList = companies;
       this.companies$.next(companies);
     });
@@ -38,9 +35,6 @@ export class CompanyService {
       this.company$.next(value);
     });
 
-  }
-  public getOneCompany() {
-    return this.onecompany;
   }
 
   public formChange(form: FormGroup) {

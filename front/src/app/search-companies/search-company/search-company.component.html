@@ -1,21 +1,3 @@
-<!--<body>-->
-<!--<div class="card" (click)="onClick(company.id)" style="width: 14rem">-->
-  <!--&lt;!&ndash; we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data&ndash;&gt;-->
-  <!--<img src="{{company.iconImage}}" class="card-img-top" size=""  alt="">-->
-  <!--<div class="card-body">-->
-    <!--<h5 class="card-title">-->
-      <!--<label id="name of company" class="row">{{company.name}}</label>-->
-      <!--&lt;!&ndash;<label id="type intern" class="col-2">Type de stage proposé :{{company.internshipType}}</label>&ndash;&gt;-->
-    <!--</h5>-->
-    <!--<p class="card-text">-->
-      <!--<label id="secteur" class="row">Secteur: {{company.activitySector}}</label>-->
-      <!--<label id="avis" class="row">Avis: {{company.rating}}</label>-->
-    <!--</p>-->
-    <!--&lt;!&ndash;<label id="opportunity" class="col-2">Opportunité d'embauche :{{company.opportunity}}</label>&ndash;&gt;-->
-    <!--&lt;!&ndash;<a href="#" class="btn btn-primary" >See details</a>&ndash;&gt;-->
-  <!--</div>-->
-<!--</div>-->
-<!--</body>-->
 
 <mat-card class="border" (click)="onClick(company.id)">
   <mat-card-header>
@@ -25,7 +7,7 @@
     </mat-card-title>
     <mat-card-subtitle></mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="{{company.iconImage}}" alt="">
+  <img mat-card-image [src]="company.iconImage" alt="">
   <mat-card-content>
 
     <p>Secteur: {{company.activitySector}}</p>

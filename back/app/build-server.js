@@ -12,17 +12,9 @@ module.exports = (cb) => {
     useNewUrlParser: true,
   }).then(() => {
     console.log('mongoDB Connected');
-  }).catch( (err) => {
+  }).catch((err) => {
     console.log(err);
   });
-  // const options = {
-  //   db: { native_parser: true },
-  //   server: { poolSize: 5 },
-  //   replset: { rs_name: 'myReplicaSetName' },
-  //   user: 'user',
-  //   pass: 'user',
-  // }
-  // mongoose.connect(dbUrl , options);
   const app = express();
   app.disable('x-powered-by');
   app.use(cors());
