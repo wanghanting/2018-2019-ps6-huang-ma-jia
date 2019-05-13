@@ -48,10 +48,6 @@
                             - Informations :
                                 <a [href]=oneCountry.visaWeb>{{oneCountry.name+' visa information'}}</a>
                         </div><br>
-                        Logements partenaires :
-                        <div class="tabulation" *ngFor="let partnerHousing of partnerHousingList">
-                            - {{partnerHousing.name}} : <a [href]="partnerHousing.webSite" target="_blank">{{partnerHousing.webSite}}</a>
-                        </div><br>
                         Opportinité d'embauche dans le pays : {{oneCountry.hiringOpportunities}}
                     </div>
                 </td>
