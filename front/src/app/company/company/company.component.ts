@@ -12,13 +12,12 @@ import {ActivatedRoute} from '@angular/router';
 export class CompanyComponent implements OnInit {
   public visaFullStarsArray: any[];
   public visaEmptyStarsArray: any[];
+  private company: Company;
 
   /**
    * Inputs & Output allow communication between parent & child components.
    * More information: https://angular.io/guide/component-interaction
    */
-  @Input()
-  company: Company;
   @Output()
   clickEventCompany = new EventEmitter<String>();
 

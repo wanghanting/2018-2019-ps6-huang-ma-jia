@@ -1,8 +1,8 @@
-<div class="container-fluid" style="background: white">
+<div class="container-fluid" style="background: white" *ngIf="company">
   <div class="row">
     <div class="col-sm-3">
   <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
-  <img class="icon" [src]="company.iconImage" [height]="150" [width]="150" >
+  <img class="icon" [src]="company.iconImage" [height]="150" [width]="150"  alt="">
       </div>
   <div class="col-lg-6">
     <div class="col"></div>
