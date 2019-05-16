@@ -37,5 +37,22 @@ const countrySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  visaInfo: {
+    type: String,
+    required: true,
+  },
+  rent:{
+    type: String,
+    required: true,
+  },
+  earning:{
+    type: String,
+    required: true,
+  },
+  expenditure:{
+    type: String,
+    required: true,
+  },
+
 });
 module.exports = mongoose.model('Country', countrySchema,'countries');

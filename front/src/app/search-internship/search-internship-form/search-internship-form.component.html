@@ -13,8 +13,8 @@
         </div>
         <div class="col-4">
           <select id="sector" [formControlName]="'sector'" (change)="sectorChange($event.target.value)">
-            <option value="" selected disabled hidden>filiere</option>
-            <option value = "">filiere</option>
+            <option value="" selected disabled hidden>filière</option>
+            <option value = "">filière</option>
             <option *ngFor="let currentSector of SECTOR_LIST" [value]="currentSector.name">
               {{currentSector.name}}
             </option>
@@ -22,8 +22,8 @@
         </div>
         <div class="col-4">
           <select  id="specialty" [formControlName]="'specialty'">
-            <option value="" selected disabled hidden>specialite</option>
-            <option value = "">specialty</option>
+            <option value="" selected disabled hidden>specialité</option>
+            <option value = "">specialité</option>
             <option *ngFor="let currentSpecialty of SPECIALTY_LIST" [value]="currentSpecialty.name">
               {{currentSpecialty.name}}
             </option>
@@ -39,8 +39,8 @@
         </div>
         <div class="col-3">
           <select  id="country" [formControlName]="'country'">
-            <option value="" selected disabled hidden>country</option>
-            <option value = "">country</option>
+            <option value="" selected disabled hidden>pays</option>
+            <option value = "">pays</option>
             <option *ngFor="let currentCountry of COUNTRY_LIST" [value]="currentCountry.id">
               {{currentCountry.name}}
             </option>
@@ -73,8 +73,8 @@
         </div>
         <div class="col-4">
           <select id="start" [formControlName]="'start'">
-            <option value="" selected disabled hidden>start date</option>
-            <option value = "">start date</option>
+            <option value="" selected disabled hidden>date de début</option>
+            <option value = "">date de début</option>
             <option *ngFor="let currentStart of STARTDATE_LIST" [value]="currentStart.name">
               {{currentStart.name}}
             </option>
@@ -82,8 +82,8 @@
         </div>
         <div class="col-4">
           <select  id="period" [formControlName]="'period'">
-            <option value="" selected disabled hidden>period</option>
-            <option value = "">period</option>
+            <option value="" selected disabled hidden>Durée</option>
+            <option value = "">Durée</option>
             <option *ngFor="let currentPeriod of PERIOD_LIST" [value]="currentPeriod.name">
               {{currentPeriod.name}}
             </option>

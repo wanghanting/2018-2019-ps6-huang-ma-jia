@@ -9,4 +9,8 @@ export interface Country {
     visaWeb?: string;
     hiringOpportunities?: string;
     introduction?: string;
+    visaInfo?: string;
+    rent?: string;
+    earning?: string;
+    expenditure?: string;
 }

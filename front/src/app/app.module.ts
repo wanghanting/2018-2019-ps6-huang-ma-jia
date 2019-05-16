@@ -32,12 +32,14 @@ import { InteractiveMapComponent} from './tickets/interactive-map/interactive-ma
 import { HomePageComponent} from './tickets/home-page/home-page.component';
 import { CardInformationComponent } from './tickets/card-information/card-information.component';
 import { StudentPageComponent } from './student/student';
+import {ProfileComponent} from './profile/profile-page';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountryPageComponent,
     CompanyComponent,
+    ProfileComponent,
     SearchCompanyComponent,
     SearchCompanyFormComponent,
     SearchCompanyListComponent,

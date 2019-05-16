@@ -45,10 +45,13 @@
 
     <HR style="FILTER: alpha(opacity：100,finishopacity：0,style = 2)" width="80%" color=#987cb9 SIZE=10>
 
-    <div class="row">
-      <app-company-list (clickEventList)="onClick($event)"></app-company-list>
+    <div>
+      <h1>{{student.firstName+' ' + student.lastName}}</h1>
+      <p>{{student.nickname}}</p>
+      <p>{{student.email}}</p>
+      <p>{{student.sector}}</p>
+      <p>{{student.specialty}}</p>
     </div>
-    <footer class="page-footer font-small blue pt-4">
 
       <!-- Copyright -->
       <div class="footer-copyright text-center py-3">© 2019 Copyright:
