@@ -21,4 +21,7 @@ export class StudentPageComponent implements OnInit {
     });
   }
   ngOnInit() {}
+  onClick(id) {
+    window.location.href = 'http://localhost:4200/emailTo/?id=' + id;
+  }
 }

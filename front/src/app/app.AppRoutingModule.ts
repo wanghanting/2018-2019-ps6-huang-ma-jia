@@ -6,6 +6,7 @@ import {CompanyPageComponent} from './company/company-page';
 import {HomePageComponent} from './tickets/home-page';
 import {StudentPageComponent} from './student/student';
 import {SearchInternshipPageComponent} from './search-internship/search-internship-page';
+import {EmailComponent} from './email/email.component';
 
 // import {UserListComponent} from './users/user-list/user-list.component';
 
@@ -15,8 +16,8 @@ const routes: Routes = [
   {path: 'country', component: CountryPageComponent},
   {path: 'homePage', component: HomePageComponent},
   {path: 'student', component: StudentPageComponent},
-  {path: 'search-internship', component: SearchInternshipPageComponent}
-    // {path: 'users', component: UserListComponent}
+  {path: 'search-internship', component: SearchInternshipPageComponent},
+  {path: 'emailTo', component: EmailComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -33,6 +33,7 @@ import { HomePageComponent} from './tickets/home-page/home-page.component';
 import { CardInformationComponent } from './tickets/card-information/card-information.component';
 import { StudentPageComponent } from './student/student';
 import {ProfileComponent} from './profile/profile-page';
+import {EmailComponent} from './email/email.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {ProfileComponent} from './profile/profile-page';
     CountryPageComponent,
     CompanyComponent,
     ProfileComponent,
+    EmailComponent,
     SearchCompanyComponent,
     SearchCompanyFormComponent,
     SearchCompanyListComponent,
