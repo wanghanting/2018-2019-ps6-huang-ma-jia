@@ -1,0 +1,39 @@
+.page-footer{
+  background-color: rgb(26,72,116);
+}
+
+.row{
+  width: 90%;
+  margin: auto;
+  padding-top: 10px;
+}
+
+#left1{
+  /*width: 233px;*/
+  /*height: 162px;*/
+  color: white;
+  font-size: medium;
+  padding-top: 20px;
+}
+
+#img1{
+  width: 128px;
+  height: 40px;
+}
+
+#img2{
+  width: 120px;
+  height: 120px;
+}
+
+ul,li{
+  list-style-type: none;
+}
+
+a{
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color:white;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+}

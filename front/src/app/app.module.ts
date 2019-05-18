@@ -35,6 +35,7 @@ import { StudentPageComponent } from './student/student';
 import {ProfileComponent} from './profile/profile-page';
 import {EmailComponent} from './email/email.component';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { HeaderComponent } from './header/header.component';
     SearchInternshipPageComponent,
     SearchInternshipFormComponent,
     HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserAnimationsModule,

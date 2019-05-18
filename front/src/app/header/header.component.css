@@ -1,18 +1,24 @@
 .header{
   width: 100%;
-  font-size: 40px;
   background-color: rgb(26,72,116);
 }
 
 
 #nav-home{
-  font-size: 30px;
+  font-size: 40px;
+  margin-right: 50px;
 }
 
 #nav-com{
-  font-size: 30px;
+  font-size: 40px;
+  margin-right: 50px;
 }
 
 #nav-intern{
-  font-size: 30px;
+  font-size: 40px;
+  margin-right: 50px;
+}
+
+#icon{
+  margin-right: 50px;
 }
