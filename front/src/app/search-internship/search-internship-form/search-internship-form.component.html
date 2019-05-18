@@ -8,7 +8,7 @@
   <div class="row">
     <form class="form" [formGroup]="stuForm" (change)="stuformChange()">
       <div class="row">
-        <div class="col-4">
+        <div class="col-6">
           <label>A propos de vous:</label>
         </div>
         <div class="col-4">
@@ -20,7 +20,7 @@
             </option>
           </select>
         </div>
-        <div class="col-4">
+        <div class="col-2">
           <select  id="specialty" [formControlName]="'specialty'">
             <option value="" selected disabled hidden>specialité</option>
             <option value = "">specialité</option>
@@ -34,7 +34,7 @@
     <form class="form" [formGroup]="companyForm" (change)="comformChange()">
       <br>
       <div class="row">
-        <div class="col-3">
+        <div class="col-4">
           <label>A propos de entreprise:</label>
         </div>
         <div class="col-3">
@@ -55,7 +55,7 @@
             </option>
           </select>
         </div>
-        <div class="col-3">
+        <div class="col-2">
           <select  id="size" [formControlName]="'size'">
             <option value="" selected disabled hidden>taille</option>
             <option value = "">taille</option>
@@ -67,8 +67,9 @@
       </div>
     </form>
     <form class="form" [formGroup]="internForm" (change)="internformChange()">
+      <br>
       <div class="row">
-        <div class="col-4">
+        <div class="col-6">
           <label>A propos de stage:</label>
         </div>
         <div class="col-4">
@@ -80,7 +81,7 @@
             </option>
           </select>
         </div>
-        <div class="col-4">
+        <div class="col-2">
           <select  id="period" [formControlName]="'period'">
             <option value="" selected disabled hidden>Durée</option>
             <option value = "">Durée</option>
