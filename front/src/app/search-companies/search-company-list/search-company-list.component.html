@@ -1,9 +1,11 @@
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
-<p>{{companyList.length}} entreprises à découvrir: </p>
-<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="">
+<div class="container-fluid" id="company_list">
+  <p>{{companyList.length}} entreprises à découvrir: </p>
+  <div fxLayout="row wrap" fxLayoutGap="5%" fxLayoutAlign="">
     <mat-card class="company" *ngFor="let company of companyList">
-        <app-company-search [company]="company" (clickEventCompany)="onClick($event)"></app-company-search>
+      <app-company-search [company]="company" (clickEventCompany)="onClick($event)"></app-company-search>
     </mat-card>
   </div>
+</div>
