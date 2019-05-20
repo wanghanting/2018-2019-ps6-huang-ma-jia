@@ -1,0 +1,48 @@
+//@import '../../../styles/card.scss';
+//
+.border:hover {
+  cursor: pointer;
+}
+
+.border {
+  width: 450px;
+  height: 400px;
+  margin: 2px;
+}
+
+.example-header-image {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqmzq1D6O3dU1oV8ke5FDABeYJdmGtg-yHY_3ib970uguET8ND');
+  background-size: cover;
+}
+
+img{
+  width: 80%;
+  height: 60%;
+  margin-left: 10%;
+
+}
+
+mat-card-title{
+  font-size: larger;
+}
+
+mat-card-actions{
+  text-align: center;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+mat-card-content{
+  text-align: center;
+}
+
+mat-card{
+  background: whitesmoke;
+}
+
+p{
+  margin-bottom: 1px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+}

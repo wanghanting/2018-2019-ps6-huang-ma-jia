@@ -36,6 +36,8 @@ import {ProfileComponent} from './profile/profile-page';
 import {EmailComponent} from './email/email.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import {LogeComponent} from './loge/loge';
+import {LogeListComponent} from './loge/loge-list';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { FooterComponent } from './footer/footer.component';
     SearchCompanyFormComponent,
     SearchCompanyListComponent,
     SearchCompanyPageComponent,
+    LogeComponent,
+    LogeListComponent,
     InternshipComponent,
     InternshipListComponent,
     CompanyPageComponent,

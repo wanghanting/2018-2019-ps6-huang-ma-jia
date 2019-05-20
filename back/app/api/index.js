@@ -10,6 +10,7 @@ const CompanySizeRouter = require('./employeesNumber');
 const ActivitySectorsRouter = require('./activitySectors');
 const PeriodRouter = require('./period');
 const StartDateRouter = require('./startdate');
+const LogeRouter =  require('./loge');
 
 const router = new Router();
 router.get('/status', (req, res) => res.status(200).json('ok'));
@@ -24,6 +25,7 @@ router.use('/employeesNumber', CompanySizeRouter);
 router.use('/activitySectors', ActivitySectorsRouter);
 router.use('/startdates', StartDateRouter);
 router.use('/periods', PeriodRouter);
+router.use('/loge', LogeRouter);
 
 
 module.exports = router;

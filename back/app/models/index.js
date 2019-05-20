@@ -7,8 +7,9 @@ const Sector = require('./sector/sector.js');
 const StartDate = require('./startDate/startDate.js');
 const Period = require('./period/period.js');
 const Specialty = require('./sector/specialty.js');
-const EmploeesNumber = require('./employeesNumber/employeeNumber.js')
+const EmploeesNumber = require('./employeesNumber/employeeNumber.js');
+const Loge = require('./loge/loge');
 
 module.exports = {
-  EmploeesNumber, Student, Company, Country, Internship, ActivitySector, Sector, StartDate, Period, Specialty,
+  EmploeesNumber, Student, Company, Country, Internship, ActivitySector, Sector, StartDate, Period, Specialty, Loge,
 };
