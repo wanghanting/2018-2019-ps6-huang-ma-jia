@@ -1,37 +1,18 @@
-.container{
-  width: 100%;
-  height: 100%;
+body{
+  padding-top: 180px;
 }
 
-
-.backhead{
-  background: url("../../../imgs/p4.jpg") no-repeat;
-  width:100%;
-  height:350px;
-  background-size:100% 100%;
-}
-
-.main{
-  width: 100%;
-  height: 35%;
-  margin: 10px;
-  display: flex;
-}
-
-.left{
-  height: 100%;
-  border: 1px solid #282828;
-  padding: 5px;
-}
-
-.right img{
-  float: right;
-  width: 60%;
-  height: 60%;
+.container-fluid{
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 app-internship-list{
-  width: 80%;
-  margin-left: 10%;
+  width: 60%;
   margin-right: 10%;
+}
+
+app-company-card{
+  width: 80%;
+  margin: auto;
 }

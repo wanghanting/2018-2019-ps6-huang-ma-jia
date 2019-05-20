@@ -1,34 +1,53 @@
-<div class="country-page" *ngIf="oneCountry != null">
+<div class="container-fluid">
+  <div class="row" *ngIf="oneCountry != null" id="company-page">
 
     <h1>{{oneCountry.name}}</h1>
+  </div>
+  <br>
+  <br>
+    <!--<fieldset>-->
+        <!--<legend>Information sur le pays</legend>-->
+        <!--<table>-->
+            <!--<tr>-->
+                <!--<td class="country-infos-td ">-->
+                    <!--<div class="country-infos">-->
+                        <!--{{oneCountry.introduction}}<br>-->
+                        <!--<br>-->
+                        <!--Démarche pour avoir un visa :<br>-->
+                        <!--<div class="tabulation">-->
+                            <!-- - Facilité :-->
+                                <!--<i *ngFor="let item of visaFullStarsArray" class="fas fa-star"></i>-->
+                                <!--<i *ngFor="let item of visaEmptyStarsArray" class="far fa-star"></i><br>-->
+                            <!-- - Informations :-->
+                                <!--<a [href]=oneCountry.visaWeb>{{oneCountry.name+' visa information'}}</a>-->
+                        <!--</div><br>-->
+                      <!--<br>-->
+                      <!--<br>-->
+                        <!--Opportinité d'embauche dans le pays : {{oneCountry.hiringOpportunities}}-->
+                    <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<img class="country-image" [src]="oneCountry.photoPath"/>-->
+                <!--</td>-->
+            <!--</tr>-->
+        <!--</table>-->
+    <!--</fieldset>-->
 
-    <fieldset>
-        <legend>Information sur le pays</legend>
-        <table>
-            <tr>
-                <td class="country-infos-td ">
-                    <div class="country-infos">
-                        {{oneCountry.introduction}}<br>
-                        <br>
-                        Démarche pour avoir un visa :<br>
-                        <div class="tabulation">
-                            - Facilité :
-                                <i *ngFor="let item of visaFullStarsArray" class="fas fa-star"></i>
-                                <i *ngFor="let item of visaEmptyStarsArray" class="far fa-star"></i><br>
-                            - Informations :
-                                <a [href]=oneCountry.visaWeb>{{oneCountry.name+' visa information'}}</a>
-                        </div><br>
-                        Opportinité d'embauche dans le pays : {{oneCountry.hiringOpportunities}}
-                    </div>
-                </td>
-                <td>
-                    <img class="country-image" [src]="oneCountry.photoPath"/>
-                </td>
-            </tr>
-        </table>
-    </fieldset>
-
+  <div class="row">
+    <div class="col-lg-6">
+      <app-life-info></app-life-info>
+    </div>
+    <div class="col-lg-3">
+      <app-visa-info></app-visa-info>
+    </div>
+    <div class="col-lg-3">
+      <img class="country-image" [src]="oneCountry.photoPath"/>
+    </div>
+  </div>
     <br>
-</div>
-  <app-company-form></app-company-form>
-<app-company-list  (clickEventList)="onClick($event)"></app-company-list>
+
+    <app-company-form></app-company-form>
+    <app-company-list  (clickEventList)="onClick($event)"></app-company-list>
+
+
+  </div>

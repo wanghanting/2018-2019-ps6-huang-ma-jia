@@ -1,8 +1,11 @@
 .header{
   width: 100%;
-  background-color: rgb(26,72,116);
+  /*background-color: rgb(26,72,116);*/
 }
 
+#nav{
+  background-color: rgb(26,72,116);
+}
 
 #nav-home{
   font-size: 40px;

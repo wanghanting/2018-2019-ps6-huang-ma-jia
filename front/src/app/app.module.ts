@@ -38,6 +38,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {LogeComponent} from './loge/loge';
 import {LogeListComponent} from './loge/loge-list';
+import { VisaInfoComponent } from './countries/visa-info/visa-info.component';
+import { LifeInfoComponent } from './countries/life-info/life-info.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import {LogeListComponent} from './loge/loge-list';
     SearchInternshipFormComponent,
     HeaderComponent,
     FooterComponent,
+    VisaInfoComponent,
+    LifeInfoComponent,
   ],
   imports: [
     BrowserAnimationsModule,

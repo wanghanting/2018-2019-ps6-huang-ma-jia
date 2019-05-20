@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs/index';
 import {HttpClient} from '@angular/common/http';
-import {Loge} from '../../models/Loge';
+import {Loge} from '../../models/loge';
 
 @Injectable({
   providedIn: 'root'

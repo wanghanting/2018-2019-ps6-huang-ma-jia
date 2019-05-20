@@ -5,13 +5,23 @@
 
     <br>
 
-    <app-company-card></app-company-card>
+    <div class="row">
+      <app-company-card></app-company-card>
+    </div>
 
     <br>
 
-    <app-search-form></app-search-form>
-    <app-internship-list (clickEventList)="onClick($event)"></app-internship-list>
-    <app-loge-list></app-loge-list>
+    <div class="row">
+      <app-search-form></app-search-form>
+    </div>
 
+    <div class="row">
+      <div class="col-lg-8">
+        <app-internship-list (clickEventList)="onClick($event)"></app-internship-list>
+      </div>
+      <div class="col-lg-4">
+        <app-loge-list></app-loge-list>
+      </div>
+    </div>
   </div>
 </body>
