@@ -3,8 +3,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Student} from '../../../models/student';
 
 import {StudentService} from '../../../services/student/student.service';
-import {CompanyService} from '../../../services/company/company.service';
 import {ActivatedRoute} from '@angular/router';
+import {InternshipService} from '../../../services/internship/internship.service';
 
 @Component({
   selector: 'app-company-page',
@@ -14,10 +14,12 @@ import {ActivatedRoute} from '@angular/router';
 
 export class StudentPageComponent implements OnInit {
   public student: Student;
-  constructor(public studentService: StudentService, private route: ActivatedRoute) {
+  constructor(public studentService: StudentService, public stageService: InternshipService, private route: ActivatedRoute) {
     this.studentService.student$.subscribe((stu) => this.student = stu.pop());
     this.route.queryParams.subscribe(params => {
       this.studentService.OneStudentService(params['id']);
+      const str = 'studentId=' + params['id'];
+      this.stageService.filterIntern(str);
     });
   }
   ngOnInit() {}

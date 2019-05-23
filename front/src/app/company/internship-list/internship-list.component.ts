@@ -19,12 +19,7 @@ export class InternshipListComponent implements OnInit {
   public companyList: Company[] = [];
   @Output() clickEventList = new EventEmitter<number>();
 
-  constructor(public internshipService: InternshipService, public studentService: StudentService, public companyService: CompanyService, private route: ActivatedRoute) {
-      this.route.queryParams.subscribe(params => {
-        if (params['id']) {
-          this.internshipService.setCompanyId(params['id']);
-        }
-      });
+  constructor(public internshipService: InternshipService, public studentService: StudentService, public companyService: CompanyService) {
     this.internshipService.internships$.subscribe((intern) => this.internshipList = intern);
     this.studentService.student$.subscribe((student) => this.studentList = student);
     this.companyService.companies$.subscribe((companies) => {this.companyList = companies; });
