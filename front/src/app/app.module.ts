@@ -40,6 +40,8 @@ import {LogeComponent} from './loge/loge';
 import {LogeListComponent} from './loge/loge-list';
 import { VisaInfoComponent } from './countries/visa-info/visa-info.component';
 import { LifeInfoComponent } from './countries/life-info/life-info.component';
+import {ReviewComponent} from './review/review';
+import {ReviewListComponent} from './review/review-list';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { LifeInfoComponent } from './countries/life-info/life-info.component';
     FooterComponent,
     VisaInfoComponent,
     LifeInfoComponent,
+    ReviewComponent,
+    ReviewListComponent
   ],
   imports: [
     BrowserAnimationsModule,

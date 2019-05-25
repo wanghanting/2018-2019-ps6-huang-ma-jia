@@ -9,7 +9,19 @@ const Period = require('./period/period.js');
 const Specialty = require('./sector/specialty.js');
 const EmploeesNumber = require('./employeesNumber/employeeNumber.js');
 const Loge = require('./loge/loge');
+const Review = require('./review/review');
 
 module.exports = {
-  EmploeesNumber, Student, Company, Country, Internship, ActivitySector, Sector, StartDate, Period, Specialty, Loge,
+  EmploeesNumber,
+  Student,
+  Company,
+  Country,
+  Internship,
+  ActivitySector,
+  Sector,
+  StartDate,
+  Period,
+  Specialty,
+  Loge,
+  Review,
 };

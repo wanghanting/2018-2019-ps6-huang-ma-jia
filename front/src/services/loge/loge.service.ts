@@ -10,7 +10,7 @@ import {Loge} from '../../models/loge';
 export class LogeService {
   private logeList: Loge[];
 
-  private logeUrl = 'http://localhost:9428/api/loge/';
+  private logeUrl = 'http://localhost:9428/api/review/';
   public loge$: BehaviorSubject<Loge[]> = new BehaviorSubject(this.logeList);
 
   constructor(

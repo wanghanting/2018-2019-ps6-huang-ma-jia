@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CompanyService} from '../../../services/company/company.service';
 import {ActivatedRoute} from '@angular/router';
 import {InternshipService} from '../../../services/internship/internship.service';
 @Component({
