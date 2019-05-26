@@ -61,5 +61,9 @@ const internshipSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  iconImage: {
+    type: String,
+    required: true,
+  },
 });
 module.exports = mongoose.model('Internship', internshipSchema, 'internship');
