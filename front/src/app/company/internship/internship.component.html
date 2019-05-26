@@ -46,7 +46,14 @@
 
 <div class="card" (click)="onclick(internship.studentId)">
   <div class="card-header">
-    {{internship.name}}
+      <div class="row">
+        <div class="col-10">
+          {{internship.name}}
+        </div>
+        <div class="col-2">
+          <img class="icon" src="https://img.16pic.com/00/63/82/16pic_6382514_s.png" [height]="50" [width]="50"  alt="">
+        </div>
+  </div>
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
@@ -56,12 +63,20 @@
           <img [src]="internship.stuProfile" [height]="150" [width]="150">
           <p>{{internship.stuName}}</p>
         </div>
-        <div class="col-6">
+        <div class="col-4">
         <div class="row">Durée:  {{internship.period}}</div>
         <div class="row">Rating:  {{internship.rating}}</div>
         <div class="row">Salaire:  {{internship.salary}}</div>
         <div class="row">Logé:  {{internship.residence}}</div>
         </div>
+          <div class="col-5">
+            <div class="row">
+              Commentaire:
+              <br>
+              <br>
+                {{internship.review}}
+            </div>
+          </div>
       </div>
       </div>
       <footer class="blockquote-footer">Excellent élève de <cite title="Source Title">Polytech Nice-Sophia</cite></footer>

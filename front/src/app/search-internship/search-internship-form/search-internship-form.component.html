@@ -8,7 +8,7 @@
   <div class="row">
     <form class="form" [formGroup]="stuForm" (change)="stuformChange()">
       <div class="row">
-        <div class="col-6">
+        <div class="col-8">
           <label>A propos de vous:</label>
         </div>
         <div class="col-4">
@@ -20,7 +20,12 @@
             </option>
           </select>
         </div>
-        <div class="col-2">
+      </div>
+
+      <br>
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
           <select  id="specialty" [formControlName]="'specialty'">
             <option value="" selected disabled hidden>specialité</option>
             <option value = "">specialité</option>
@@ -31,13 +36,15 @@
         </div>
       </div>
     </form>
+
+
     <form class="form" [formGroup]="companyForm" (change)="comformChange()">
       <br>
       <div class="row">
-        <div class="col-4">
-          <label>A propos de entreprise:</label>
+        <div class="col-8">
+          <label>A propos d'entreprise:</label>
         </div>
-        <div class="col-3">
+        <div class="col-4">
           <select  id="country" [formControlName]="'country'">
             <option value="" selected disabled hidden>pays</option>
             <option value = "">pays</option>
@@ -46,7 +53,12 @@
             </option>
           </select>
         </div>
-        <div class="col-3">
+      </div>
+
+      <br>
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
           <select id="secteur" [formControlName]="'secteur'" >
             <option value="" selected disabled hidden>secteur</option>
             <option value = "">secteur</option>
@@ -55,7 +67,13 @@
             </option>
           </select>
         </div>
-        <div class="col-2">
+      </div>
+
+
+      <br>
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
           <select  id="size" [formControlName]="'size'">
             <option value="" selected disabled hidden>taille</option>
             <option value = "">taille</option>
@@ -65,11 +83,13 @@
           </select>
         </div>
       </div>
+
     </form>
+
     <form class="form" [formGroup]="internForm" (change)="internformChange()">
       <br>
       <div class="row">
-        <div class="col-6">
+        <div class="col-8">
           <label>A propos de stage:</label>
         </div>
         <div class="col-4">
@@ -81,7 +101,12 @@
             </option>
           </select>
         </div>
-        <div class="col-2">
+      </div>
+
+      <br>
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
           <select  id="period" [formControlName]="'period'">
             <option value="" selected disabled hidden>Durée</option>
             <option value = "">Durée</option>

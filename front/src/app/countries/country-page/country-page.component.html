@@ -10,7 +10,23 @@
       <app-life-info></app-life-info>
     </div>
     <div class="col-lg-3">
-      <app-visa-info></app-visa-info>
+      <div class="card" style="width: 18rem;">
+        <!--<img src="..." class="card-img-top" alt="...">-->
+        <div class="card-body">
+          <h5 class="card-title">Démarche pour avoir un visa :</h5>
+          <p class="card-text">
+            - Facilité :
+            <i *ngFor="let item of visaFullStarsArray" class="fas fa-star"></i>
+            <i *ngFor="let item of visaEmptyStarsArray" class="far fa-star"></i><br>
+            - Informations :
+            Si vous êtes français, vous avez besoin d’un visa pour votre voyage en Chine
+            (Pékin, Shanghai, Shenzhen etc). Nous effectuons les formalités à votre place au
+            centre de visa chinois...
+            <!--<a [href]=oneCountry.visaWeb>{{oneCountry.name+' visa information'}}</a>-->
+          </p>
+          <a [href]="oneCountry.visaWeb" class="btn btn-primary">Plus d'information</a>
+        </div>
+      </div>
     </div>
     <div class="col-lg-3">
       <img class="country-image" [src]="oneCountry.photoPath"/>
@@ -18,8 +34,9 @@
   </div>
     <br>
 
-    <app-company-form></app-company-form>
-    <app-company-list  (clickEventList)="onClick($event)"></app-company-list>
-    <app-review-list></app-review-list>
+  <app-company-form></app-company-form>
+  <app-company-list  (clickEventList)="onClick($event)"></app-company-list>
+
+  <app-review-list></app-review-list>
 
   </div>

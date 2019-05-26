@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<div class="container-fluid">
+<div class="container">
 <div class="row">
   <div class="col-2"></div>
   <div class="col">
@@ -7,17 +7,28 @@
     <br>  
     <p>Filiere: {{student.sector}}</p>
     <p>Spécialité: {{student.specialty}}</p>
-    <p>Adresse email: {{student.email}}</p>
+    <p>Adresse email:
+      <a href="mailto:{{student.email}}">
+        <span class="fas fa-envelope"></span>
+        {{student.email}}
+      </a>
+    </p>
   </div>
   <div class="col-4">
     <img [src]="student.profilePicture">
   </div>
 </div>
-  <div class="grid-email">
-    <a href="mailto:{{student.email}}">
-      <span class="fas fa-envelope"></span>
-      {{student.email}}
-    </a>
-  </div>
+  <!--<div class="row" id="end">-->
+    <!--<div class="col-2"></div>-->
+    <!--<div class="col">-->
+      <!--<div class="grid-email">-->
+        <!--<a href="mailto:{{student.email}}">-->
+          <!--<span class="fas fa-envelope"></span>-->
+          <!--{{student.email}}-->
+        <!--</a>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
   <app-internship-list></app-internship-list>
 </div>

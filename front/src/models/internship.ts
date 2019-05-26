@@ -14,5 +14,6 @@ export interface Internship {
   tuteur?: string;
   stuProfile?: string;
   stuName?: string;
+  review?: string;
   iconImage?: string;
 }
