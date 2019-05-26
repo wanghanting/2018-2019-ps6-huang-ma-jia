@@ -42,10 +42,12 @@ import { VisaInfoComponent } from './countries/visa-info/visa-info.component';
 import { LifeInfoComponent } from './countries/life-info/life-info.component';
 import {ReviewComponent} from './review/review';
 import {ReviewListComponent} from './review/review-list';
+import {ActivityComponent} from './activity/index';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ActivityComponent,
     CountryPageComponent,
     CompanyComponent,
     ProfileComponent,
