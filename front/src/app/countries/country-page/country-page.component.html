@@ -8,7 +8,6 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="card" >
-        <!--<img src="..." class="card-img-top" alt="...">-->
         <div class="card-body">
           <h5 class="card-title">Information sur le pays</h5>
           <br>
@@ -30,7 +29,7 @@
     <br>
   <div class="row">
     <div class="col-lg-6">
-      <div class="card" style="width: 18rem;">
+      <div class="card" >
         <div class="card-body">
           <h5 class="card-title">Démarche pour avoir un visa :</h5>
           <p class="card-text">
@@ -38,15 +37,14 @@
             <i *ngFor="let item of visaFullStarsArray" class="fas fa-star"></i>
             <i *ngFor="let item of visaEmptyStarsArray" class="far fa-star"></i><br>
             - Informations :
-          <p class="card-text">
-          <p *ngFor="let text of oneCountry.visaInfo">{{text}}<p><br>
-
+          <p *ngFor="let text of oneCountry.visaInfo" style="margin-bottom: 2px">{{text}}</p>
           <a [href]='oneCountry.visaWeb' class="btn btn-primary">Plus d'information</a>
+
         </div>
       </div>
     </div>
-    <div class="col-lg-5">
-      <div class="card" style="width: 18rem;">
+    <div class="col-lg-4">
+      <div class="card">
         <div class="card-body">
           <h5 class="card-title">Niveau de vie :</h5>
           <p>Rent: {{oneCountry.rent}}</p><br>
