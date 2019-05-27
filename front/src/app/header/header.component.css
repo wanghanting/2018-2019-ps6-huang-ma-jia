@@ -1,12 +1,14 @@
 .header{
   width: 100%;
-  /*background-color: rgb(26,72,116);*/
+  height: 10%;
 }
 
 #nav{
   background-color: rgb(26,72,116);
 }
-
+#schoolicon {
+  height: 50px;
+}
 #nav-home{
   font-size: 40px;
   margin-right: 50px;
