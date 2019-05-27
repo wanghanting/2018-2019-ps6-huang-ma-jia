@@ -38,7 +38,7 @@ const countrySchema = new mongoose.Schema({
     required: true,
   },
   visaInfo: {
-    type: String,
+    type: Array,
     required: true,
   },
   rent:{

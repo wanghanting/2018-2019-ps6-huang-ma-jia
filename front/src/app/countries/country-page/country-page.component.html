@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="oneCountry">
   <div class="row" *ngIf="oneCountry != null" id="company-page">
 
     <h1>{{oneCountry.name}}</h1>
@@ -7,11 +7,30 @@
   <br>
   <div class="row">
     <div class="col-lg-6">
-      <app-life-info></app-life-info>
-    </div>
-    <div class="col-lg-3">
-      <div class="card" style="width: 18rem;">
+      <div class="card" >
         <!--<img src="..." class="card-img-top" alt="...">-->
+        <div class="card-body">
+          <h5 class="card-title">Information sur le pays</h5>
+          <br>
+          <p class="card-text">
+            {{oneCountry.introduction}}
+            <br>
+            <br>
+            <br>
+            Opportinité d'embauche dans le pays : {{oneCountry.hiringOpportunities}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <img class="country-image" [src]="oneCountry.photoPath"/>
+    </div>
+  </div>
+    <br>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Démarche pour avoir un visa :</h5>
           <p class="card-text">
@@ -19,20 +38,26 @@
             <i *ngFor="let item of visaFullStarsArray" class="fas fa-star"></i>
             <i *ngFor="let item of visaEmptyStarsArray" class="far fa-star"></i><br>
             - Informations :
-            Si vous êtes français, vous avez besoin d’un visa pour votre voyage en Chine
-            (Pékin, Shanghai, Shenzhen etc). Nous effectuons les formalités à votre place au
-            centre de visa chinois...
-            <!--<a [href]=oneCountry.visaWeb>{{oneCountry.name+' visa information'}}</a>-->
-          </p>
-          <a [href]="oneCountry.visaWeb" class="btn btn-primary">Plus d'information</a>
+          <p class="card-text">
+          <p *ngFor="let text of oneCountry.visaInfo">{{text}}<p><br>
+
+          <a [href]='oneCountry.visaWeb' class="btn btn-primary">Plus d'information</a>
         </div>
       </div>
     </div>
-    <div class="col-lg-3">
-      <img class="country-image" [src]="oneCountry.photoPath"/>
+    <div class="col-lg-5">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Niveau de vie :</h5>
+          <p>Rent: {{oneCountry.rent}}</p><br>
+          <p>Earning:{{oneCountry.earning}}</p><br>
+          <p>Expenditure: {{oneCountry.expenditure}}</p>
+
+        </div>
+      </div>
     </div>
   </div>
-    <br>
+
 
   <app-company-form></app-company-form>
   <app-company-list  (clickEventList)="onClick($event)"></app-company-list>
