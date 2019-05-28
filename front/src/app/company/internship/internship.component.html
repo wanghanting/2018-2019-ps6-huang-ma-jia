@@ -3,7 +3,7 @@
   <div class="card-header"id="stagehead">
       <div class="row" >
         <div class="col-10">
-          <p style="color: #e08031;size: 80px;font-weight: bold">{{internship.name}}</p>
+          <p style="color: #e08031;size: 120px;font-weight: bold">{{internship.name}}</p>
         </div>
         <div class="col-2">
           <img class="icon" [src]="internship.iconImage" [height]="80" [width]="80"  alt="">
@@ -41,7 +41,7 @@
           <div class="col-3">
             <img [src]="internship.stuProfile" [height]="150" [width]="200">
             <i>{{internship.stuName}}</i>
-            <p style="font-weight: bold">Commentaire :</p>{{internship.review}}
+            <p style="font-weight: bold">Commentaire :</p>{{internship.review}} !
             <button (click)="onclick(internship.studentId)">Contactez-moi!</button>
           </div>
         </div>

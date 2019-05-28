@@ -5,8 +5,11 @@
   </div>
 <br>
   <div class="row">
-    <input id="searchIntern" type = "text" name="searchIntern" width="150px" [(ngModel)]="searchIntern">
-    <button (click)="onClick(searchIntern)">Chercher</button>
+    <div class="input-group">
+      <input id="searchIntern" class="form-control input-group-xs" type = "text" name="searchIntern" [(ngModel)]="searchIntern" placeholder="Entrez ce que vous recherchez">
+      <!--<button (click)="onClick(searchIntern)">Chercher</button>-->
+      <img src="http://ku.90sjimg.com/element_pic/00/91/94/8456f18ade30696.jpg" alt="" id="search" (click)="onClick(searchIntern)">
+    </div>
   </div>
   <br>
   <br>
