@@ -123,7 +123,7 @@ export class SearchInternshipFormComponent implements OnInit {
     this.internshipFilter();
   }
   onClick(key) {
-    this.internshipService.filterIntern('&name=%' + key + '%');
+    this.internshipService.filterIntern('&name=' + key);
   }
 
 }
