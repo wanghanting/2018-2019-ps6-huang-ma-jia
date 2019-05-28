@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {Searchcompany} from '../../../models/searchcompany';
 import {CompanyService} from '../../../services/company/company.service';
 import {SectorService} from '../../../services/sector/sector.service';
 import {SpecialtyService} from '../../../services/specialty/specialty.service';
@@ -29,15 +28,10 @@ import {PeriodService} from '../../../services/period/period.service';
 })
 export class SearchInternshipFormComponent implements OnInit {
 
-  // Note: We are using here ReactiveForms to create our form. Be careful when you look for some documentation to
-  // avoid TemplateDrivenForm (another type of form)
-  /**
-   * TicketForm: Object which manages the form in our component.
-   * More information about Reactive Forms: https://angular.io/guide/reactive-forms
-   */
   public studentList: Student[] = [];
   public companyList: Company[] = [];
   public internshipList: Internship[];
+  public searchIntern: string;
   public stuForm: FormGroup;
   public companyForm: FormGroup;
   public internForm: FormGroup;
@@ -109,9 +103,7 @@ export class SearchInternshipFormComponent implements OnInit {
   internshipFilter() {
     this.urlExtra = '';
       this.studentList.forEach(i => this.urlExtra = this.urlExtra + '&studentId=' + i.id);
-    //if (this.companyForm.getRawValue().country !== 'all' || this.companyForm.getRawValue().secteur !== 'all' || this.companyForm.getRawValue().size !== 'all') {
       this.companyList.forEach(i => this.urlExtra = this.urlExtra + '&companyId=' + i.id);
-     //}
     this.internshipService.filterIntern(this.urlExtra + this.urlExtra2);
     this.internshipService.internships$.subscribe((internship) => this.internshipList = internship);
   }
@@ -130,4 +122,8 @@ export class SearchInternshipFormComponent implements OnInit {
     + (this.internForm.getRawValue().period ? '&period=' + this.internForm.getRawValue().period : '' );
     this.internshipFilter();
   }
+  onClick(key) {
+    this.internshipService.filterIntern('&name=%' + key + '%');
+  }
+
 }

@@ -18,7 +18,7 @@ export class InternshipComponent implements OnInit {
   ngOnInit() {
 
   }
-  onclick(id){
+  onclick(id) {
     this.clickEvent.emit(id);
   }
 }
