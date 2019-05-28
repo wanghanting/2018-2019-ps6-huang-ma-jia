@@ -8,4 +8,5 @@ export interface Student {
   profilePicture?: string;
   sector?: string;
   specialty?: string;
+  introduction?: string;
 }

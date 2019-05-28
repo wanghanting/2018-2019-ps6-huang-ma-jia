@@ -12,10 +12,18 @@ export class InternshipComponent implements OnInit {
   @Output()
   clickEvent = new EventEmitter<number>();
 
+  public FullStarsArray: any[];
+  public EmptyStarsArray: any[];
+
+
   constructor() {
+
   }
 
   ngOnInit() {
+    this. FullStarsArray = Array(this.internship.rating);
+    this. EmptyStarsArray = Array(5 - this.internship.rating);
+
 
   }
   onclick(id) {

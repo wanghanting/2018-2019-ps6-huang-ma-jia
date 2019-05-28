@@ -1,9 +1,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<div class="container">
+<div class="box" *ngIf="student">
 <div class="row">
-  <div class="col-2"></div>
-  <div class="col">
-    <h1>Etudiant:  {{student.firstName+' '+student.lastName}}</h1>  
+  <div class="col-8">
+    <p style="font-weight: bold;font-size: 150px;color: gold">{{student.firstName+' '+student.lastName}} </p>  
     <br>  
     <p>Filiere: {{student.sector}}</p>
     <p>Spécialité: {{student.specialty}}</p>
@@ -14,10 +13,14 @@
       </a>
     </p>
   </div>
-  <div class="col-4">
-    <img [src]="student.profilePicture">
+  <div class="col-2">
+    <img [src]="student.profilePicture" width="600" height="400">
   </div>
 </div>
+  <div class="row">
+    <p style="font-weight: bold;font-size: 150px;color: gold">Introduction:</p>
+    <p>{{student.introduction}}</p>
+  </div>
 
   <app-internship-list></app-internship-list>
 </div>
