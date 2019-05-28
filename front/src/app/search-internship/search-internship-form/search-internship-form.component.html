@@ -4,7 +4,12 @@
     <h3 style="color: #EB5528">Quels sont vos critères?</h3>
   </div>
 <br>
-
+  <div class="row">
+    <input id="searchIntern" type = "text" name="searchIntern" width="150px" [(ngModel)]="searchIntern">
+    <button (click)="onClick(searchIntern)">Chercher</button>
+  </div>
+  <br>
+  <br>
   <div class="row">
     <form class="form" [formGroup]="stuForm" (change)="stuformChange()">
       <div class="row">
@@ -118,8 +123,5 @@
       </div>
     </form>
   </div>
-  <div class="row">
-    <input id="searchIntern" type = "text" name="searchIntern" width="150px" [(ngModel)]="searchIntern">
-    <button (click)="onClick(searchIntern)">submit</button>
-  </div>
+
 </div>
