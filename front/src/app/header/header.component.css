@@ -32,3 +32,24 @@
   font-size: 40px;
   margin-right: 50px;
 }
+
+#nav-contact{
+  font-size: 40px;
+  margin-right: 50px;
+}
+
+#nav-log{
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+li{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#user{
+  height: 50px;
+  width: 50px;
+  background-color: #2a5caa
+}
