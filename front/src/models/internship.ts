@@ -16,4 +16,6 @@ export interface Internship {
   stuName?: string;
   review?: string;
   iconImage?: string;
+  language?: string[];
+  companyPhoto?: string;
 }
