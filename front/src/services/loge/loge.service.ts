@@ -10,11 +10,10 @@ import {Loge} from '../../models/loge';
 export class LogeService {
   private logeList: Loge[];
 
-  private logeUrl = 'http://localhost:9428/api/review/';
+  private logeUrl = 'http://localhost:9428/api/loge/';
   public loge$: BehaviorSubject<Loge[]> = new BehaviorSubject(this.logeList);
 
-  constructor(
-    private http: HttpClient) {
+  constructor(private http: HttpClient) {
     this.http.get<Loge[]>(this.logeUrl).subscribe(value => {
       this.logeList = value;
       this.loge$.next(value);
