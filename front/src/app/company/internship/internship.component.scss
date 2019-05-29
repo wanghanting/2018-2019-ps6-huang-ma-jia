@@ -15,7 +15,7 @@
 }
 button {
   border-radius: 15px;
-  background-color: #51a59b;
+  background-color: darkorange;
   border:none;
   color:white;
   text-align:center;
@@ -24,4 +24,8 @@ button {
   padding: 5px;
   font-size:24px;
   cursor: pointer;
+}
+
+.picture{
+  margin:10px;
 }

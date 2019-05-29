@@ -1,63 +1,64 @@
-<div class="container-fluid" *ngIf="oneCountry">
+<div class="container-fluid"  *ngIf="oneCountry">
   <div class="row" *ngIf="oneCountry != null" id="company-page">
 
     <h1>{{oneCountry.name}}</h1>
   </div>
   <br>
   <br>
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="card" >
-        <div class="card-body">
-          <h5 class="card-title">Information sur le pays</h5>
-          <br>
-          <p class="card-text">
+  <div class="card" >
+    <div class="row">
+    <div class="col-5">
+      <img class="country-image" [src]="oneCountry.photoPath">
+    </div>
+    <div class="col-7">
+      <div style="margin: 20px">
+        <h2>Information sur le pays</h2>
+          <p style="font-size: 30px;">
             {{oneCountry.introduction}}
-            <br>
-            <br>
-            <br>
+          </p>
+      <br>
+          <p style="font-size: 40px;color:#B87333;">
             Opportinité d'embauche dans le pays : {{oneCountry.hiringOpportunities}}
           </p>
-        </div>
       </div>
-    </div>
-
-    <div class="col-lg-4">
-      <img class="country-image" [src]="oneCountry.photoPath"/>
+        </div>
     </div>
   </div>
     <br>
+  <div class="row" id="lifecard">
+    <div class="col-4" align="center">
+      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559172741355&di=1c00e4e8b2e02940a2c849a8e4ad31ed&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F01%2F33%2F49%2F59246e327ef72_610.jpg" height="150" width="150">
+      <p class="labelgrey">Earning</p>
+      <p class="labelword">{{oneCountry.earning}}</p>
+    </div>
+    <div class="col-4" align="center">
+      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559767378&di=e66935ec8e51dec0d25396077525421c&imgtype=jpg&er=1&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F18%2F04%2F02%2Fd0d3088764293fbd5c99bf584eb4da63.jpg%21%2Ffwfh%2F804x804%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue" height="150" width="150">
+      <p class="labelgrey">Rent</p>
+      <p class="labelword">{{oneCountry.earning}}</p>
+    </div>
+    <div class="col-4" align="center">
+      <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=988893365,3264002235&fm=15&gp=0.jpg" height="150" width="150">
+      <p class="labelgrey">Expenditure</p>
+      <p class="labelword">{{oneCountry.earning}}</p>
+    </div>
+  </div>
+<br>
   <div class="row">
-    <div class="col-lg-6">
-      <div class="card" >
-        <div class="card-body">
-          <h5 class="card-title">Démarche pour avoir un visa :</h5>
+    <div id="visacard">
+      <div align="center">
+          <h2>Démarche pour avoir un visa :</h2>
           <p class="card-text">
-            - Facilité :
+             Facilité :
             <i *ngFor="let item of visaFullStarsArray" class="fas fa-star"></i>
             <i *ngFor="let item of visaEmptyStarsArray" class="far fa-star"></i><br>
-            - Informations :
-          <p *ngFor="let text of oneCountry.visaInfo" style="margin-bottom: px">{{text}}</p>
+           <p class="labelgrey">Informations </p>
+          <p *ngFor="let text of oneCountry.visaInfo" class="labelword">{{text}}</p>
           <a [href]='oneCountry.visaWeb' class="btn btn-primary">Plus d'information</a>
 
         </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Niveau de vie :</h5>
-          <p>Rent: {{oneCountry.rent}}</p><br>
-          <p>Earning:{{oneCountry.earning}}</p><br>
-          <p>Expenditure: {{oneCountry.expenditure}}</p>
-
-        </div>
-      </div>
     </div>
   </div>
 
-
-  <app-company-form></app-company-form>
   <app-company-list  (clickEventList)="onClick($event)"></app-company-list>
 
   <app-review-list></app-review-list>

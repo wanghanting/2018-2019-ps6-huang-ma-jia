@@ -1,18 +1,8 @@
 .container-fluid {
-  padding-top: 180px;
-  width: 90%;
+  padding-top: 100px;
+  width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  }
-
-  .country-infos-td {
-    width: 100%;
-  }
-
-  .country-infos {
-    margin: 20px;
-    font-size: 20px;
-    line-height: 130%
   }
 
   .company-array {
@@ -25,9 +15,9 @@
 
 
   .country-image {
-      height: 400px;
-      width: 500px;
-      margin: 5px;
+      height: 500px;
+      width: 800px;
+      margin: 0;
   }
 
   td {
@@ -45,3 +35,32 @@
   .sizeArray {
     font-size: 14px;
   }
+
+  #visacard{
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+  }
+
+  .labelgrey{
+    font-size: 25px;
+    color:#404040;
+    margin:auto;
+  }
+  .labelword{
+    font-size:30px;
+    color:#404040;
+  }
+  #lifecard{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+h1{
+  font-size: 5em;
+  color:rgba(67,153,97,.5);
+  text-shadow:4px 4px 0 rgba(236,144,79, 0.6);
+}
+h2{
+  font-size: 50px;
+  color: gold;
+}
