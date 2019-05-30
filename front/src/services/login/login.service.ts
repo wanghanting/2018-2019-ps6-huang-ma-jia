@@ -7,16 +7,22 @@ import {User} from '../../models/user';
   providedIn: 'root'
 })
 
-export class LogeService {
+export class UserService {
   private user: User;
 
-  private loginUrl = 'http://localhost:9428/api/loge/';
+  private loginUrl = 'http://localhost:9428/api/login';
   public logeduser$: BehaviorSubject<User> = new BehaviorSubject(this.user);
 
   constructor(private http: HttpClient) {
-    this.http.get<User>(this.loginUrl).subscribe(value => {
-      this.user = value;
-      this.logeduser$.next(value);
+  }
+  checkUser(user, pass) {
+    const info = {'name': user, 'password': pass};
+    console.log(info);
+    this.http.post(this.loginUrl, info).subscribe(res => {
+
+    }, error => {
+
     });
+
   }
 }

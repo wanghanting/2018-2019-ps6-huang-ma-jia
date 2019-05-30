@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {UserService} from '../../services/login/login.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',
@@ -10,9 +12,15 @@ export class LoginPageComponent implements OnInit {
   public showlogin: boolean ;
   public userLogin: string;
   public passLogin: string;
-  constructor() {
+  public loginForm: FormGroup;
+  constructor(public userService: UserService,public formBuilder: FormBuilder) {
     this.showsign = false;
     this.showlogin = true;
+    this.loginForm = this.formBuilder.group({
+      name: [''],
+      password: [''],
+    });
+
 
   }
   ngOnInit() {}
@@ -24,7 +32,8 @@ export class LoginPageComponent implements OnInit {
     this.showsign = false;
     this.showlogin = true;
   }
-  submitLogin(user, pass){
+  submitLogin(user, pass) {
+    this.userService.checkUser(user, pass);
 
   }
 }

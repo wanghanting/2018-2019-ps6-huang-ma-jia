@@ -42,17 +42,17 @@
                   </div>
               </div>
               <div *ngIf="showlogin">
-                    <form action="#">
+                    <form action="#" [formGroup]="loginForm">
                       <div class="row form-group">
                         <div class="col-md-12">
-                          <label for="username2">Username or Email</label>
-                          <input type="text" class="form-control" id="username2" [(ngModel)]="userLogin">
+                          <label for="username2" >Username or Email</label>
+                          <input type="text" class="form-control" id="username2"  [formControlName]="'name'" [(ngModel)]="userLogin">
                         </div>
                       </div>
                       <div class="row form-group">
                         <div class="col-md-12">
                           <label for="password2">Password</label>
-                          <input type="password" class="form-control" id="password2" [(ngModel)]="passLogin">
+                          <input type="password" class="form-control" id="password2"  [formControlName]="'password'"[(ngModel)]="passLogin">
                         </div>
                       </div>
 
