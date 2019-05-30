@@ -1,17 +1,3 @@
-.form-wrap{
-  border: grey 1px;
-  background-color: white;
-  opacity: 0.85;
-  margin-top: 260px;
-  padding-left: 16px;
-  border-radius: 15px;
-}
-.container-fluid{
-  background-image: url("../../imgs/img_4.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0,0;
-}
 
 button {
   margin-bottom: 100px;
@@ -39,4 +25,28 @@ form{
   margin-bottom: 100px;
   width: 150px;
   background-color:dimgrey;
+}
+.row{
+  background-color: black;
+}
+#row1-pic{
+  background-image: url("../../imgs/img_row1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#row2-pic{
+  background-image: url("../../imgs/row2_pic.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.row-text{
+  padding: 100px;
+}
+.title-inner{
+  color:white;
+  font-size: 50px;
+}
+.text-inner{
+  color:white;
+  font-size: 40px;
 }

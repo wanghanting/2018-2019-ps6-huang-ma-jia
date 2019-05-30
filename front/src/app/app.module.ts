@@ -40,13 +40,14 @@ import {LogeComponent} from './loge/loge';
 import {LogeListComponent} from './loge/loge-list';
 import {ReviewComponent} from './review/review';
 import {ReviewListComponent} from './review/review-list';
-import {ActivityComponent} from './activity/index';
+import {ActivityComponent} from './activity';
 import {LoginPageComponent} from './login';
 import {ManageListComponent} from './manage-list';
 import {ListService} from '../services/list/list.service';
 import {LogeService} from '../services/loge/loge.service';
 import {ReviewService} from '../services/review/review.service';
 import {InternshipService} from '../services/internship/internship.service';
+import {ContactPageComponent} from './contact';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import {InternshipService} from '../services/internship/internship.service';
     ReviewListComponent,
     LoginPageComponent,
     ManageListComponent,
+    ContactPageComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -96,7 +98,8 @@ import {InternshipService} from '../services/internship/internship.service';
     ReactiveFormsModule,
     AppRoutingModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [CountryService, OneCountryService, ActivitySectorService, CompanySizeService, StudentService, StartdateService, PeriodService,
     ListService, LogeService, ReviewService, InternshipService],
