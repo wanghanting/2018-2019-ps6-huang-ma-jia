@@ -13,7 +13,20 @@ select{
 .container{
   border-bottom: solid 2px black;
 }
+h1{
+  font-size: 5em;
+  color:dimgrey;
+  text-shadow:4px 4px 0 rgba(236,144,79, 0.6);
+}
 
 #bot{
   margin-bottom: 100px;
+}
+select{
+  width: 90%;
+  height:45px;
+  font-size: 30px;
+}
+h3{
+  color:orangered;
 }
