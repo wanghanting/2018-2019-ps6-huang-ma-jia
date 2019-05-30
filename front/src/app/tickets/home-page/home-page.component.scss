@@ -1,25 +1,29 @@
-// You can apply style directly to a component
+.container-fluid{
+  width:100%;
+}
 
-.mapWorld {
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
+h1{
+  font-size: 70px;
+  color:rgba(67,153,97,.5);
+  text-shadow:4px 4px 0 rgba(236,144,79, 0.6);
 }
 
 .countryList {
-  width: 80%;
-  margin: auto;
 }
-.title{
-  display: block;
-  width: 60%;
-  margin: 10px auto 40px;
+app-country-ticket-list{
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-button{
-  display: table;
-  font-size: 25px;
-  width: 40%;
-  margin: 1px auto 200px;
+button {
+  border-radius: 15px;
+  background-color: rgba(67,153,97,.5) ;
+  border:none;
+  color:white;
+  padding:15px 32px;
+  text-align:center;
+  text-decoration:none;
+  display:inline-block;
+  font-size:26px;
+  cursor: pointer;
 }
-
