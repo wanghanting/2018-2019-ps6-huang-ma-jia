@@ -17,25 +17,26 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="/country?id=1" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="btn-group">
+          <button class="btn btn-default dropdown-toggle" type="button" id="navbarDropdownMenuLink" data-toggle="dropdown" (click)="show=!show">
             Pays
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Thailand</a>
-            <a class="dropdown-item" href="#">Australie</a>
-            <a class="dropdown-item" href="#">Chine</a>
-            <a class="dropdown-item" href="#">Etas-Unis</a>
-          </div>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" [ngClass]="{show: show === true}">
+            <li><a class="dropdown-item" href="/country?id=2">Thailand</a></li>
+            <li><a class="dropdown-item" href="/country?id=3">Australie</a></li>
+            <li><a class="dropdown-item" href="/country?id=1">Chine</a></li>
+            <li><a class="dropdown-item" href="/country?id=4">Etas-Unis</a></li>
+          </ul>
+        </div>
+        <li class="nav-item active">
+          <a class="nav-link" href="/search-companies" id="nav-com">Entreprises</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="search-companies" id="nav-com">Entreprises</a>
+          <a class="nav-link" href="/search-internship" id="nav-intern">Stages</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="search-internship" id="nav-intern">Stages</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#" id="nav-contact">Nous contacter</a>
+          <a class="nav-link" href="#" id="nav-contact">Rendez-vous</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#" id="nav-log">
