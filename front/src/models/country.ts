@@ -13,4 +13,5 @@ export interface Country {
     rent?: string;
     earning?: string;
     expenditure?: string;
+    culture?: string[];
 }

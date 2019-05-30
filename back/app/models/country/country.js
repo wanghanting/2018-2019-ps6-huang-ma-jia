@@ -41,7 +41,7 @@ const countrySchema = new mongoose.Schema({
     type: Array,
     required: true,
   },
-  rent:{
+  rent: {
     type: String,
     required: true,
   },
@@ -53,6 +53,10 @@ const countrySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  culture:{
+    type: Array,
+    required: true,
+  }
 
 });
 module.exports = mongoose.model('Country', countrySchema,'countries');

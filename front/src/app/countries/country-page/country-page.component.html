@@ -58,6 +58,12 @@
         </div>
     </div>
   </div>
+  <br>
+  <div class="row">
+    <div class="col-4" *ngFor="let culphoto of oneCountry.culture" align="center">
+      <img [src]="culphoto" height="360" width="600">
+    </div>
+  </div>
 
   <app-company-list  (clickEventList)="onClick($event)"></app-company-list>
 
