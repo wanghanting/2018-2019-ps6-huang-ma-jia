@@ -1,0 +1,9 @@
+<div class="container-fluid" id="manage_list" *ngIf="list">
+  <div fxLayout="row" fxLayoutGap="0.5%" fxLayoutAlign="">
+    <mat-card class="company" *ngFor="let student of list.interviewlist">
+      <p>
+      {{student.name}}
+      {{student.number}}</p>
+    </mat-card>
+  </div>
+</div>

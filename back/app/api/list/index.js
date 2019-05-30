@@ -1,10 +1,11 @@
 const { Router } = require('express');
-const { User } = require('../../models');
+const { List } = require('../../models/');
 
 const router = new Router();
 router.get('/', (req, res) => {
-  User.findOne(req.query, { _id: 0 }, (err, user) => {
-    res.send(user);
+  List.findOne(req.query, { _id: 0 }, (err, list) => {
+    res.send(list);
   });
 });
+
 module.exports = router;

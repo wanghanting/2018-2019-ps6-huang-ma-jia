@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../services/login/login.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-login-page',
@@ -13,6 +14,7 @@ export class LoginPageComponent implements OnInit {
   public userLogin: string;
   public passLogin: string;
   public loginForm: FormGroup;
+  public user: User;
   constructor(public userService: UserService,public formBuilder: FormBuilder) {
     this.showsign = false;
     this.showlogin = true;
@@ -34,6 +36,10 @@ export class LoginPageComponent implements OnInit {
   }
   submitLogin(user, pass) {
     this.userService.checkUser(user, pass);
+    this.userService.logeduser$.subscribe((loginUser) => this.user = loginUser);
+    if (this.user) {
+      window.location.href = 'http://localhost:4200/manage-list/?userid=' + this.user.id;
+    }
 
   }
 }

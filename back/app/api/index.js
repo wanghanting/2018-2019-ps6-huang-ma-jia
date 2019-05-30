@@ -13,6 +13,7 @@ const StartDateRouter = require('./startdate');
 const LogeRouter = require('./loge');
 const ReviewRouter = require('./review');
 const LoginRouter = require('./user');
+const ListRouter = require('./list');
 
 const router = new Router();
 router.get('/status', (req, res) => res.status(200).json('ok'));
@@ -29,7 +30,8 @@ router.use('/startdates', StartDateRouter);
 router.use('/periods', PeriodRouter);
 router.use('/loge', LogeRouter);
 router.use('/review', ReviewRouter);
-router.use('/login', LoginRouter)
+router.use('/login', LoginRouter);
+router.use('/manage-list', ListRouter);
 
 
 module.exports = router;

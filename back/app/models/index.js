@@ -11,6 +11,7 @@ const EmploeesNumber = require('./employeesNumber/employeeNumber.js');
 const Loge = require('./loge/loge');
 const Review = require('./review/review');
 const User = require('./user/user');
+const List = require('./list/list');
 
 module.exports = {
   EmploeesNumber,
@@ -26,4 +27,5 @@ module.exports = {
   Loge,
   Review,
   User,
+  List,
 };

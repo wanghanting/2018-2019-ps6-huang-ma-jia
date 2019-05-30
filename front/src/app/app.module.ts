@@ -42,6 +42,11 @@ import {ReviewComponent} from './review/review';
 import {ReviewListComponent} from './review/review-list';
 import {ActivityComponent} from './activity/index';
 import {LoginPageComponent} from './login';
+import {ManageListComponent} from './manage-list';
+import {ListService} from '../services/list/list.service';
+import {LogeService} from '../services/loge/loge.service';
+import {ReviewService} from '../services/review/review.service';
+import {InternshipService} from '../services/internship/internship.service';
 
 @NgModule({
   declarations: [
@@ -74,7 +79,8 @@ import {LoginPageComponent} from './login';
     FooterComponent,
     ReviewComponent,
     ReviewListComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    ManageListComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -92,7 +98,8 @@ import {LoginPageComponent} from './login';
     FlexLayoutModule,
     AppRoutingModule
   ],
-  providers: [CountryService, OneCountryService, ActivitySectorService, CompanySizeService, StudentService, StartdateService, PeriodService],
+  providers: [CountryService, OneCountryService, ActivitySectorService, CompanySizeService, StudentService, StartdateService, PeriodService,
+    ListService, LogeService, ReviewService, InternshipService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

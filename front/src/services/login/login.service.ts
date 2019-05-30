@@ -10,15 +10,27 @@ import {User} from '../../models/user';
 export class UserService {
   private user: User;
 
-  private loginUrl = 'http://localhost:9428/api/login';
+  private loginUrl = 'http://localhost:9428/api/login/';
   public logeduser$: BehaviorSubject<User> = new BehaviorSubject(this.user);
 
   constructor(private http: HttpClient) {
   }
   checkUser(user, pass) {
     const info = {'name': user, 'password': pass};
-    console.log(info);
-    this.http.post(this.loginUrl, info).subscribe(res => {
+    this.http.get(this.loginUrl + '?name=' + user + '&password=' + pass).subscribe(res => {
+      if (!res) {
+        this.http.get(this.loginUrl + '?email=' + user + '&password=' + pass).subscribe(res2 => {
+          if (res2) {
+            this.user = res2;
+            this.logeduser$.next(res2);
+          } else {
+            console.log('wrong');
+          }
+        });
+      } else {
+        this.user = res;
+        this.logeduser$.next(res);
+      }
 
     }, error => {
 
