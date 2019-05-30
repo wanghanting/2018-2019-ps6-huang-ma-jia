@@ -41,6 +41,7 @@ import {LogeListComponent} from './loge/loge-list';
 import {ReviewComponent} from './review/review';
 import {ReviewListComponent} from './review/review-list';
 import {ActivityComponent} from './activity/index';
+import {LoginPageComponent} from './login';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import {ActivityComponent} from './activity/index';
     HeaderComponent,
     FooterComponent,
     ReviewComponent,
-    ReviewListComponent
+    ReviewListComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserAnimationsModule,

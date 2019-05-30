@@ -10,6 +10,7 @@ const Specialty = require('./sector/specialty.js');
 const EmploeesNumber = require('./employeesNumber/employeeNumber.js');
 const Loge = require('./loge/loge');
 const Review = require('./review/review');
+const User = require('./user/user');
 
 module.exports = {
   EmploeesNumber,
@@ -24,4 +25,5 @@ module.exports = {
   Specialty,
   Loge,
   Review,
+  User,
 };
