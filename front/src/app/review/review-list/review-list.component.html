@@ -1,7 +1,16 @@
-<div class="container-fluid" id="review_list">
-  <div fxLayout="row" fxLayoutGap="0.5%" fxLayoutAlign="">
-    <mat-card class="company" *ngFor="let review of reviewList">
+<!--<div class="container-fluid" id="review_list">-->
+  <!--<div fxLayout="row" fxLayoutGap="0.5%" fxLayoutAlign="">-->
+    <!--<mat-card class="company" *ngFor="let review of reviewList">-->
+      <!--<app-review [review]="review"></app-review>-->
+    <!--</mat-card>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let review of reviewList">
       <app-review [review]="review"></app-review>
-    </mat-card>
-  </div>
+    </li>
+  </ul>
 </div>
