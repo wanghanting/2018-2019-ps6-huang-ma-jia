@@ -4,8 +4,6 @@
 <p>{{internshipList.length}} stages à découvrir: </p>
 <ul class="list-group list-group-flush" id="internlist">
   <li class="list-group-item" *ngFor="let internship of internshipList">
-      <!--Inputs & Output allow communication between parent & child components.-->
-      <!--More information: https://angular.io/guide/component-interaction-->
       <app-internship [internship]="internship" (clickEvent)="onClick($event)"></app-internship>
   </li>
 </ul>

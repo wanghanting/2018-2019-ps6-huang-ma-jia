@@ -7,10 +7,10 @@
 
     <form class="form" [formGroup]="searchForm" (change)="companyFilter()">
       <div class="row">
-        <div class="col-4">
-          <h5>A porpos d'entreprise: </h5>
+        <div class="col-5">
+          <h3>A porpos d'entreprise: </h3>
         </div>
-      <div class="col-2">
+      <div class="col-3">
           <select id="secteur" [formControlName]="'secteur'" >
             <option value="" selected disabled hidden>secteur d'entreprise </option>
             <option value = "">secteur d'entreprise</option>
@@ -19,7 +19,7 @@
             </option>
           </select>
       </div>
-      <div class="col-2" id="bot">
+      <div class="col-3" id="bot">
           <select  id="size" [formControlName]="'size'">
             <option value="" selected disabled hidden>taille</option>
             <option value = "">taille</option>
