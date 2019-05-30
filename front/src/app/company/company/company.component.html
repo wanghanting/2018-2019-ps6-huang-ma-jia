@@ -1,16 +1,15 @@
-<div class="container-fluid shadow p-3 mb-5 bg-white rounded" style="background: white" *ngIf="company">
+<div class="row" id="banner">
+  <br><br><br><br>
+</div>
+<div class="container-fluid shadow p-3 mb-5 bg-white rounded" style="background: white;margin-top: 100px" *ngIf="company">
+
   <div class="row">
     <div class="col-4">
-  <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
-  <!--<img class="icon" [src]="company.iconImage" [height]="150" [width]="150"  alt="">-->
       <div id="company_name" class="col">{{company.name}}</div>
       </div>
   <div class="col-4">
-      <!--<div id="company_name" class="col">{{company.name}}</div>-->
-      <!--<label id="type intern" class="col-2">Type de stage proposé :{{company.internshipType}}</label>-->
     <div class ="row">
       <label id="secteur" class="col">Secteur:  {{company.activitySector}}</label>
-      <!--<label id="opportunity" class="col-2">Opportunité d'embauche :{{company.opportunity}}</label>-->
     </div>
     <div class="row">
       <label id="avis" class="col">Avis:
@@ -26,20 +25,8 @@
     </div>
   </div>
     <div class="col-4">
-      <!--<div class ="row">-->
-        <!--<label id="secteur" class="col">Secteur:  {{company.activitySector}}</label>-->
-        <!--&lt;!&ndash;<label id="opportunity" class="col-2">Opportunité d'embauche :{{company.opportunity}}</label>&ndash;&gt;-->
-      <!--</div>-->
-      <!--<div class="row">-->
-        <!--<label id="avis" class="col">Avis:-->
-          <!--<i *ngFor="let item of visaFullStarsArray" class="fas fa-star"></i>-->
-          <!--<i *ngFor="let item of visaEmptyStarsArray" class="far fa-star"></i>-->
-          <!--<br></label>-->
-      <!--</div>-->
-      <!--<div class="row">-->
-        <!--<label class="col">Adresse:  {{company.address}}</label>-->
-      <!--</div>-->
       <img class="icon" [src]="company.iconImage" [height]="150" [width]="150"  alt="">
     </div>
   </div>
 </div>
+
