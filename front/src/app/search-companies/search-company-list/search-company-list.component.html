@@ -3,7 +3,7 @@
 </head>
 <div class="container-fluid" id="company_list">
   <p>{{companyList.length}} entreprises à découvrir: </p>
-  <div fxLayout="row wrap" fxLayoutGap="0.5%" fxLayoutAlign="">
+  <div fxLayout="row wrap" fxLayoutGap="63px">
     <mat-card class="company" *ngFor="let company of companyList">
       <app-company-search [company]="company" (clickEventCompany)="onClick($event)"></app-company-search>
     </mat-card>
