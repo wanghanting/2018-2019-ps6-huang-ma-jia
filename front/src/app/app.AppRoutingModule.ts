@@ -6,12 +6,10 @@ import {CompanyPageComponent} from './company/company-page';
 import {HomePageComponent} from './tickets/home-page';
 import {StudentPageComponent} from './student/student';
 import {SearchInternshipPageComponent} from './search-internship/search-internship-page';
-import {EmailComponent} from './email/email.component';
+import {EnrollPageComponent} from './enroll/enroll-page.component';
 import {LoginPageComponent} from './login';
 import {ManageListComponent} from './manage-list';
 import {ContactPageComponent} from './contact';
-
-// import {UserListComponent} from './users/user-list/user-list.component';
 
 const routes: Routes = [
   {path: 'search-companies', component: SearchCompanyPageComponent},
@@ -20,7 +18,7 @@ const routes: Routes = [
   {path: 'homePage', component: HomePageComponent},
   {path: 'student', component: StudentPageComponent},
   {path: 'search-internship', component: SearchInternshipPageComponent},
-  {path: 'emailTo', component: EmailComponent},
+  {path: 'enroll', component: EnrollPageComponent},
   {path: 'login', component: LoginPageComponent},
   {path: 'manage-list', component: ManageListComponent},
   {path: 'contact', component: ContactPageComponent}

@@ -19,7 +19,7 @@ export class UserService {
     const info = {'name': user, 'password': pass};
     this.http.get(this.loginUrl + '?name=' + user + '&password=' + pass).subscribe(res => {
       if (!res) {
-        this.http.get(this.loginUrl + '?email=' + user + '&password=' + pass).subscribe(res2 => {
+        this.http.get(this.loginUrl + '?enroll=' + user + '&password=' + pass).subscribe(res2 => {
           if (res2) {
             this.user = res2;
             this.logeduser$.next(res2);

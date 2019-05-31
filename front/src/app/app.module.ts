@@ -33,7 +33,7 @@ import { HomePageComponent} from './tickets/home-page/home-page.component';
 import { CardInformationComponent } from './tickets/card-information/card-information.component';
 import { StudentPageComponent } from './student/student';
 import {ProfileComponent} from './profile/profile-page';
-import {EmailComponent} from './email/email.component';
+import {EnrollPageComponent} from './enroll/enroll-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {LogeComponent} from './loge/loge';
@@ -56,7 +56,7 @@ import {ContactPageComponent} from './contact';
     CountryPageComponent,
     CompanyComponent,
     ProfileComponent,
-    EmailComponent,
+    EnrollPageComponent,
     SearchCompanyComponent,
     SearchCompanyFormComponent,
     SearchCompanyListComponent,

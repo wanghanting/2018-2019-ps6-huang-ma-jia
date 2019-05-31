@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {Internship} from '../../models/internship';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {Company} from '../../models/company';
 import {FormGroup} from '@angular/forms';
 
 @Injectable({

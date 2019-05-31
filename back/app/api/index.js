@@ -14,6 +14,7 @@ const LogeRouter = require('./loge');
 const ReviewRouter = require('./review');
 const LoginRouter = require('./user');
 const ListRouter = require('./list');
+const ActivityRouter = require('./activity');
 
 const router = new Router();
 router.get('/status', (req, res) => res.status(200).json('ok'));
@@ -32,6 +33,7 @@ router.use('/loge', LogeRouter);
 router.use('/review', ReviewRouter);
 router.use('/login', LoginRouter);
 router.use('/manage-list', ListRouter);
+router.use('/activity', ActivityRouter);
 
 
 module.exports = router;

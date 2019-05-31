@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-6">
+  <div class="wrap" align="center">
+<div class="row">
+  <label>Nom:</label>
+  <input type="text" [(ngModel)]=lastname>
+</div>
+  <div class="row">
+    <label>Prenom:</label>
+    <input type="text" [(ngModel)]=firstname>
+  </div>
+  <div class="row">
+    <label>Specialite:</label>
+    <input type="text" [(ngModel)]=specialty>
+  </div>
+  <div class="row">
+    <button (click)="onClick(firstname,lastname,specialty)"> Envoyer</button>
+  </div>
+  </div>
+  </div>
+  <div class="col-6" align="center" id="bg">
+    <p>
+      La manifestation sera organisée conjointement par le Bureau des affaires académiques et le Bureau des affaires étrangères. Certains étudiants ayant une expérience de stage à l'étranger seront également présents. À la fin de l'événement, vous pouvez poser des questions et communiquer davantage.
+    </p>
+    <p id="time">15:00-17:00 03/06/2019</p>
+    <p id="place">Amphi Forum</p>
+
+  </div>
+  </div>
+</div>

@@ -13,4 +13,7 @@ export class ActivityComponent implements OnInit {
     this.Imgsrc2 = 'http://img0.imgtn.bdimg.com/it/u=4256542375,2025118593&fm=26&gp=0.jpg';
   }
   ngOnInit() {}
+  onClick(id) {
+    window.location.href = 'http://localhost:4200/enroll/?id=' + id;
+  }
 }
