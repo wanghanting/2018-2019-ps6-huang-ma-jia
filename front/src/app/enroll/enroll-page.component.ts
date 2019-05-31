@@ -20,6 +20,9 @@ export class EnrollPageComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.enrollService.enroll(params['id'], firstname, lastname, specialty);
     });
-
+    window.location.href = 'http://localhost:4200/search-internship';
+  }
+  onClick2() {
+   window.location.href = 'http://localhost:4200/search-internship';
   }
 }
