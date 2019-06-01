@@ -12,32 +12,46 @@
               </div>
               <div *ngIf="showsign">
                 <div class="form-content">
-                    <form action="#">
+                    <form action="#" [formGroup]="signupForm">
+                      <div class="row form-group">
+                      <div class="col-12">
+                        <label for="username1">Username</label>
+                        <input type="text" class="form-control" id="username1" [formControlName]="'name'" >
+                      </div>
+                    </div>
                       <div class="row form-group">
                         <div class="col-12">
-                          <label for="username1">Username or Email</label>
-                          <input type="text" class="form-control" id="username1">
+                          <label for="email">Email</label>
+                          <input type="email" class="form-control" id="email" [formControlName]="'email'" >
                         </div>
                       </div>
                       <div class="row form-group">
                         <div class="col-12">
                           <label for="password1">Password</label>
-                          <input type="password" class="form-control" id="password1">
+                          <input type="password" class="form-control" id="password1" [formControlName]="'password'" >
                         </div>
                       </div>
                       <div class="row form-group">
                         <div class="col-12">
                           <label for="password">Repeat Password</label>
-                          <input type="password" class="form-control" id="password">
+                          <input type="password" class="form-control" id="password" [formControlName]="'repeatpass'" >
                         </div>
                       </div>
                       <div class="row form-group">
                         <div class="col-12">
+                          <input type ="radio" name="type" value="entreprise" [formControlName]="'type'" class="radio"><label>Entreprise</label>
+                          <input type ="radio" name="type" value="etudiant" [formControlName]="'type'"class="radio"><label>Etudiant</label>
+                        </div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col-12">
+                          <label id="note">{{note}}</label>
                           <br>
-                          <input type="submit" class="btn btn-primary" value="Sign up" (click)="SubmitSign()">
+                          <input type="submit" class="btn btn-primary" value="Sign up" (click)="submitSign()">
                         </div>
                       </div>
                     </form>
+
                   </div>
               </div>
               <div *ngIf="showlogin">
@@ -51,7 +65,7 @@
                       <div class="row form-group">
                         <div class="col-md-12">
                           <label for="password2">Password</label>
-                          <input type="password" class="form-control" id="password2"  [formControlName]="'password'"[(ngModel)]="passLogin">
+                          <input type="password" class="form-control" id="password2"  [formControlName]="'password'" [(ngModel)]="passLogin">
                         </div>
                       </div>
 

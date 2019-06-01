@@ -16,7 +16,6 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
   checkUser(user, pass) {
-    const info = {'name': user, 'password': pass};
     this.http.get(this.loginUrl + '?name=' + user + '&password=' + pass).subscribe(res => {
       if (!res) {
         this.http.get(this.loginUrl + '?enroll=' + user + '&password=' + pass).subscribe(res2 => {
@@ -36,5 +35,16 @@ export class UserService {
 
     });
 
+  }
+  signup(name, email, password, type) {
+    const info = {'name': name, 'password': password, 'email': email, 'type': type };
+    console.log(info);
+    this.http.post(this.loginUrl, info).subscribe(res => {
+      if (res) {
+        this.user = res;
+        this.logeduser$.next(res);
+        return 'success';
+      }
+    });
   }
 }

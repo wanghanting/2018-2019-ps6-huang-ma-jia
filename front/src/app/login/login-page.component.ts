@@ -13,16 +13,24 @@ export class LoginPageComponent implements OnInit {
   public showlogin: boolean ;
   public userLogin: string;
   public passLogin: string;
+  public note: string;
   public loginForm: FormGroup;
+  public signupForm: FormGroup;
   public user: User;
-  constructor(public userService: UserService,public formBuilder: FormBuilder) {
+  constructor(public userService: UserService, public formBuilder: FormBuilder) {
     this.showsign = false;
     this.showlogin = true;
     this.loginForm = this.formBuilder.group({
       name: [''],
       password: [''],
     });
-
+    this.signupForm = this.formBuilder.group({
+      name: [''],
+      email: [''],
+      password: [''],
+      repeatpass: [''],
+      type: [''],
+    });
 
   }
   ngOnInit() {}
@@ -38,8 +46,19 @@ export class LoginPageComponent implements OnInit {
     this.userService.checkUser(user, pass);
     this.userService.logeduser$.subscribe((loginUser) => this.user = loginUser);
     if (this.user) {
-      window.location.href = 'http://localhost:4200/manage-list/?userid=' + this.user.id;
+      window.location.href = 'http://localhost:4200/homePage' + this.user.id;
     }
-
+  }
+  submitSign() {
+    if (this.signupForm.getRawValue().password && this.signupForm.getRawValue().repeatpass &&
+      this.signupForm.getRawValue().name && this.signupForm.getRawValue().type && this.signupForm.getRawValue().email) {
+      if (this.signupForm.getRawValue().password === this.signupForm.getRawValue().repeatpass) {
+        this.userService.signup(this.signupForm.getRawValue().name, this.signupForm.getRawValue().email,
+          this.signupForm.getRawValue().password, this.signupForm.getRawValue().type);
+          window.location.href = 'http://localhost:4200/homePage';
+      }
+    } else {
+      this.note = 'no empty';
+    }
   }
 }
