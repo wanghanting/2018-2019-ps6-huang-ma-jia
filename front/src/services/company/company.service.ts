@@ -51,4 +51,10 @@ export class CompanyService {
       this.companies$.next(value);
     });
   }
+  public search(extra) {
+    this.http.get<Company[]>(this.companiesUrl + '?' + extra).subscribe(value => {
+      this.companyList = value;
+      this.companies$.next(value);
+    });
+  }
 }

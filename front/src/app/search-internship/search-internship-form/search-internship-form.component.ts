@@ -91,6 +91,7 @@ export class SearchInternshipFormComponent implements OnInit {
     this.internForm = this.formBuilder.group({
       start: [''],
       period: [''],
+      contract: [''],
     });
     this.stuformChange();
     this.comformChange();
@@ -119,7 +120,8 @@ export class SearchInternshipFormComponent implements OnInit {
   internformChange() {
     this.urlExtra2 = '';
     this.urlExtra2 = this.urlExtra2 + (this.internForm.getRawValue().start ? '&startDate=' + this.internForm.getRawValue().start : '')
-    + (this.internForm.getRawValue().period ? '&period=' + this.internForm.getRawValue().period : '' );
+    + (this.internForm.getRawValue().period ? '&period=' + this.internForm.getRawValue().period : '' )
+    + (this.internForm.getRawValue().contract ? '&contractRenewed=' + this.internForm.getRawValue().contract : '');
     this.internshipFilter();
   }
   onClick(key) {

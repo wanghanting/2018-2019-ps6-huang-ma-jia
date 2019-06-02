@@ -23,6 +23,7 @@ export class SearchCompanyFormComponent implements OnInit {
    * More information about Reactive Forms: https://angular.io/guide/reactive-forms
    */
   public searchForm: FormGroup;
+  public searchCom: string;
   public TAILLE_LIST: CompanySize[] = [];
   public SECTEUR_LIST: ActivitySector[] = [];
   constructor(public formBuilder: FormBuilder, public  companyservice: CompanyService, public activitySectorService: ActivitySectorService,
@@ -44,6 +45,9 @@ export class SearchCompanyFormComponent implements OnInit {
   }
   companyFilter() {
     this.companyservice.formChange(this.searchForm);
+  }
+  onClick(key) {
+    this.companyservice.search('&name=' + key);
   }
   sectorChange(value) {
     this.specialtyService.setSectorName(value);

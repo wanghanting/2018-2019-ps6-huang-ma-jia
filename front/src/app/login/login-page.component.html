@@ -5,9 +5,13 @@
           <div class="col-3">
             <div class="form-wrap">
               <div class="tab">
-                <div class="row">
-                  <button id="signup" (click)="onClickSign()">Sign up</button>
-                  <button id="login" (click)="onClickLogin()">Login</button>
+                <div class="row" *ngIf="showlogin">
+                  <button id="signup1" (click)="onClickSign()">Sign up</button>
+                  <button id="login1" (click)="onClickLogin()">Login</button>
+                </div>
+                <div class="row" *ngIf="showsign">
+                  <button id="signup2" (click)="onClickSign()">Sign up</button>
+                  <button id="login2" (click)="onClickLogin()">Login</button>
                 </div>
               </div>
               <div *ngIf="showsign">

@@ -12,6 +12,9 @@
   background-repeat: no-repeat;
   background-position: 0,0;
 }
+.row{
+  margin-right:0;
+}
 
 button {
   margin-bottom: 100px;
@@ -25,7 +28,7 @@ button {
   display:inline-block;
   font-size:26px;
   cursor: pointer;
-  width: 200px;
+  width: 50%;
 }
 label{
   font-size: 40px;
@@ -46,4 +49,10 @@ form{
 }
 #note{
   color:red;
+}
+#login1{
+  background-color: white;
+}
+#signup2{
+  background-color: white;
 }

@@ -20,7 +20,7 @@
         </div>
         <div class="col-2">
           <select id="sector" [formControlName]="'sector'" (change)="sectorChange($event.target.value)">
-            <option value="" selected disabled hidden>filière</option>
+            <option value="" selected disabled hidden>Filière</option>
             <option value = "">filière</option>
             <option *ngFor="let currentSector of SECTOR_LIST" [value]="currentSector.name">
               {{currentSector.name}}
@@ -34,7 +34,7 @@
         <div class="col-8"></div>
         <div class="col-2">
           <select  id="specialty" [formControlName]="'specialty'">
-            <option value="" selected disabled hidden>specialité</option>
+            <option value="" selected disabled hidden>Specialité</option>
             <option value = "">specialité</option>
             <option *ngFor="let currentSpecialty of SPECIALTY_LIST" [value]="currentSpecialty.name">
               {{currentSpecialty.name}}
@@ -53,7 +53,7 @@
         </div>
         <div class="col-2">
           <select  id="country" [formControlName]="'country'">
-            <option value="" selected disabled hidden>pays</option>
+            <option value="" selected disabled hidden>Pays</option>
             <option value = "">pays</option>
             <option *ngFor="let currentCountry of COUNTRY_LIST" [value]="currentCountry.id">
               {{currentCountry.name}}
@@ -67,7 +67,7 @@
         <div class="col-8"></div>
         <div class="col-4">
           <select id="secteur" [formControlName]="'secteur'" >
-            <option value="" selected disabled hidden>secteur</option>
+            <option value="" selected disabled hidden>Secteur</option>
             <option value = "">secteur</option>
             <option *ngFor="let currentSecteur of SECTEUR_LIST" [value]="currentSecteur.name">
               {{currentSecteur.name}}
@@ -82,7 +82,7 @@
         <div class="col-8"></div>
         <div class="col-4">
           <select  id="size" [formControlName]="'size'">
-            <option value="" selected disabled hidden>taille</option>
+            <option value="" selected disabled hidden>Taille</option>
             <option value = "">taille</option>
             <option *ngFor="let currentTaille of TAILLE_LIST" [value]="currentTaille.num">
               {{currentTaille.num}}
@@ -101,7 +101,7 @@
         </div>
         <div class="col-4">
           <select id="start" [formControlName]="'start'">
-            <option value="" selected disabled hidden>date de début</option>
+            <option value="" selected disabled hidden>Date de début</option>
             <option value = "">date de début</option>
             <option *ngFor="let currentStart of STARTDATE_LIST" [value]="currentStart.name">
               {{currentStart.name}}
@@ -124,6 +124,17 @@
         </div>
       </div>
       <br>
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
+          <select  id="contract" [formControlName]="'contract'">
+            <option value="" selected disabled hidden>Contract</option>
+            <option value = "">Contact</option>
+            <option value="CDD">CDD</option>
+            <option value="CDI">CDI</option>
+          </select>
+        </div>
+      </div>
       <div class="row">
         <div id="social">
           <img src="http://img3.imgtn.bdimg.com/it/u=2146573912,4053482061&fm=26&gp=0.jpg" class="picture" height="100" width="100">

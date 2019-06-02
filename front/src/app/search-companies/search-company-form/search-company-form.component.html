@@ -29,5 +29,12 @@
           </select>
       </div>
       </div>
+
     </form>
+  <div class="row">
+    <div class="input-group">
+      <input id="searchIntern" class="form-control input-group-xs" type = "text" name="searchIntern" [(ngModel)]="searchCom" placeholder="Entrez ce que vous recherchez">
+      <img src="http://img4.imgtn.bdimg.com/it/u=3012987789,2452251719&fm=26&gp=0.jpg" alt="" id="search"  height="50px" (click)="onClick(searchCom)">
+    </div>
+  </div>
 </div>
