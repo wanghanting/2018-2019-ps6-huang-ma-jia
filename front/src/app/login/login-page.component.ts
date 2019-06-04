@@ -46,7 +46,7 @@ export class LoginPageComponent implements OnInit {
     this.userService.checkUser(user, pass);
     this.userService.logeduser$.subscribe((loginUser) => this.user = loginUser);
     if (this.user) {
-      window.location.href = 'http://localhost:4200/homePage' + this.user.id;
+      window.location.href = 'http://localhost:4200/homePage';
     }
   }
   submitSign() {
